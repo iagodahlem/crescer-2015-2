@@ -35,9 +35,10 @@ public class Elfo {
      *      public void atirarFlechaDeFogo
     */
    
-    public void atirarFlecha() {
+    public void atirarFlecha(Dwarf dwarf) {
         flechas--;
         experiencia++;
+        dwarf.receberFlechada();
         //experiencia += 1;
         //experiencia = experiencia + 1;
     }
@@ -65,18 +66,20 @@ public class Elfo {
         return this.nome;
     }
     
+    /*
     public void setNome(String novoNome) {
         this.nome = novoNome;
     }
+    */
     
     public int getFlechas() {
         return this.flechas;
     }
     
     /*
-     *public void setFlechas(int flechas) {
-     *    if (flechas > this.flechas)
-     *    this.flechas = flechas;
-     *}
-     */
+    public void setFlechas(int flechas) {
+        if (flechas > this.flechas)
+        this.flechas = flechas;
+     }
+    */
 }
