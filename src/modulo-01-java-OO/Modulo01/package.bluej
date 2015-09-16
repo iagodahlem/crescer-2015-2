@@ -1,19 +1,19 @@
 #BlueJ package file
-objectbench.height=192
-objectbench.width=252
-package.editor.height=475
+objectbench.height=76
+objectbench.width=1274
+package.editor.height=573
 package.editor.width=1148
 package.editor.x=1
-package.editor.y=23
+package.editor.y=30
 package.numDependencies=0
 package.numTargets=2
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
-target1.editor.height=700
-target1.editor.width=900
-target1.editor.x=41
-target1.editor.y=43
+target1.editor.height=738
+target1.editor.width=683
+target1.editor.x=0
+target1.editor.y=30
 target1.height=50
 target1.name=Elfo
 target1.naviview.expanded=false
