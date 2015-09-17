@@ -1,8 +1,16 @@
 public class Dwarf  {
-    private int vida;
+    private String nome;
+    private int vida, experiencia;
+    private Status status;
     
     {
         vida = 110;
+        experiencia = 0;
+        status = Status.VIVO;
+    }
+    
+    public void Dwarf(String nome) {
+        this.nome = nome;
     }
     
     public void receberFlechada() {

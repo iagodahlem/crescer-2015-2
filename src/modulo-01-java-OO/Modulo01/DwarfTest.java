@@ -24,7 +24,7 @@ public class DwarfTest
     }
     
     @Test
-    public void dwarfRecebe11FlechaVezesEVidaÉ0() {
+    public void dwarfRecebe11FlechasEVidaÉ0() {
         Dwarf gimli = new Dwarf();
         for(int i = 0; i < 11; i++) {
             gimli.receberFlechada();
@@ -39,5 +39,14 @@ public class DwarfTest
             gimli.receberFlechada();
         }
         assertEquals(40, gimli.getVida());
+    }
+    
+    @Test
+    public void dwarfRecebeStatusMorto() {
+        Dwarf gloin = new Dwarf();
+        for (int i = 0; i < 11; i++) {
+            gloin.receberFlechada();
+        }
+        assertEquals(Status.MORTO, gloin.getStatus());
     }
 }
