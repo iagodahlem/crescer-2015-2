@@ -44,4 +44,10 @@ public class ElfoTest
         elf.atirarFlecha(gimli);
         assertEquals(1, elf.getExperiencia());
     }
+    
+    @Test
+    public void elfoNasceVivo() {
+        Elfo legolas = new Elfo("Legolas");
+        assertEquals(Status.VIVO, legolas.getStatus());
+    }
 }
