@@ -12,7 +12,7 @@ public class Elfo {
         experiencia++;
     }
     
-    public void atirarFlechaRefactory() {
-    
+    public void atirarFlechaRefactory(String alvo) {
+
     }
 }
