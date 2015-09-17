@@ -6,8 +6,8 @@ import org.junit.Test;
 public class ElfoTest
 {
     @Test
-    public void elfoNasceComNomeEFlechasSetadosPeloUsuario() {
-        Elfo elf = new Elfo("", 0);
+    public void elfoNasceComNome() {
+        Elfo elf = new Elfo("");
         assertNotNull(elf.getNome());
     }
     
@@ -15,5 +15,21 @@ public class ElfoTest
     public void elfoNasceCom42Flechas() {
         Elfo elf = new Elfo("Elf");
         assertEquals(42, elf.getFlechas());
+    }
+    
+    @Test
+    public void elfoAtiraFlechaEPerde1Flecha() {
+        Elfo elf = new Elfo("Elf");
+        Dwarf gimli = new Dwarf();
+        elf.atirarFlecha(gimli);
+        assertEquals(41, elf.getFlechas());
+    }
+    
+    @Test
+    public void elfoAtiraFlechaEGanha1DeExperiencia() {
+        Elfo elf = new Elfo("Elf");
+        Dwarf gimli = new Dwarf();
+        elf.atirarFlecha(gimli);
+        assertEquals(1, elf.getExperiencia());
     }
 }
