@@ -18,7 +18,7 @@ public class Elfo {
         this.flechas = flechas;
     }
     
-    /* Método para demosntrar implementação com int Integer X
+    /* Método para demonstrar implementação com int Integer X
     public Elfo(String nome, Integer flechas) {
         this(nome);
         if (flechas != null) {
@@ -90,4 +90,8 @@ public class Elfo {
         this.flechas = flechas;
      }
     */
+   
+   public int getExperiencia() {
+       return this.experiencia;
+   }
 }
