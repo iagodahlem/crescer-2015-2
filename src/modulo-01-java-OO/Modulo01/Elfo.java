@@ -4,6 +4,7 @@
 public class Elfo {
     private String nome;
     private int flechas, experiencia;
+    private Status status;
     
     /**
      * Type Initializer
@@ -16,9 +17,10 @@ public class Elfo {
     public Elfo(String nome, int flechas) {
         this.nome = nome;
         this.flechas = flechas;
+        this.status = Status.VIVO;
     }
     
-    /* Método para demosntrar implementação com int Integer X
+    /* Método para demonstrar implementação com int Integer X
     public Elfo(String nome, Integer flechas) {
         this(nome);
         if (flechas != null) {
@@ -90,4 +92,16 @@ public class Elfo {
         this.flechas = flechas;
      }
     */
+   
+   public int getExperiencia() {
+       return this.experiencia;
+   }
+   
+   public Status getStatus() {
+       return this.status;
+   }
+   
+   public String toString() {
+       return this.nome + " possui " + this.flechas + " flechas e " + this.experiencia + " niveis de experiencia.";
+   }
 }
