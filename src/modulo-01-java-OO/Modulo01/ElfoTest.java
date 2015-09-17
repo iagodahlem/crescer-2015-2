@@ -12,9 +12,21 @@ public class ElfoTest
     }
     
     @Test
-    public void elfoNasceCom42Flechas() {
+    public void elfoCriadoComNomeNasceCom42Flechas() {
         Elfo elf = new Elfo("Elf");
         assertEquals(42, elf.getFlechas());
+    }
+    
+    @Test
+    public void elfoNasceComNomeNull() {
+        Elfo elf = new Elfo(null);
+        assertNull(elf.getNome());
+    }
+    
+    @Test
+    public void elfoNasceComNomeVazio() {
+        Elfo elf = new Elfo("");
+        assertEquals("", elf.getNome());
     }
     
     @Test
