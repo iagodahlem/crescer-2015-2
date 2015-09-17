@@ -7,6 +7,7 @@ public class Dwarf  {
     
     public void receberFlechada() {
         this.vida -= 10;
+        
     }
     
     public int getVida() {
