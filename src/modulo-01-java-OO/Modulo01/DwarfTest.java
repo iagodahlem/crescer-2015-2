@@ -14,6 +14,7 @@ public class DwarfTest
     @Test
     public void dwarfRecebeFlechadaEPerde10DeVida() {
         Dwarf gimli = new Dwarf();
-        assertEquals(110, gimli.getVida());
+        gimli.receberFlechada();
+        assertEquals(100, gimli.getVida());
     }
 }
