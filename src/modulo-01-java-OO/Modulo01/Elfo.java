@@ -18,18 +18,22 @@ public class Elfo {
         this.flechas = flechas;
     }
     
+    /* Método para demosntrar implementação com int Integer X
     public Elfo(String nome, Integer flechas) {
         this(nome);
         if (flechas != null) {
             this.flechas = flechas;
         }
     }
+    */
     
     public Elfo(String nome) {
         this(nome, 42);
     }
 
-    /* PascalCase (C#, VB.NET)
+    /* Exemplos de nomenclatura
+     * 
+     * PascalCase (C#, VB.NET)
      *      public void AtirarFlechaDeFogo
      * camelCase (Java, JavaScript)
      *      public void atirarFlechaDeFogo
@@ -43,16 +47,18 @@ public class Elfo {
         //experiencia = experiencia + 1;
     }
 
-    /*
-     * public atirarFlechaRefactory(this.flechas, this.experiencia){
-     *     if(boolean acertar == true){
-     *         flechas--;
-     *         experiencia++;
-     *      }else{
-     *          flechas--;
-     *      }
-     *  }
-     */
+    /* Refatoraçao Antes:
+      
+    public atirarFlechaRefactory(this.flechas, this.experiencia){
+        if(boolean acertar == true){
+            flechas--;
+            experiencia++;
+        }else{
+             flechas--;
+        }
+    }
+    
+    Depois:
     public void atirarFlechaRefactory(){
         boolean acertar = true;
         if (acertar) {
@@ -60,12 +66,14 @@ public class Elfo {
         }
         flechas--;
     }
+    */
     
     public String getNome() {
         return this.nome;
     }
     
-    /*
+    /* Exemplo de setter
+     * 
     public void setNome(String novoNome) {
         this.nome = novoNome;
     }
@@ -75,7 +83,8 @@ public class Elfo {
         return this.flechas;
     }
     
-    /*
+    /*Exemplo de setter
+     * 
     public void setFlechas(int flechas) {
         if (flechas > this.flechas)
         this.flechas = flechas;

@@ -1,4 +1,4 @@
-public class Dwarf {
+public class Dwarf  {
     private int vida;
     
     {
