@@ -60,10 +60,12 @@ public class DwarfTest
         assertEquals(1995, dataNascimento.getAno());
     }
     
-   /*
     @Test
     public void dwarfRecebeDataDeNascimentoDefault() {
-    
+        Dwarf gloin = new Dwarf("Gloin");
+        DataTerceiraEra dataNascimento = gloin.getDataDeNascimento();
+        assertEquals(1, dataNascimento.getDia());
+        assertEquals(1, dataNascimento.getMes());
+        assertEquals(1, dataNascimento.getAno());
     }
-    */
 }
