@@ -44,6 +44,9 @@ public class Dwarf  {
     
     public double getNumeroSorte() {
         double numeroSorte = 101.0;
+        if (this.dataNascimento.ehBissexto() == true && this.vida >=80 || this.vida <=90) {
+            numeroSorte *= -33;
+        }
         return numeroSorte;
     }
 }

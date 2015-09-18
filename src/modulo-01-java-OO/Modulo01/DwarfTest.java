@@ -68,4 +68,14 @@ public class DwarfTest
         assertEquals(1, dataNascimento.getMes());
         assertEquals(1, dataNascimento.getAno());
     }
+    
+    @Test
+    public void dwarfTemNumeroDaSorteMenos3333() {
+        Dwarf gloin = new Dwarf("Gloin", new DataTerceiraEra(1, 1, 4));
+        for(int i = 0; i < 3; i++) {
+            gloin.receberFlechada();
+        }
+        DataTerceiraEra dataNascimento = gloin.getDataDeNascimento();
+        assertEquals(-3333, gloin.getNumeroSorte(), 0);
+    }
 }
