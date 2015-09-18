@@ -22,6 +22,7 @@ public class Dwarf  {
     public void receberFlechada() {
         this.vida -= 10;
         if (this.vida <= 0) {
+            this.vida = 0;
             this.status = Status.MORTO;
         }
     }
@@ -46,6 +47,9 @@ public class Dwarf  {
         double numeroSorte = 101.0;
         if (this.dataNascimento.ehBissexto() == true && this.vida >=80 || this.vida <=90) {
             numeroSorte *= -33;
+        }
+        if (this.dataNascimento.ehBissexto() == false && this.nome == "Seixas" || this.nome == "Meireles") {
+           
         }
         return numeroSorte;
     }
