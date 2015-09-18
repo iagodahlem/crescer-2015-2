@@ -2,6 +2,7 @@ public class Dwarf  {
     private String nome;
     private int vida, experiencia;
     private Status status;
+    private DataTerceiraEra dataNascimento;
     
     {
         vida = 110;
