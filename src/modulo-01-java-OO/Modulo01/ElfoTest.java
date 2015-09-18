@@ -38,7 +38,7 @@ public class ElfoTest
     @Test
     public void elfoAtiraFlechaEPerde1Flecha() {
         Elfo elf = new Elfo("Elf");
-        Dwarf gimli = new Dwarf();
+        Dwarf gimli = new Dwarf("Gimli");
         elf.atirarFlecha(gimli);
         assertEquals(41, elf.getFlechas());
     }
@@ -46,7 +46,7 @@ public class ElfoTest
     @Test
     public void elfoAtiraFlechaEGanha1DeExperiencia() {
         Elfo elf = new Elfo("Elf");
-        Dwarf gimli = new Dwarf();
+        Dwarf gimli = new Dwarf("Gimli");
         elf.atirarFlecha(gimli);
         assertEquals(1, elf.getExperiencia());
     }
@@ -76,7 +76,7 @@ public class ElfoTest
     public void elfoAtiraFlechaEmDwarf() {
         // Arrange
         Elfo elfo = new Elfo("Elfo caçador");
-        Dwarf balin = new Dwarf();
+        Dwarf balin = new Dwarf("Gimli");
         int qtdFlechasEsperada = 41;
         int experienciaEsperada = 1;
         int vidaEsperada = 100;
@@ -92,8 +92,8 @@ public class ElfoTest
     public void elfoAtiraEmDoisAnoes() {
         // Arrange
         Elfo elfo = new Elfo("Elfo caçador");
-        Dwarf balin = new Dwarf();
-        Dwarf filhoDeBalin = new Dwarf();
+        Dwarf balin = new Dwarf("Balin");
+        Dwarf filhoDeBalin = new Dwarf("filhoDeBalin");
         int qtdFlechasEsperada = 40;
         int experienciaEsperada = 2;
         int vidaEsperada = 100;
@@ -112,8 +112,8 @@ public class ElfoTest
         // Arrange
         Elfo elfo1 = new Elfo("Elfo caçador");
         Elfo elfo2 = new Elfo("Segundo elfo");
-        Dwarf balin = new Dwarf();
-        Dwarf filhoDeBalin = new Dwarf();
+        Dwarf balin = new Dwarf("Balin");
+        Dwarf filhoDeBalin = new Dwarf("filhoDeBalin");
         int qtdFlechasEsperada = 40;
         int experienciaEsperada = 2;
         int vidaEsperada = 90;
@@ -148,7 +148,7 @@ public class ElfoTest
     @Test
     public void elfoComUmDeExperienciaToString() {
         Elfo elfo1 = new Elfo(null);
-        elfo1.atirarFlecha(new Dwarf());
+        elfo1.atirarFlecha(new Dwarf("elfo1"));
         String textoEsperado = "null possui 41 flechas e 1 nível de experiência.";
         assertEquals(textoEsperado, elfo1.toString());
     }
