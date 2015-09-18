@@ -50,14 +50,15 @@ public class DwarfTest
        assertEquals(Status.MORTO, gloin.getStatus());
     }
     
-    /*
     @Test 
     public void dwarfRecebeNomeEDataDeNascimento() {
         Dwarf gloin = new Dwarf("Gloin", new DataTerceiraEra(10, 10, 1995));
+        DataTerceiraEra dataNascimento = gloin.getDataDeNascimento();
         assertEquals("Gloin", gloin.getNome());
-        assertEquals(new DataTerceiraEra(10, 10, 1995), gloin.getDataDeNascimento());
+        assertEquals(10, dataNascimento.getDia());
+        assertEquals(10, dataNascimento.getMes());
+        assertEquals(1995, dataNascimento.getAno());
     }
-    */
     
    /*
     @Test
