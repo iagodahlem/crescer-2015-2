@@ -20,7 +20,6 @@ public class DataTerceiraEra {
     }
     
     public boolean ehBissexto() {
-        boolean bissexto = ((this.ano % 4 == 0) && ((this.ano % 100 != 0) || (this.ano % 400 == 0))) ? true : false;
-        return bissexto;
+        return ((this.ano % 4 == 0) && ((this.ano % 100 != 0) || (this.ano % 400 == 0))) ? true : false;
     }
 }
