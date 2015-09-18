@@ -41,4 +41,9 @@ public class Dwarf  {
     public DataTerceiraEra getDataDeNascimento() {
         return this.dataNascimento;
     }
+    
+    public double getNumeroSorte() {
+        double numeroSorte = 101.0;
+        return numeroSorte;
+    }
 }
