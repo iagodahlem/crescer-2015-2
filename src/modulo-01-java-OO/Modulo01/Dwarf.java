@@ -3,6 +3,7 @@ public class Dwarf  {
     private int vida, experiencia;
     private Status status;
     private DataTerceiraEra dataNascimento;
+    private Inventario inventario;
     
     public Dwarf(String nome) {
         this(nome, new DataTerceiraEra(1, 1, 1));
@@ -14,6 +15,7 @@ public class Dwarf  {
         this.vida = 110;
         this.experiencia = 0;
         this.status = Status.VIVO;
+        this.inventario = new Inventario();
     }
     
     public void receberFlechada() {
@@ -22,6 +24,14 @@ public class Dwarf  {
             this.vida = 0;
             this.status = Status.MORTO;
         }
+    }
+    
+    public void adicionarItemDwarf(Item item){
+        inventario.adicionarItem(item);
+    }
+    
+    public void perderItemDwarf(Item item) {
+        inventario.perderItem(item);
     }
     
     public String getNome() {
@@ -38,6 +48,10 @@ public class Dwarf  {
     
     public DataTerceiraEra getDataDeNascimento() {
         return this.dataNascimento;
+    }
+    
+    public int getInventarioDwarf() {
+       return inventario.getItens();
     }
     
     public double getNumeroSorte() {

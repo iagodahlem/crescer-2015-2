@@ -78,4 +78,23 @@ public class DwarfTest
         DataTerceiraEra dataNascimento = gloin.getDataDeNascimento();
         assertEquals(-3333, gloin.getNumeroSorte(), 0);
     }
+    
+    @Test
+    public void dwarfRecebe1Item() {
+        Dwarf dwarf = new Dwarf("dwarf");
+        Item marreta = new Item("marreta", 1);
+        dwarf.adicionarItemDwarf(marreta);
+        assertEquals(1, dwarf.getInventarioDwarf());
+    }
+    
+    @Test
+    public void dwarfRecebe2ItensEPerde1Item() {
+        Dwarf dwarf = new Dwarf("dwarf");
+        Item marreta = new Item("marreta", 1);
+        Item pocao = new Item("vidaInfinita", 1);
+        dwarf.adicionarItemDwarf(marreta);
+        dwarf.adicionarItemDwarf(pocao);
+        dwarf.perderItemDwarf(pocao);
+        assertEquals(1, dwarf.getInventarioDwarf());
+    }
 }
