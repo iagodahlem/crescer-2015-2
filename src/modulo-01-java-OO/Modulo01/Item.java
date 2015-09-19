@@ -8,7 +8,7 @@ public class Item {
     }
     
     public Item() {
-        this("", 0);
+
     }
     
     public String getDescricao() {

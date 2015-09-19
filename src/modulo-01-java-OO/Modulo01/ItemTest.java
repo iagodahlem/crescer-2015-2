@@ -8,7 +8,7 @@ public class ItemTest
     @Test
     public void itemRecebeDescricaoNullEQuantidade0() {
         Item item = new Item();
-        assertEquals("", item.getDescricao());
+        assertEquals(null, item.getDescricao());
         assertEquals(0, item.getQuantidade());
     }
     
