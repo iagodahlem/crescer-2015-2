@@ -48,10 +48,9 @@ public class Dwarf  {
         if (this.dataNascimento.ehBissexto() == true && this.vida >=80 || this.vida <=90) {
             numeroSorte *= -33;
         }
-        if (this.dataNascimento.ehBissexto() == false && this.nome == "Seixas" || this.nome == "Meireles") {
+        if (!dataNascimento.ehBissexto() && this.nome != null && (this.nome.equals("Seixas") || this.nome.equals("Meireles"))) {
            numeroSorte = numeroSorte * 33 % 100;
-        }
-        
+        }      
         return numeroSorte;
     }
 }
