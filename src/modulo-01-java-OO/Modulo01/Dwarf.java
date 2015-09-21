@@ -4,11 +4,7 @@ public class Dwarf  {
     private Status status;
     private DataTerceiraEra dataNascimento;
     private Inventario inventario;
-    
-    public Dwarf(String nome) {
-        this(nome, new DataTerceiraEra(1, 1, 1));
-    }
-    
+        
     public Dwarf(String nome, DataTerceiraEra dataNascimento) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
@@ -16,6 +12,10 @@ public class Dwarf  {
         this.experiencia = 0;
         this.status = Status.VIVO;
         this.inventario = new Inventario();
+    }
+    
+    public Dwarf(String nome) {
+        this(nome, new DataTerceiraEra(1, 1, 1));
     }
     
     public void receberFlechada() {
