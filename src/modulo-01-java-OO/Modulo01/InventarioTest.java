@@ -54,4 +54,14 @@ public class InventarioTest
         maleta.perderItem(metralhadora);
         assertEquals(0, maleta.getItensTamanho());
     }
+    
+    @Test
+    public void inventarioRetornaItemComMaiorQuantidade() {
+        Item bala = new Item("balas", 42);
+        Item metralhadora = new Item("uzi", 1);
+        Inventario maleta = new Inventario();
+        maleta.adicionarItem(bala);
+        maleta.adicionarItem(metralhadora);
+        assertEquals(maleta.getItens().get(0), maleta.getItemComMaiorQuantidade());
+    }
 }

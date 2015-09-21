@@ -40,6 +40,13 @@ public class Inventario {
     }
     
     public Item getItemComMaiorQuantidade() {
-        
+        Item itemComMaiorQuantidade = this.getItens().get(0);
+        int itens = this.getItensTamanho();
+        for(int i = 1; i < itens; i++) {
+            if(itemComMaiorQuantidade.getQuantidade() < this.getItens().get(i).getQuantidade()) {
+                itemComMaiorQuantidade = this.getItens().get(i);
+            }
+        }
+        return itemComMaiorQuantidade;
     }
 }   
