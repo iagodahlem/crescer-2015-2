@@ -15,6 +15,10 @@ public class Item {
         this.quantidade += 1000;
     }
     
+    public void aumentarEmMil2() {
+        this.quantidade = ((this.quantidade + this.quantidade) * 1000) + this.quantidade;
+    }
+    
     public String getDescricao() {
         return this.descricao;
     }
