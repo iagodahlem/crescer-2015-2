@@ -19,7 +19,23 @@ public class Inventario {
         return this.itens.get(posicao);
     }
     
-    public int getItens() {
+    public int getItensTamanho() {
         return this.itens.size();
     }
-}
+    
+    public ArrayList<Item> getItens() {
+        return itens;
+    }
+    
+    public String getDescricoesItens() {
+        String descricao = "";
+        int itens = this.getItensTamanho();
+        for(int i = 0; i < itens; i++) {
+            descricao += this.getItens().get(i).getDescricao();
+            if (itens != 1) {
+                descricao += ",";
+            }
+        }
+        return descricao;  
+    }
+}   

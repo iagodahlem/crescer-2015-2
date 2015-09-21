@@ -51,7 +51,7 @@ public class Dwarf  {
     }
     
     public int getInventarioDwarf() {
-       return inventario.getItens();
+       return inventario.getItensTamanho();
     }
     
     public double getNumeroSorte() {
