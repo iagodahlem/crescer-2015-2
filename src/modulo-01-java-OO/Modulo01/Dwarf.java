@@ -19,10 +19,19 @@ public class Dwarf  {
     }
     
     public void receberFlechada() {
-        this.vida -= 10;
-        if (this.vida <= 0) {
-            this.vida = 0;
-            this.status = Status.MORTO;
+        double numero = this.getNumeroSorte();
+        
+        if (numero < 0) {
+            this.experiencia += 2;
+        }
+        else if (numero > 100) {
+            int dano = 10, vidaAposFlechada = this.vida - dano;
+            if (vidaAposFlechada == 0) {
+                this.status = Status.MORTO;
+            }
+            if (vida > 0) {
+                this.vida = vidaAposFlechada;
+            }
         }
     }
     
