@@ -97,4 +97,18 @@ public class DwarfTest
         dwarf.perderItemDwarf(pocao);
         assertEquals(1, dwarf.getInventarioDwarf());
     }
+    
+    @Test
+    public void dwarfTentaSorteEAumentaQuantidadeDeUmItemEmMil() {
+        Dwarf dwarf = new Dwarf("Dwarf", new DataTerceiraEra(1,1,4));
+        Elfo elfo = new Elfo("Elfo");
+        for(int i = 0; i < 2; i++) {
+            dwarf.receberFlechada();
+        }
+        Item pocao = new Item("Poçao", 1);
+        Inventario inventario = new Inventario();
+        dwarf.adicionarItemDwarf(pocao);
+        dwarf.tentarSorte();
+        assertEquals(1001, dwarf.getInventario().getItem(0).getQuantidade());
+    }
 }

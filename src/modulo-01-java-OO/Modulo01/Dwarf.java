@@ -54,6 +54,10 @@ public class Dwarf  {
        return inventario.getItensTamanho();
     }
     
+    public Inventario getInventario() {
+        return this.inventario;
+    }
+    
     public double getNumeroSorte() {
         double numeroSorte = 101.0;
         if (this.dataNascimento.ehBissexto() == true && this.vida >=80 || this.vida <=90) {
@@ -63,5 +67,13 @@ public class Dwarf  {
            numeroSorte = numeroSorte * 33 % 100;
         }      
         return numeroSorte;
+    }
+    
+    public void tentarSorte() {
+        if (this.getNumeroSorte() == -3333) {
+            for(int i = 0; i < this.inventario.getItensTamanho(); i++){
+                this.inventario.getItens().get(i).aumentarQuantidadeEmMil();
+            }
+        }
     }
 }

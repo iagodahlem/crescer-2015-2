@@ -11,6 +11,10 @@ public class Item {
 
     }
     
+    public void aumentarQuantidadeEmMil() {
+        this.quantidade += 1000;
+    }
+    
     public String getDescricao() {
         return this.descricao;
     }
