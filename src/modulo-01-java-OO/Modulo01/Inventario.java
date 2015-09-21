@@ -33,9 +33,13 @@ public class Inventario {
         for(int i = 0; i < itens; i++) {
             descricao += this.getItens().get(i).getDescricao();
             if (itens != 1) {
-                descricao += ",";
+                descricao += "," + "";
             }
         }
         return descricao;  
+    }
+    
+    public Item getItemComMaiorQuantidade() {
+        
     }
 }   
