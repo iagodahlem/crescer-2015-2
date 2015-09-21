@@ -83,7 +83,7 @@ public class DwarfTest
     public void dwarfRecebe1Item() {
         Dwarf dwarf = new Dwarf("dwarf");
         Item marreta = new Item("marreta", 1);
-        dwarf.adicionarItemDwarf(marreta);
+        dwarf.adicionarItem(marreta);
         assertEquals(1, dwarf.getInventarioDwarf());
     }
     
@@ -92,9 +92,9 @@ public class DwarfTest
         Dwarf dwarf = new Dwarf("dwarf");
         Item marreta = new Item("marreta", 1);
         Item pocao = new Item("vidaInfinita", 1);
-        dwarf.adicionarItemDwarf(marreta);
-        dwarf.adicionarItemDwarf(pocao);
-        dwarf.perderItemDwarf(pocao);
+        dwarf.adicionarItem(marreta);
+        dwarf.adicionarItem(pocao);
+        dwarf.perderItem(pocao);
         assertEquals(1, dwarf.getInventarioDwarf());
     }
     
@@ -107,7 +107,7 @@ public class DwarfTest
         }
         Item pocao = new Item("Poçao", 1);
         Inventario inventario = new Inventario();
-        dwarf.adicionarItemDwarf(pocao);
+        dwarf.adicionarItem(pocao);
         dwarf.tentarSorte();
         assertEquals(1001, dwarf.getInventario().getItem(0).getQuantidade());
     }
