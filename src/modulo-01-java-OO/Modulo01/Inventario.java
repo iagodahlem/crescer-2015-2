@@ -15,16 +15,16 @@ public class Inventario {
         this.itens.remove(item);
     }
     
+    public ArrayList<Item> getItens() {
+        return itens;
+    }
+    
     public Item getItem(int posicao){
         return this.itens.get(posicao);
     }
     
     public int getItensTamanho() {
         return this.itens.size();
-    }
-    
-    public ArrayList<Item> getItens() {
-        return itens;
     }
     
     public String getDescricoesItens() {
