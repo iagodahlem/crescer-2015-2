@@ -1,4 +1,4 @@
-# Convenções para utilização no Projeto Crescer 2015-02 
+# Convenções para utilização no Projeto CRESCER 2015-02 - CWI
 
 ## Java
 
