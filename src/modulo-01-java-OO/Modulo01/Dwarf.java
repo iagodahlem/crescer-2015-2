@@ -35,12 +35,12 @@ public class Dwarf  {
         }
     }
     
-    public void adicionarItemDwarf(Item item){
-        inventario.adicionarItem(item);
+    public void adicionarItem(Item item){
+        this.inventario.adicionarItem(item);
     }
     
-    public void perderItemDwarf(Item item) {
-        inventario.perderItem(item);
+    public void perderItem(Item item) {
+        this.inventario.perderItem(item);
     }
     
     public String getNome() {
