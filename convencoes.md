@@ -3,12 +3,12 @@
 ## Java
 
 ### Classes
-  Deve iniciar com letra **maiúscula** e **camelCase**. Exemplos:
+Deve iniciar com letra **maiúscula** e **camelCase**. Exemplos:
 * public class Elfo
 * public class DataTerceiraEra
 
 ### Métodos
-  Deve iniciar com letra **minúscula** e **camelCase**. Exemplos:
+Deve iniciar com letra **minúscula** e **camelCase**. Exemplos:
 * public void atirarEmDwarf()
 * public void matarElfo()
 
