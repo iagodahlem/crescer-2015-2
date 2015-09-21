@@ -24,11 +24,11 @@ public class IrishDwarfTest
         for(int i = 0; i < 2; i++) {
             irishDwarf.receberFlechada();
         }
-        Item pocao = new Item("Poçao", 6);
+        Item pocao = new Item("Poçao", 4);
         Inventario inventario = new Inventario();
         irishDwarf.adicionarItemDwarf(pocao);
         irishDwarf.tentarSorte();
-        assertEquals(12006, irishDwarf.getInventario().getItem(0).getQuantidade());        
+        assertEquals(10004, irishDwarf.getInventario().getItem(0).getQuantidade());        
     }
     
     @Test
@@ -37,10 +37,10 @@ public class IrishDwarfTest
         for(int i = 0; i < 2; i++) {
             irishDwarf.receberFlechada();
         }
-        Item pocao = new Item("Poçao", 10);
+        Item pocao = new Item("Poçao", 6);
         Inventario inventario = new Inventario();
         irishDwarf.adicionarItemDwarf(pocao);
         irishDwarf.tentarSorte();
-        assertEquals(20010, irishDwarf.getInventario().getItem(0).getQuantidade());        
+        assertEquals(21006, irishDwarf.getInventario().getItem(0).getQuantidade());        
     }
 }
