@@ -1,61 +1,46 @@
 public class Orc {
-    public int vida;
+    private String nome;
+    private int vida;
+    private Inventario inventario = new Inventario();
     
-    protected Item Arco;
-    protected Item Flecha1;
-    protected Item Flecha2;
-    protected Item Flecha3;
-    protected Item EscudoUrukHai;
+    protected Item arco;
+    protected Item flecha;
+    protected Item espada;
+    protected Item escudoUrukHai;
 
-    public Orc() {
-        this.vida = 100 / 10 * 2.5;
-    }
-
-    public void gerarVida(int vidaAleatoria) {
-        this.vida = vidaAleatoria;
-    }
-    
-    public void receberFlechaDeElfo(Elfo elfo) {
-        if (this.EscudoUrukHai == null) {
-            gerarVida(this.VIDA - 10);
+    public Orc(String nome) { 
+        this.nome = nome;
+        if (this.nome == "Uruk-Hai") {
+            inventario.adicionarItem(escudoUrukHai);
+            inventario.adicionarItem(espada);           
+            this.vida = 150;
         }
-        gerarVida(this.Vida - 5);
+        if (this.nome == "Snaga") {
+            inventario.adicionarItem(arco);
+            inventario.adicionarItem(flecha);
+            this.vida = 70;
+        }
+        if (this.nome != "Uruk-Hai" || this.nome != "Snaga") {
+            
+        }
+    }
+        
+    public void receberFlechaDeElfo(Elfo elfo) {
+        this.vida -= 8;
     }
     
     public void receberFlechaDeAnao(Dwarf dwarf) {
-        if (this.EscudoUrukHai == null) {
-            gerarVida(this.VIDA - 10);
+        if (this.escudoUrukHai == null) {
+            this.vida -= 10;
         }
-        gerarVida(this.Vida - 5);
+        this.vida -= 5;
     }
     
-    public void adicionarNovoItem(Item item) {
-        
-        if (item.getDescricao() == "Escudo UrukHai") {
-            this.EscudoUrukHai = i;
-        }
-        else if (i.getDescricao().indexOf("Flecha") >= 0) {
-            
-            if (i.getDescricao() == "Flecha1")
-                this.Flecha1 = i;
-            if (i.getDescricao() == "Flecha2")
-                this.Flecha2 = i;
-            if (i.getDescricao() == "Flecha3")
-                this.Flecha3 = i;
-            else
-                this.Arco = new Item(1, "Arco  Uruk Hay");
-                this.Flecha1 = new Item(1, "Flecha");
-        }
-        else {
-            this.Arco = i;
-        }
-        
-    }
-    
+    /*
     public void atacarDwarf(Dwarf dwarf) {
-        anao.vida -= 10;
+        dwarf.vida -= 10;
         
-        for (Item item : this.novosItens) {
+        for (Item item : this) {
             ArrayList<int> numeroDeFlechas = new ArrayList<int>();
             numeroDeFlechas.add(1);
             numeroDeFlechas.add(2);
@@ -68,5 +53,18 @@ public class Orc {
                 }
             }
         }
+    }
+    
+    public void atacarElfo(Elfo elfo) {
+        
+    }
+    */
+    
+    public void adicionarItem(Item item){
+        this.inventario.adicionarItem(item);
+    }
+    
+    public void perderItem(Item item) {
+        this.inventario.perderItem(item);
     }
 }
