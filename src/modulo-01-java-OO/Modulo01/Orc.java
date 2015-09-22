@@ -1,6 +1,5 @@
 public class Orc {
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    public int VIDA;
+    public int vida;
     
     protected Item Arco;
     protected Item Flecha1;
@@ -8,47 +7,40 @@ public class Orc {
     protected Item Flecha3;
     protected Item EscudoUrukHai;
 
-    /**
-     * COnstrutor para objetos da classe orc
-     */
-    public orc()
-    {
-        VIDA = 100 / 10 * 2.5;
+    public Orc() {
+        this.vida = 100 / 10 * 2.5;
     }
 
     public void gerarVida(int vidaAleatoria) {
-        VIDA = vidaAleatoria;
+        this.vida = vidaAleatoria;
     }
     
-    public void Recever_Flecha_De_Elfo(Elfo elfo) {
-        
-        if(this.EscudoUrukHai == null) {
+    public void receberFlechaDeElfo(Elfo elfo) {
+        if (this.EscudoUrukHai == null) {
             gerarVida(this.VIDA - 10);
         }
-        
         gerarVida(this.Vida - 5);
     }
     
-    public void Recever_Flecha_De_Anao(Dwarf elfo) {
-        if(this.EscudoUrukHai == null) {
+    public void receberFlechaDeAnao(Dwarf dwarf) {
+        if (this.EscudoUrukHai == null) {
             gerarVida(this.VIDA - 10);
         }
-        
         gerarVida(this.Vida - 5);
     }
     
-    public void adicionarNovoItem(Item i) {
+    public void adicionarNovoItem(Item item) {
         
-        if(i.getDescricao() == "Escudo UrukHai") {
+        if (item.getDescricao() == "Escudo UrukHai") {
             this.EscudoUrukHai = i;
         }
-        else if(i.getDescricao().indexOf("Flecha") >= 0) {
+        else if (i.getDescricao().indexOf("Flecha") >= 0) {
             
-            if(i.getDescricao() == "Flecha1")
+            if (i.getDescricao() == "Flecha1")
                 this.Flecha1 = i;
-            if(i.getDescricao() == "Flecha2")
+            if (i.getDescricao() == "Flecha2")
                 this.Flecha2 = i;
-            if(i.getDescricao() == "Flecha3")
+            if (i.getDescricao() == "Flecha3")
                 this.Flecha3 = i;
             else
                 this.Arco = new Item(1, "Arco  Uruk Hay");
@@ -60,20 +52,18 @@ public class Orc {
         
     }
     
-    public void AtacarAnao(Dwarf anao) {
-    
+    public void atacarDwarf(Dwarf dwarf) {
         anao.vida -= 10;
         
         for (Item item : this.novosItens) {
-            
             ArrayList<int> numeroDeFlechas = new ArrayList<int>();
             numeroDeFlechas.add(1);
             numeroDeFlechas.add(2);
             numeroDeFlechas.add(3);
             
-            for(int i = 0; i++; i <= 3) {
+            for (int i = 0; i < 3; i++) {
                 
-                if(item.getDescricao() == "Flecha" + i) {
+                if (item.getDescricao() == "Flecha" + i) {
                     this.novosItens.remove(item);
                 }
             }
