@@ -1,28 +1,7 @@
-public class Orc {
-    private String nome;
-    private int vida;
-    private Inventario inventario = new Inventario();
-    
-    protected Item arco;
-    protected Item flecha;
-    protected Item espada;
-    protected Item escudoUrukHai;
+public class Orc extends Personagem{
 
     public Orc(String nome) { 
         this.nome = nome;
-        if (this.nome == "Uruk-Hai") {
-            inventario.adicionarItem(escudoUrukHai);
-            inventario.adicionarItem(espada);           
-            this.vida = 150;
-        }
-        if (this.nome == "Snaga") {
-            inventario.adicionarItem(arco);
-            inventario.adicionarItem(flecha);
-            this.vida = 70;
-        }
-        if (this.nome != "Uruk-Hai" || this.nome != "Snaga") {
-            
-        }
     }
         
     public void receberFlechaDeElfo(Elfo elfo) {
@@ -30,10 +9,7 @@ public class Orc {
     }
     
     public void receberFlechaDeAnao(Dwarf dwarf) {
-        if (this.escudoUrukHai == null) {
-            this.vida -= 10;
-        }
-        this.vida -= 5;
+
     }
     
     /*
@@ -59,12 +35,4 @@ public class Orc {
         
     }
     */
-    
-    public void adicionarItem(Item item){
-        this.inventario.adicionarItem(item);
-    }
-    
-    public void perderItem(Item item) {
-        this.inventario.perderItem(item);
-    }
 }
