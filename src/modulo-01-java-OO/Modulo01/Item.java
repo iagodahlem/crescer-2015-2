@@ -7,19 +7,15 @@ public class Item {
         this.quantidade = quantidade;
     }
     
-    public Item() {
-
-    }
-    
     public void aumentarQuantidadeEmMil() {
         this.quantidade += 1000;
     }
     
-    public void aumentarEmMil2() {
+    public void aumentarQuantidadeComSomatorio() {
         int pa = this.quantidade * (this.quantidade + 1) / 2;
-        this.quantidade += (1000 * pa);
+        this.quantidade += 1000 * pa;
     }
-    
+
     /*
      * Exercicio de refatoração:
     public void shimbalaie() {
@@ -34,5 +30,10 @@ public class Item {
     
     public int getQuantidade() {
         return this.quantidade;
+    }
+    
+    public boolean equals(Object obj) {
+        Item outro = (Item)obj;
+        return this.descricao.equals(outro.getDescricao()) && this.quantidade == outro.getQuantidade();
     }
 }
