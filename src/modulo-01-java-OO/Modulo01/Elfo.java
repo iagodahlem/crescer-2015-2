@@ -1,11 +1,5 @@
-/**
- * Representa objetos do tipo Elfo.
- */
-public class Elfo {
-    private String nome;
-    private int flechas, experiencia;
-    private Status status;
-    private Inventario inventario = new Inventario();
+public class Elfo extends Personagem {
+    int flechas;
     
     /**
      * Type Initializer
@@ -23,6 +17,7 @@ public class Elfo {
         this.nome = nome;
         this.flechas = flechas;
         this.status = Status.VIVO;
+        this.inventario = new Inventario();
     }
     
     /* Método para demonstrar implementação com int Integer X
@@ -49,6 +44,10 @@ public class Elfo {
         //experiencia += 1;
         //experiencia = experiencia + 1;
     }
+    
+    public int getFlechas() {
+        return this.flechas;
+    }
 
     /* Refatoraçao Antes:
       
@@ -70,22 +69,6 @@ public class Elfo {
         flechas--;
     }
     */
-    
-    public String getNome() {
-        return this.nome;
-    }
-    
-    public int getFlechas() {
-       return this.flechas;
-    }
-   
-    public int getExperiencia() {
-       return this.experiencia;
-    }
-   
-    public Status getStatus() {
-       return this.status;
-    }
    
     // String de forma errada
     /*
@@ -107,17 +90,5 @@ public class Elfo {
         //"\{nome} possui \{flechas} \{textoFlechas} e \{experiencia} \{textoNiveis} de experiência."
         
         return String.format("%s possui %d %s e %d %s de experiência.", this.nome, this.flechas, flechaNoSingular ? "flecha" : "flechas", this.experiencia, nivelNoSingular ? "nível" : "níveis");
-    }
-    
-    public void adicionarItem(Item item) {
-        this.inventario.adicionarItem(item);
-    }
-    
-    public void perderItem(Item item) {
-        this.inventario.perderItem(item);
-    }
-    
-    public Inventario getInventario() {
-        return this.inventario;
     }
 }
