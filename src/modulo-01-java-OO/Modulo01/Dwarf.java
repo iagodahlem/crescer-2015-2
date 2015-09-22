@@ -4,18 +4,23 @@ public class Dwarf  {
     protected Status status;
     protected DataTerceiraEra dataNascimento;
     protected Inventario inventario;
-        
-    public Dwarf(String nome, DataTerceiraEra dataNascimento) {
-        this.nome = nome;
-        this.dataNascimento = dataNascimento;
+    
+    public Dwarf() {
         this.vida = 110;
         this.experiencia = 0;
         this.status = Status.VIVO;
+        this.dataNascimento = new DataTerceiraEra(1, 1, 1);
         this.inventario = new Inventario();
     }
     
     public Dwarf(String nome) {
-        this(nome, new DataTerceiraEra(1, 1, 1));
+        this();
+        this.nome = nome;
+    }
+   
+    public Dwarf(String nome, DataTerceiraEra dataNascimento) {
+        this(nome);
+        this.dataNascimento = dataNascimento;
     }
     
     public void receberFlechada() {
@@ -37,14 +42,6 @@ public class Dwarf  {
         }
     }
     
-    public void adicionarItem(Item item){
-        this.inventario.adicionarItem(item);
-    }
-    
-    public void perderItem(Item item) {
-        this.inventario.perderItem(item);
-    }
-    
     public String getNome() {
         return this.nome;
     }
@@ -61,8 +58,12 @@ public class Dwarf  {
         return this.dataNascimento;
     }
     
-    public int getInventarioDwarf() {
-       return inventario.getItensTamanho();
+    public void adicionarItem(Item item){
+        this.inventario.adicionarItem(item);
+    }
+    
+    public void perderItem(Item item) {
+        this.inventario.perderItem(item);
     }
     
     public Inventario getInventario() {
@@ -81,10 +82,9 @@ public class Dwarf  {
     }
     
     public void tentarSorte() {
-        if (this.getNumeroSorte() == -3333) {
-            for(int i = 0; i < this.inventario.getItensTamanho(); i++){
-                this.inventario.getItens().get(i).aumentarQuantidadeEmMil();
-            }
+        double numeroSorte = getNumeroSorte();
+        if (numeroSorte == -3333.0) {
+            this.inventario.aumentarQuantidadeEmMil();
         }
     }
 }
