@@ -37,9 +37,6 @@ public class Dwarf  {
                 this.vida = vidaAposFlechada;
             }
         }
-        if (vida <= 0) {
-            this.status = Status.MORTO;
-        }
     }
     
     public String getNome() {
@@ -48,6 +45,10 @@ public class Dwarf  {
     
     public int getVida() {
         return this.vida;
+    }
+    
+    public int getExperiencia() {
+        return this.experiencia;
     }
     
     public Status getStatus() {
