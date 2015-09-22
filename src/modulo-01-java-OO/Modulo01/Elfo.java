@@ -5,6 +5,7 @@ public class Elfo {
     private String nome;
     private int flechas, experiencia;
     private Status status;
+    private Inventario inventario = new Inventario();
     
     /**
      * Type Initializer
@@ -106,5 +107,17 @@ public class Elfo {
         //"\{nome} possui \{flechas} \{textoFlechas} e \{experiencia} \{textoNiveis} de experiência."
         
         return String.format("%s possui %d %s e %d %s de experiência.", this.nome, this.flechas, flechaNoSingular ? "flecha" : "flechas", this.experiencia, nivelNoSingular ? "nível" : "níveis");
+    }
+    
+    public void adicionarItem(Item item) {
+        this.inventario.adicionarItem(item);
+    }
+    
+    public void perderItem(Item item) {
+        this.inventario.perderItem(item);
+    }
+    
+    public Inventario getInventario() {
+        return this.inventario;
     }
 }
