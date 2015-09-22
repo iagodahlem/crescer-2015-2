@@ -13,9 +13,9 @@ public class IrishDwarfTest
         }
         Item pocao = new Item("Poçao", 3);
         Inventario inventario = new Inventario();
-        irishDwarf.adicionarItemDwarf(pocao);
+        irishDwarf.adicionarItem(pocao);
         irishDwarf.tentarSorte();
-        assertEquals(6003, irishDwarf.getInventario().getItem(0).getQuantidade());        
+        assertEquals(6009, inventario.getItens());
     }
     
     @Test
@@ -26,9 +26,9 @@ public class IrishDwarfTest
         }
         Item pocao = new Item("Poçao", 4);
         Inventario inventario = new Inventario();
-        irishDwarf.adicionarItemDwarf(pocao);
+        irishDwarf.adicionarItem(pocao);
         irishDwarf.tentarSorte();
-        assertEquals(10004, irishDwarf.getInventario().getItem(0).getQuantidade());        
+        assertEquals(10004, inventario.getItens());        
     }
     
     @Test
@@ -39,8 +39,8 @@ public class IrishDwarfTest
         }
         Item pocao = new Item("Poçao", 6);
         Inventario inventario = new Inventario();
-        irishDwarf.adicionarItemDwarf(pocao);
+        irishDwarf.adicionarItem(pocao);
         irishDwarf.tentarSorte();
-        assertEquals(21006, irishDwarf.getInventario().getItem(0).getQuantidade());        
+        assertEquals(21006, inventario.getItens());        
     }
 }
