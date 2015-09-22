@@ -10,7 +10,7 @@ public class InventarioTest
         Item computador = new Item("computador", 1);
         Inventario mochila = new Inventario();
         mochila.adicionarItem(computador);
-        assertEquals(1, mochila.getItensTamanho());
+        assertEquals(1, mochila.getItens().size());
     }
     
     @Test
@@ -20,7 +20,7 @@ public class InventarioTest
         for (int i = 0; i < 50; i++) {
             inventario.adicionarItem(pocao);
         }
-        assertEquals(50, inventario.getItensTamanho());
+        assertEquals(50, inventario.getItens().size());
     }
     
     @Test
@@ -31,7 +31,7 @@ public class InventarioTest
         inventario.adicionarItem(item1);
         inventario.adicionarItem(item2);
         inventario.perderItem(item1);
-        assertEquals(1, inventario.getItensTamanho());
+        assertEquals(1, inventario.getItens().size());
     }
     
     @Test 
@@ -40,7 +40,7 @@ public class InventarioTest
         Inventario maleta = new Inventario();
         maleta.adicionarItem(bala);
         maleta.perderItem(bala);
-        assertEquals(0, maleta.getItensTamanho());
+        assertEquals(0, maleta.getItens().size());
     }
     
     @Test
@@ -52,7 +52,7 @@ public class InventarioTest
         maleta.adicionarItem(metralhadora);
         maleta.perderItem(bala);
         maleta.perderItem(metralhadora);
-        assertEquals(0, maleta.getItensTamanho());
+        assertEquals(0, maleta.getItens().size());
     }
     
     @Test
