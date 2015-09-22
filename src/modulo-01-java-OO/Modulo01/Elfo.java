@@ -14,6 +14,10 @@ public class Elfo {
      * }
      */
     
+    public Elfo(String nome) {
+        this(nome, 42);
+    }
+    
     public Elfo(String nome, int flechas) {
         this.nome = nome;
         this.flechas = flechas;
@@ -28,10 +32,6 @@ public class Elfo {
         }
     }
     */
-    
-    public Elfo(String nome) {
-        this(nome, 42);
-    }
 
     /* Exemplos de nomenclatura
      * 
@@ -74,45 +74,36 @@ public class Elfo {
         return this.nome;
     }
     
-    /* Exemplo de setter
-     * 
-    public void setNome(String novoNome) {
-        this.nome = novoNome;
-    }
-    */
-    
     public int getFlechas() {
-        return this.flechas;
+       return this.flechas;
     }
-    
-    /*Exemplo de setter
-     * 
-    public void setFlechas(int flechas) {
-        if (flechas > this.flechas)
-        this.flechas = flechas;
-     }
-    */
    
-   public int getExperiencia() {
+    public int getExperiencia() {
        return this.experiencia;
-   }
+    }
    
-   public Status getStatus() {
+    public Status getStatus() {
        return this.status;
-   }
+    }
    
-   // String de forma errada
-   /*
-   public String toString() {
-       return this.nome + " possui " + this.flechas + " flechas e " + this.experiencia + " niveis de experiencia.";
-   }
-   */
+    // String de forma errada
+    /*
+     * public String toString() {
+     *     return this.nome + " possui " + this.flechas + " flechas e " + this.experiencia + " niveis de experiencia.";
+     *  }
+     */
   
-  // String de forma correta
+    // String de forma correta
     public String toString() {
         
         boolean flechaNoSingular = Math.abs(this.flechas) == 1;
         boolean nivelNoSingular = Math.abs(this.experiencia) == 1;
+        
+        // Ruby ou CoffeeScript:
+        //"#{nome} possui #{flechas} #{textoFlechas} e #{experiencia} #{textoNiveis} de experiência."
+        
+        // C# 6:
+        //"\{nome} possui \{flechas} \{textoFlechas} e \{experiencia} \{textoNiveis} de experiência."
         
         return String.format("%s possui %d %s e %d %s de experiência.", this.nome, this.flechas, flechaNoSingular ? "flecha" : "flechas", this.experiencia, nivelNoSingular ? "nível" : "níveis");
     }
