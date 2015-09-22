@@ -32,7 +32,7 @@ public class DwarfTest
     public void dwarfNasceComDataNascimentoPadrão() {
         Dwarf bofur = new Dwarf();
         DataTerceiraEra esperada = new DataTerceiraEra(1,1,1);
-        DataTerceiraEra obtida = bofur.getDataDeNascimento();
+        DataTerceiraEra obtida = bofur.getDataNascimento();
         assertEquals(esperada, obtida);
     }
 
@@ -40,7 +40,7 @@ public class DwarfTest
     public void dwarfNasceComNomeEDataDeNascimento() {
         DataTerceiraEra esperada = new DataTerceiraEra(12,11,1987);
         Dwarf bernardin = new Dwarf("Bernardin", new DataTerceiraEra(12, 11, 1987));
-        assertEquals(esperada, bernardin.getDataDeNascimento());
+        assertEquals(esperada, bernardin.getDataNascimento());
         assertEquals("Bernardin", bernardin.getNome());
     }
 
