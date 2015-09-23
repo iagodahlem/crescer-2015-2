@@ -3,14 +3,21 @@
 ## Java
 
 ### Classes
-Deve iniciar com letra **maiúscula** e **camelCase**. Exemplos:
+Deve iniciar com letra **maiúscula** e utilizar **PascalCase**. Exemplos:
 * public class Elfo
 * public class DataTerceiraEra
 
 ### Métodos
-Deve iniciar com letra **minúscula** e **camelCase**. Exemplos:
+Deve iniciar com letra **minúscula** e utilizar **camelCase**. Exemplos:
 * public void atirarEmDwarf()
 * public void matarElfo()
+
+### Variáveis
+Deve iniciar com letra **minúscula e utilizar **camelCase**. Exemplos:
+* int idade
+* int dataNascimento
+* String nome
+* String nomeDeOrcs
 
 ## Git
 Guideline baseada na documentação do angular
