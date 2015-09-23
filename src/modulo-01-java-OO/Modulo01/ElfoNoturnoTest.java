@@ -27,6 +27,6 @@ public class ElfoNoturnoTest
         Dwarf dwarf = new Dwarf();
         noturno.atirarFlecha(dwarf);
         noturno.atirarFlecha(dwarf);
-        assertEquals(90, noturno.getVida(), 00001);
+        assertEquals(90.25, noturno.getVida(), 00001);
     }
 }
