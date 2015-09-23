@@ -1,4 +1,5 @@
 public class Dwarf extends Personagem {
+    protected DataTerceiraEra dataNascimento;
     
     public Dwarf() {
         this.vida = 110;
@@ -32,6 +33,10 @@ public class Dwarf extends Personagem {
                 this.vida = vidaAposFlechada;
             }
         }
+    }
+    
+    public void atacarOrc(Orc orc) {
+        orc.levarAtaqueDeAnao();
     }
     
     public double getNumeroSorte() {

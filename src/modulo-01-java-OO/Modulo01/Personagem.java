@@ -2,7 +2,6 @@ public abstract class Personagem {
     protected String nome;
     protected int experiencia, vida;
     protected Status status;
-    protected DataTerceiraEra dataNascimento;
     protected Inventario inventario;
     
     public String getNome() {
@@ -20,11 +19,7 @@ public abstract class Personagem {
     public Status getStatus() {
         return this.status;
     }
-    
-    public DataTerceiraEra getDataNascimento() {
-        return this.dataNascimento;
-    }
-    
+        
     public void adicionarItem(Item item) {
         this.inventario.adicionarItem(item);
     }
@@ -35,5 +30,10 @@ public abstract class Personagem {
     
     public Inventario getInventario() {
         return this.inventario;
+    }
+    
+    public void receberAtaqueDoOrc(Orc orc){
+        int dano = orc.getDanoDeAtaque();
+        this.vida -= dano;
     }
 }

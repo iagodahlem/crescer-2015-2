@@ -18,6 +18,12 @@ public class Item {
         int pa = this.quantidade * (this.quantidade + 1) / 2;
         this.quantidade += 1000 * pa;
     }
+    
+    public void debitarUmaUnidade() {
+        if (this.quantidade > 0) {
+            this.quantidade--;
+        }
+    }
 
     /*
      * Exercicio de refatoração:
