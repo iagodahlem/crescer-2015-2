@@ -7,87 +7,87 @@ public class OrcTest
 {
 @Test
     public void criaUrukHai(){
-        Orc orc = new Orc(TipoOrc.URUKHAI);
+        OrcHurukHai orcHurukHai = new OrcHurukHai();
         
         int vidaEsperada = 150;
         Inventario inventarioEsperado = new Inventario();
-        inventarioEsperado.adicionarItem(new Item(1, "Escudo Uruk-Hai"));
-        inventarioEsperado.adicionarItem(new Item(1, "Espada"));
+        inventarioEsperado.adicionarItem(new Item("Escudo Uruk-Hai", 1));
+        inventarioEsperado.adicionarItem(new Item("Espada", 1));
         
-        assertEquals(vidaEsperada, orc.getVida());
-        assertEquals(inventarioEsperado, orc.getInventario());
+        assertEquals(vidaEsperada, orcHurukHai.getVida());
+        assertEquals(inventarioEsperado, orcHurukHai.getInventario());
     }
     
     @Test
     public void criaSnaga(){
-        Orc orc = new Orc(TipoOrc.SNAGA);
+        OrcSnaga orcSnaga = new OrcSnaga();
         
         int vidaEsperada = 70;
         Inventario inventarioEsperado = new Inventario();
-        inventarioEsperado.adicionarItem(new Item(1, "Arco"));
-        inventarioEsperado.adicionarItem(new Item(5, "Flecha"));
+        inventarioEsperado.adicionarItem(new Item("Arco", 1));
+        inventarioEsperado.adicionarItem(new Item("Flecha", 5));
         
-        assertEquals(vidaEsperada, orc.getVida());
-        assertEquals(inventarioEsperado, orc.getInventario());
+        assertEquals(vidaEsperada, orcSnaga.getVida());
+        assertEquals(inventarioEsperado, orcSnaga.getInventario());
     }
     
     @Test
     public void orcUrukHaiRecebeDanoDeAnao(){
-        Orc orc = new Orc(TipoOrc.URUKHAI);
+        OrcHurukHai orcHurukHai = new OrcHurukHai();
         
-        orc.levarAtaqueDeAnao();
+        orcHurukHai.levarAtaqueDeAnao();
         
-        assertEquals(145, orc.getVida());
+        assertEquals(145, orcHurukHai.getVida());
     }
     
     @Test
     public void orcUrukHaiRecebeDanoDeElfo(){
-        Orc orc = new Orc(TipoOrc.URUKHAI);
+        OrcHurukHai orcHurukHai = new OrcHurukHai();
         
-        orc.levarAtaqueDeElfo();
+        orcHurukHai.levarAtaqueDeElfo();
         
-        assertEquals(142, orc.getVida());
+        assertEquals(142, orcHurukHai.getVida());
     }
     
     @Test
     public void orcSnagaRecebeDanoDeAnao(){
-        Orc orc = new Orc(TipoOrc.SNAGA);
+        OrcSnaga orcSnaga = new OrcSnaga();
         
-        orc.levarAtaqueDeAnao();
+        orcSnaga.levarAtaqueDeAnao();
         
-        assertEquals(60, orc.getVida());
+        assertEquals(60, orcSnaga.getVida());
     }
     
     @Test
     public void orcSnagaRecebeDanoDeElfo(){
-        Orc orc = new Orc(TipoOrc.SNAGA);
+        OrcSnaga orcSnaga = new OrcSnaga();
         
-        orc.levarAtaqueDeElfo();
+        orcSnaga.levarAtaqueDeElfo();
         
-        assertEquals(62, orc.getVida());
+        assertEquals(62, orcSnaga.getVida());
     }
     
     @Test
     public void orcSnagaFicaSemFlechasParaAtirarEFoge(){
-        Orc orc = new Orc(TipoOrc.SNAGA);
+        OrcSnaga orcSnaga = new OrcSnaga();
         Elfo elfo = new Elfo(null);
         
         for(int i = 0; i < 6; i++){
-            orc.atacarElfo(elfo);
+            orcSnaga.atacarElfo(elfo);
         }
         
-        assertEquals(Status.FUGINDO, orc.getStatus());
+        assertEquals(Status.FUGINDO, orcSnaga.getStatus());
     }
     
     @Test
     public void orcSnagaAtiraFlechaEmElfoEFicaCom4Flechas(){
     
-        Orc orc = new Orc(TipoOrc.SNAGA);
+        OrcSnaga orcSnaga = new OrcSnaga();
         Elfo elfo = new Elfo(null);
         
-        orc.atacarElfo(elfo);
+        orcSnaga.atacarElfo(elfo);
         
-        int qtdFlechas = orc.getInventario().getItemPorDescricao("Flecha").getQuantidade();
+        int qtdFlechas = orcSnaga.getInventario().getItemPorDescricao("Flecha").getQuantidade();
         
         assertEquals(4, qtdFlechas);
         
