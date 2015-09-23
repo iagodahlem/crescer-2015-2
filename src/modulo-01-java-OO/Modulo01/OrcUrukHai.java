@@ -1,6 +1,6 @@
-public class OrcHurukHai extends Orc {
+public class OrcUrukHai extends Orc {
     
-    public OrcHurukHai() {
+    public OrcUrukHai() {
         this.vida = 150;
         gerarInventario();
     }

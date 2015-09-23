@@ -7,7 +7,7 @@ public class OrcTest
 {
 @Test
     public void criaUrukHai(){
-        OrcHurukHai orcHurukHai = new OrcHurukHai();
+        OrcUrukHai orcHurukHai = new OrcUrukHai();
         int vidaEsperada = 150;
         Inventario inventarioEsperado = new Inventario();
         inventarioEsperado.adicionarItem(new Item("Escudo Uruk-Hai", 1));
@@ -29,16 +29,16 @@ public class OrcTest
     
     @Test
     public void orcUrukHaiRecebeDanoDeAnao(){
-        OrcHurukHai orcHurukHai = new OrcHurukHai();
-        orcHurukHai.levarAtaqueDeAnao();
-        assertEquals(145, orcHurukHai.getVida());
+        OrcUrukHai orcUrukHai = new OrcUrukHai();
+        orcUrukHai.levarAtaqueDeAnao();
+        assertEquals(144, orcUrukHai.getVida());
     }
     
     @Test
     public void orcUrukHaiRecebeDanoDeElfo(){
-        OrcHurukHai orcHurukHai = new OrcHurukHai();
-        orcHurukHai.levarAtaqueDeElfo();
-        assertEquals(144, orcHurukHai.getVida());
+        OrcUrukHai orcUrukHai = new OrcUrukHai();
+        orcUrukHai.levarAtaqueDeElfo();
+        assertEquals(144, orcUrukHai.getVida());
     }
     
     @Test

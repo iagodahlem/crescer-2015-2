@@ -1,4 +1,4 @@
-public class Orc extends Personagem{
+public class Orc extends Personagem {
 
     public Orc() {
         this.status = Status.VIVO;
@@ -56,7 +56,6 @@ public class Orc extends Personagem{
         if (podeAtacarComArco()) {
             return 8;
         }
-        
         return 0;
     }
     

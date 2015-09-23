@@ -3,17 +3,17 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class OrcHurukHaiTest
+public class OrcUrukHaiTest
 {
     @Test
-    public void orcHurukHaiRecebeVida150() {
-        OrcHurukHai urukHai = new OrcHurukHai();
+    public void orcUurukHaiRecebeVida150() {
+        OrcUrukHai urukHai = new OrcUrukHai();
         assertEquals(150, urukHai.getVida());
     }
     
     @Test
     public void orcHurukHaiRecebe1EscudoE1Espada() {
-        OrcHurukHai uruk = new OrcHurukHai();
+        OrcUrukHai uruk = new OrcUrukHai();
         Inventario esperado = new Inventario();
         esperado.adicionarItem(new Item("Escudo Uruk-Hai", 1));
         esperado.adicionarItem(new Item("Espada", 1));
