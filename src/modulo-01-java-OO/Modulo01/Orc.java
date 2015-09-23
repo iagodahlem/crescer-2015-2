@@ -10,12 +10,17 @@ public class Orc extends Personagem{
             perderVida(10);
         }
         else {
-            perderVida(5);
+            perderVida(6);
         }
     }
     
     public void levarAtaqueDeElfo() {
-        perderVida(8);
+        if (getItem("Escudo Uruk-Hai") == null){
+            perderVida(10);
+        }
+        else {
+            perderVida(6);
+        }
     }
     
     public void atacarAnao(Dwarf anao) {
