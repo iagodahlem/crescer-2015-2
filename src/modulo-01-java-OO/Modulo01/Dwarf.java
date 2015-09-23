@@ -39,6 +39,10 @@ public class Dwarf extends Personagem {
         orc.levarAtaqueDeAnao();
     }
     
+    public DataTerceiraEra getDataNascimento() {
+        return this.dataNascimento;
+    }
+    
     public double getNumeroSorte() {
         double numeroSorte = 101.0;
         if (this.dataNascimento.ehBissexto() == true && this.vida >=80 || this.vida <=90) {

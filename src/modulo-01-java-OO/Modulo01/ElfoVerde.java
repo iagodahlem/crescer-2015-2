@@ -1,3 +1,4 @@
+import java.util.*;
 public class ElfoVerde extends Elfo {
     
     public ElfoVerde(String nome, int flechas) {
@@ -13,9 +14,7 @@ public class ElfoVerde extends Elfo {
         // C#
         // var validas = new [] { "Espada de aço valiriano", "Arco e Flecha de Vidro" }.ToList();
         
-        ArrayList<String> validas = 
-            new ArrayList<String>(
-                Arrays.asList(new String[] {"Espada de aço valiriano", "Arco e Flecha de Vidro"}));
+        ArrayList<String> validas = new ArrayList<String>(Arrays.asList(new String[] {"Espada de aço valiriano", "Arco e Flecha de Vidro"}));
         
         boolean podeAdicionar = item != null && validas.contains(item.getDescricao());
         
