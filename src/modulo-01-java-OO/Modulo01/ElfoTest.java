@@ -169,4 +169,10 @@ public class ElfoTest
         elfo.perderItem(item);
         assertEquals(0, elfo.getInventario().getItens().size());
     }
+    
+    @Test 
+    public void elfoNasceCom100DeVida() {
+        Elfo elfo = new Elfo("elfo");
+        assertEquals(100, elfo.getVida());
+    }
 }

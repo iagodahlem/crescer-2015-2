@@ -1,6 +1,6 @@
 public abstract class Personagem {
     protected String nome;
-    protected int experiencia, vida;
+    protected int vida, experiencia;
     protected Status status;
     protected Inventario inventario;
     

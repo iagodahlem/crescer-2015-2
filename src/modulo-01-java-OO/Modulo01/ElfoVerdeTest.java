@@ -58,4 +58,10 @@ public class ElfoVerdeTest
         esperado.adicionarItem(new Item("Arco e Flecha de Vidro", 1));
         assertEquals(esperado, sortudo.getInventario());
     }
+    
+    @Test
+    public void elfoVerdeNasceCom100DeVida() {
+        ElfoVerde elfoVerde = new ElfoVerde("elfo verdinho");
+        assertEquals(100, elfoVerde.getVida());
+    }
 }
