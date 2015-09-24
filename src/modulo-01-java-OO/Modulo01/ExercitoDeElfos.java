@@ -11,6 +11,10 @@ public class ExercitoDeElfos {
         exercito.put(elfo.getNome(), elfo);
     }
     
+    public Elfo buscarElfoPorNome(String nome) {
+        return exercito.get(nome);
+    }
+    
     public HashMap<String, Elfo> getExercito() {
         return this.exercito;
     }
