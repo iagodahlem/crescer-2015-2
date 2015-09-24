@@ -1,5 +1,6 @@
 public class Elfo extends Personagem {
-    int flechas;
+    private int flechas;
+    private static int contador;
     
     /**
      * Type Initializer
@@ -20,6 +21,7 @@ public class Elfo extends Personagem {
         this. experiencia = 0;
         this.status = Status.VIVO;
         this.inventario = new Inventario();
+        this.contador ++;
     }
     
     /* Método para demonstrar implementação com int Integer X
@@ -53,6 +55,14 @@ public class Elfo extends Personagem {
     
     public int getFlechas() {
         return this.flechas;
+    }
+
+    public static int getContador() {
+        return contador;
+    }
+    
+    public static void resetaContador() {
+        contador = 0;
     }
 
     /* Refatoraçao Antes:

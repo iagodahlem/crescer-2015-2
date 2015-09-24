@@ -175,4 +175,22 @@ public class ElfoTest
         Elfo elfo = new Elfo("elfo");
         assertEquals(100, elfo.getVida());
     }
+    
+    @Test
+    public void contadorDeElfos() {
+        Elfo elfo = new Elfo("Elfo");
+        assertEquals(1, elfo.getContador());
+    }
+    
+    @Before
+    public void setUp() {
+        Elfo.resetaContador();
+    }
+    
+    /*
+    @After 
+    public void tearDown() {
+        Elfo.resetaContador();
+    }
+    */
 }
