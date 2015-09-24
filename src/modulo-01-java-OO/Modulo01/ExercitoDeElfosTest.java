@@ -20,4 +20,12 @@ public class ExercitoDeElfosTest
         Elfo elfoObtido = exercito.buscarElfoPorNome("Green Legolas");
         assertEquals(greenLegolas, elfoObtido);
     }
+    
+    @Test
+    public void alista2ElfosVivosEOrdenaPeloStatus() {
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        exercito.alistar(new ElfoVerde("Elfo Verde"));
+        exercito.alistar(new ElfoNoturno("Night Elfo"));
+        exercito.agruparPorStatus();
+    }
 }
