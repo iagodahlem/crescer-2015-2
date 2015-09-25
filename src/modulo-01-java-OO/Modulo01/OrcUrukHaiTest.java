@@ -8,7 +8,7 @@ public class OrcUrukHaiTest
     @Test
     public void orcUurukHaiRecebeVida150() {
         OrcUrukHai urukHai = new OrcUrukHai();
-        assertEquals(150, urukHai.getVida());
+        assertEquals(150, urukHai.getVida(), 0.0);
     }
     
     @Test

@@ -8,7 +8,7 @@ public class OrcSnagaTest
     @Test
     public void orcSnagaRecebe70() {
         OrcSnaga snaga = new OrcSnaga();
-        assertEquals(70, snaga.getVida());
+        assertEquals(70, snaga.getVida(), 0.0);
     }
     
     @Test

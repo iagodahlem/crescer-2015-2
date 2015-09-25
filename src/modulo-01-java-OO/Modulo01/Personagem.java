@@ -1,6 +1,7 @@
 public abstract class Personagem {
     protected String nome;
-    protected int vida, experiencia;
+    protected double vida;
+    protected int experiencia;
     protected Status status;
     protected Inventario inventario;
     
@@ -12,7 +13,7 @@ public abstract class Personagem {
         return this.experiencia;
     }
     
-    public int getVida() {
+    public double getVida() {
         return this.vida;
     }
     
