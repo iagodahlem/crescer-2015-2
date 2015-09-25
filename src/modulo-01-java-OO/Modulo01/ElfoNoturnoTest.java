@@ -29,4 +29,14 @@ public class ElfoNoturnoTest
         noturno.atirarFlecha(dwarf);
         assertEquals(90.25, noturno.getVida(), 00001);
     }
+    
+    @Test 
+    public void elfoNoturnoAtira15FlechasEMorre() {
+        ElfoNoturno noturno = new ElfoNoturno("noturno");
+        Dwarf dwarf = new Dwarf();
+        for (int i = 0; i < 15; i++) {
+            noturno.atirarFlecha(dwarf);
+        }
+        assertEquals(Status.MORTO, noturno.getStatus());
+    }
 }
