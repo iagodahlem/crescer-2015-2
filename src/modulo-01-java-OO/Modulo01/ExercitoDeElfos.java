@@ -3,10 +3,13 @@ import java.util.*;
 public class ExercitoDeElfos {
     private HashMap<String, Elfo> exercito = new HashMap<String, Elfo>();
     private HashMap<Status, ArrayList<Elfo>> porStatus= new HashMap<Status, ArrayList<Elfo>>(); 
+    private EstrategiaDeAtaque estrategia = new EstrategiaNormal();
     
     public void alistar(Elfo elfo) {
         boolean podeAlistar = elfo instanceof ElfoVerde || elfo instanceof ElfoNoturno;
-        exercito.put(elfo.getNome(), elfo);
+        if (podeAlistar) {
+            this.exercito.put(elfo.getNome(), elfo);
+        }
     }
     
     public Elfo buscarElfoPorNome(String nome) {
@@ -15,17 +18,13 @@ public class ExercitoDeElfos {
     
     public void agruparPorStatus() {
         porStatus.clear();
-        Status vivo = Status.VIVO;
-        Status morto = Status.MORTO;
-        for (String nome : exercito.keySet()) {
-            Elfo elfo = exercito.get(nome);
-            if (elfo.getStatus() == Status.VIVO) {
-                porStatus.put(vivo, new ArrayList<Elfo>());
-                porStatus.get(vivo).add(elfo);
-            }
-            else {
-                porStatus.put(morto, new ArrayList<Elfo>());
-                porStatus.get(morto).add(elfo);
+        for (Map.Entry<String, Elfo> parChaveValor : this.exercito.entrySet()) {    
+            Elfo elfo = parChaveValor.getValue();
+            Status status = elfo.getStatus();
+            if (!porStatus.containsKey(status)) {
+                porStatus.put(status, new ArrayList<Elfo>(Arrays.asList(elfo)));
+            } else {
+                porStatus.get(status).add(elfo);
             }
         }
     }
