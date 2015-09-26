@@ -3,7 +3,7 @@ import java.util.*;
 public class ExercitoDeElfos {
     private HashMap<String, Elfo> exercito = new HashMap<String, Elfo>();
     private HashMap<Status, ArrayList<Elfo>> porStatus= new HashMap<Status, ArrayList<Elfo>>(); 
-    private EstrategiaDeAtaque estrategia = new EstrategiaNormal();
+    private EstrategiaDeAtaque estrategia = new EstrategiaControlaNoturnos();
     
     public void alistar(Elfo elfo) {
         boolean podeAlistar = elfo instanceof ElfoVerde || elfo instanceof ElfoNoturno;
@@ -40,6 +40,18 @@ public class ExercitoDeElfos {
     
     public int getQuantidadeSoldadosAlistados() {
         return this.exercito.size();
+    }
+    
+    public void atacar(ArrayList<Dwarf> alvos) {
+        this.estrategia.atacar(new ArrayList<Elfo>(exercito.values()), alvos);
+    }
+    
+    public ArrayList<Elfo> getOrdemDoUltimoAtaque() {
+        return this.estrategia.getOrdemDoUltimoAtaque();
+    }
+    
+    public void alterarEstrategia(EstrategiaDeAtaque novaEstrategia) {
+        this.estrategia = novaEstrategia;
     }
     
     public boolean equals(Object obj) {
