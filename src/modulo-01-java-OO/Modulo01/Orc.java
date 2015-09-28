@@ -1,70 +1,98 @@
-public class Orc {
-    private String nome;
-    private int vida;
-    private Inventario inventario = new Inventario();
-    
-    protected Item arco;
-    protected Item flecha;
-    protected Item espada;
-    protected Item escudoUrukHai;
+public class Orc extends Personagem {
 
-    public Orc(String nome) { 
-        this.nome = nome;
-        if (this.nome == "Uruk-Hai") {
-            inventario.adicionarItem(escudoUrukHai);
-            inventario.adicionarItem(espada);           
-            this.vida = 150;
-        }
-        if (this.nome == "Snaga") {
-            inventario.adicionarItem(arco);
-            inventario.adicionarItem(flecha);
-            this.vida = 70;
-        }
-        if (this.nome != "Uruk-Hai" || this.nome != "Snaga") {
-            
-        }
-    }
-        
-    public void receberFlechaDeElfo(Elfo elfo) {
-        this.vida -= 8;
+    public Orc() {
+        this.status = Status.VIVO;
+        this.inventario = new Inventario();
     }
     
-    public void receberFlechaDeAnao(Dwarf dwarf) {
-        if (this.escudoUrukHai == null) {
-            this.vida -= 10;
+    public void levarAtaqueDeAnao() {
+        if (getItem("Escudo Uruk-Hai") == null){
+            perderVida(10);
         }
-        this.vida -= 5;
+        else {
+            perderVida(6);
+        }
     }
     
-    /*
-    public void atacarDwarf(Dwarf dwarf) {
-        dwarf.vida -= 10;
-        
-        for (Item item : this) {
-            ArrayList<int> numeroDeFlechas = new ArrayList<int>();
-            numeroDeFlechas.add(1);
-            numeroDeFlechas.add(2);
-            numeroDeFlechas.add(3);
-            
-            for (int i = 0; i < 3; i++) {
-                
-                if (item.getDescricao() == "Flecha" + i) {
-                    this.novosItens.remove(item);
-                }
-            }
+    public void levarAtaqueDeElfo() {
+        if (getItem("Escudo Uruk-Hai") == null){
+            perderVida(10);
+        }
+        else {
+            perderVida(6);
+        }
+    }
+    
+    public void atacarAnao(Dwarf anao) {
+        if (podeAtacarComEspada()) {
+            anao.receberAtaqueDoOrc(this);
+        }
+        else if (podeAtacarComArco()) {
+            anao.receberAtaqueDoOrc(this);
+            debitarFlecha();
+        }
+        else {
+            this.status = Status.FUGINDO;
         }
     }
     
     public void atacarElfo(Elfo elfo) {
+        if (podeAtacarComEspada()) {
+            elfo.receberAtaqueDoOrc(this);
+        }
+        else if (podeAtacarComArco()) {
+            elfo.receberAtaqueDoOrc(this);
+            debitarFlecha();
+        }
+        else {
+            this.status = Status.FUGINDO;
+        }
+    }
+    
+    public int getDanoDeAtaque() {
+        if (podeAtacarComEspada()) {
+            return 12;
+        }
+        if (podeAtacarComArco()) {
+            return 8;
+        }
+        return 0;
+    }
+    
+    private void debitarFlecha() {
+        Item flecha = getItem("Flecha");
+        if (flecha.getQuantidade() == 1) {
+            this.inventario.perderItem(flecha);
+        }
+        else {
+            flecha.debitarUmaUnidade();
+        }
+    }
+    
+    private boolean podeAtacarComEspada() {
+        return getItem("Espada") != null;
+    }
+    
+    private boolean podeAtacarComArco() {
+        boolean temArco = getItem("Arco") != null;
+        Item flecha = getItem("Flecha");
+        boolean temFlechaProArco = flecha != null && flecha.getQuantidade() > 0;
+        return temArco && temFlechaProArco;
+    }
+    
+    private void perderVida(int qtdVidaPerdida) {
+        this.vida -= qtdVidaPerdida;
         
+        if (vida <= 0) {
+            vida = 0;
+            this.status = Status.MORTO;
+        }
+        else {
+            this.status = Status.FERIDO;
+        }
     }
-    */
     
-    public void adicionarItem(Item item){
-        this.inventario.adicionarItem(item);
-    }
-    
-    public void perderItem(Item item) {
-        this.inventario.perderItem(item);
+    private Item getItem(String descricao) {
+        return this.inventario.getItemPorDescricao(descricao);
     }
 }

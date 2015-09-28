@@ -85,7 +85,7 @@ public class ElfoTest
         // Assert
         assertEquals(qtdFlechasEsperada, elfo.getFlechas());
         assertEquals(experienciaEsperada, elfo.getExperiencia());
-        assertEquals(vidaEsperada, balin.getVida());
+        assertEquals(vidaEsperada, balin.getVida(), 0.0);
     }
 
     @Test
@@ -103,8 +103,8 @@ public class ElfoTest
         // Assert
         assertEquals(qtdFlechasEsperada, elfo.getFlechas());
         assertEquals(experienciaEsperada, elfo.getExperiencia());
-        assertEquals(vidaEsperada, balin.getVida());
-        assertEquals(vidaEsperada, filhoDeBalin.getVida());
+        assertEquals(vidaEsperada, balin.getVida(), 0.0);
+        assertEquals(vidaEsperada, filhoDeBalin.getVida(), 0.0);
     }
 
     @Test
@@ -127,8 +127,8 @@ public class ElfoTest
         assertEquals(experienciaEsperada, elfo1.getExperiencia());
         assertEquals(qtdFlechasEsperada, elfo2.getFlechas());
         assertEquals(experienciaEsperada, elfo2.getExperiencia());
-        assertEquals(vidaEsperada, balin.getVida());
-        assertEquals(vidaEsperada, filhoDeBalin.getVida());
+        assertEquals(vidaEsperada, balin.getVida(), 0.0);
+        assertEquals(vidaEsperada, filhoDeBalin.getVida(), 0.0);
     }
 
     @Test
@@ -152,4 +152,45 @@ public class ElfoTest
         String textoEsperado = "null possui 41 flechas e 1 nível de experiência.";
         assertEquals(textoEsperado, elfo1.toString());
     }
+    
+    @Test 
+    public void elfoRecebeItemEVaiProInventario() {
+        Elfo elfo = new Elfo("elfo");
+        Item item = new Item("item", 1);
+        elfo.adicionarItem(item);
+        assertEquals(1, elfo.getInventario().getItens().size());
+    }
+    
+    @Test 
+    public void elfoRecebeItemEPerdeItemFicandoComInventario0() {
+        Elfo elfo = new Elfo("elfo");
+        Item item = new Item("item", 1);
+        elfo.adicionarItem(item);
+        elfo.perderItem(item);
+        assertEquals(0, elfo.getInventario().getItens().size());
+    }
+    
+    @Test 
+    public void elfoNasceCom100DeVida() {
+        Elfo elfo = new Elfo("elfo");
+        assertEquals(100, elfo.getVida(), 0.0);
+    }
+    
+    @Test
+    public void contadorDeElfos() {
+        Elfo elfo = new Elfo("Elfo");
+        assertEquals(1, elfo.getContador());
+    }
+    
+    @Before
+    public void setUp() {
+        Elfo.resetaContador();
+    }
+    
+    /*
+    @After 
+    public void tearDown() {
+        Elfo.resetaContador();
+    }
+    */
 }

@@ -23,6 +23,16 @@ public class Inventario {
         return descricao.substring(0, descricao.length() - 1);
     }
     
+    public Item getItemPorDescricao(String descricao) {
+        for (Item item : this.itens) {
+            if (item.getDescricao().equals(descricao)) {
+                return item;
+            }
+        }
+        
+        return null;
+    }
+    
     public Item getItemComMaiorQuantidade() {
         int indice = 0, maiorQtd = 0;
         for (Item item : this.itens) {

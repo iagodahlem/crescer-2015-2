@@ -1,10 +1,6 @@
-/**
- * Representa objetos do tipo Elfo.
- */
-public class Elfo {
-    private String nome;
-    private int flechas, experiencia;
-    private Status status;
+public class Elfo extends Personagem {
+    private int flechas;
+    private static int contador;
     
     /**
      * Type Initializer
@@ -21,7 +17,11 @@ public class Elfo {
     public Elfo(String nome, int flechas) {
         this.nome = nome;
         this.flechas = flechas;
+        this. vida = 100;
+        this. experiencia = 0;
         this.status = Status.VIVO;
+        this.inventario = new Inventario();
+        this.contador ++;
     }
     
     /* Método para demonstrar implementação com int Integer X
@@ -48,6 +48,22 @@ public class Elfo {
         //experiencia += 1;
         //experiencia = experiencia + 1;
     }
+    
+    public void atacarOrc(Orc orc) {
+        orc.levarAtaqueDeElfo();
+    }
+    
+    public int getFlechas() {
+        return this.flechas;
+    }
+
+    public static int getContador() {
+        return contador;
+    }
+    
+    public static void resetaContador() {
+        contador = 0;
+    }
 
     /* Refatoraçao Antes:
       
@@ -69,22 +85,6 @@ public class Elfo {
         flechas--;
     }
     */
-    
-    public String getNome() {
-        return this.nome;
-    }
-    
-    public int getFlechas() {
-       return this.flechas;
-    }
-   
-    public int getExperiencia() {
-       return this.experiencia;
-    }
-   
-    public Status getStatus() {
-       return this.status;
-    }
    
     // String de forma errada
     /*
