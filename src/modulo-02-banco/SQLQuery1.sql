@@ -1,13 +1,11 @@
-Select * From Cidade
-Select * From Cliente
-Select * From Empregado
+Select * From Cidade;
+Select * From Cliente;
+Select * From Empregado;
+Select * From Associado;
 
 --------------
 
-Insert into Cidade
-	(IDCidade, Nome, UF)
-values
-	(1, 'São Leopoldo', 'RS') ;
+Insert into Cidade (IDCidade, Nome, UF) values (1, 'São Leopoldo', 'RS');
 
 --------------
 
@@ -63,7 +61,7 @@ Where		IDCidade = 1;
 begin transaction;
 
 /* Salva alterações dentro da transação */
-commit
+commit;
 
 /* Desfaz alterações dentro da transação */
 rollback;
@@ -80,3 +78,5 @@ Select * into CopiaCidade From Cidade;
 
 /* Lista estrutura da tabela determinada */
 SP_HELP 'Cliente'
+
+--------------
