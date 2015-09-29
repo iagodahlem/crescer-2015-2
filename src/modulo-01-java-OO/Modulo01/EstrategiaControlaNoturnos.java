@@ -9,7 +9,7 @@ public class EstrategiaControlaNoturnos implements EstrategiaDeAtaque {
         int limiteDeElfosNoturno = (int)(intencoesDeAtaque * 0.3);
         int count = 0;
         for (Elfo elfo : pelotao) {
-            if (elfo.getStatus() != Status.MORTO) {
+            if (elfo.getStatus() == Status.VIVO) {
                 boolean elfoNoturno = elfo instanceof ElfoNoturno;
                 if (elfoNoturno) {
                     if (count >= limiteDeElfosNoturno) {
