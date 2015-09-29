@@ -1,10 +1,10 @@
-select * from cidade
-select * from cliente
-select * from empregado
+Select * From Cidade
+Select * From Cliente
+Select * From Empregado
 
 --------------
 
-Insert Cidade
+Insert into Cidade
 	(IDCidade, Nome, UF)
 values
 	(1, 'São Leopoldo', 'RS') ;
@@ -44,17 +44,23 @@ alter table Cliente drop constraint PK_Cliente_28374892374;
 
 alter table Cliente add constraint PK_Cliente primary key (IDCliente);
 
+alter table Cidade add constraint PK_Cidade primary key (IDCidade);
+
 --------------
 
-alter table Cidade add constraint PK_Cidade primary key (IDCidade);
+/* Altera dados já existentes na tabela determinada */
+Update  Cidade
+Set		Nome = 'Novo Hamburgo'
+Where	IDCidade = 1;
+
+/* Delete linha inteira da tabela determinada e estipulada pela clausula WHERE */
+Delete From Cidade
+Where		IDCidade = 1;
 
 --------------
 
 /* Inicia uma transação */
 begin transaction;
-
-/* Deleta todos os campos da tabela determinada */
-delete from Cidade;
 
 /* Salva alterações dentro da transação */
 commit
@@ -64,6 +70,11 @@ rollback;
 
 /* Apaga a tabela e reseta geral */
 truncate table Cidade;
+
+--------------
+
+/* Copiar tabelas */
+Select * into CopiaCidade From Cidade;
 
 --------------
 
