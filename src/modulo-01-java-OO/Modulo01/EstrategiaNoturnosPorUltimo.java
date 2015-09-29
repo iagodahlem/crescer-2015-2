@@ -48,5 +48,5 @@ public class EstrategiaNoturnosPorUltimo implements EstrategiaDeAtaque {
     
     public ArrayList<Elfo> getOrdemDoUltimoAtaque() {
        return this.ordemDoUltimoAtaque;
-    }    
+    }
 }
