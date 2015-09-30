@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6A7FA7EA-CF64-A660-7064-2C695DE38AD9" name="Projeto">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 19:58:24 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<engineerTo>
+<item key="EBC7466E-4739-912B-6E66-2C2E2467CD62" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDProjeto" id="31758828-23E5-D041-4339-0D9F114978E0">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 19:58:32 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<engineerTo>
+<item key="EBC7466E-4739-912B-6E66-2C2E2467CD62" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nome" id="6D272241-C813-3836-B2A7-6529DA123061">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 19:58:47 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<engineerTo>
+<item key="EBC7466E-4739-912B-6E66-2C2E2467CD62" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DataInicio" id="5FA7A848-DC2E-7A12-03AD-AFFBECC266FE">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 19:59:02 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<engineerTo>
+<item key="EBC7466E-4739-912B-6E66-2C2E2467CD62" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DataFim" id="DD22CE99-1A4E-811D-900B-3F5C0432FFE1">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 19:59:21 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<engineerTo>
+<item key="EBC7466E-4739-912B-6E66-2C2E2467CD62" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8C58FDEC-94C9-1509-0F88-5B6C2DA022FA" name="Projeto PK">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 19:58:45 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<engineerTo>
+<item key="EBC7466E-4739-912B-6E66-2C2E2467CD62" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>31758828-23E5-D041-4339-0D9F114978E0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

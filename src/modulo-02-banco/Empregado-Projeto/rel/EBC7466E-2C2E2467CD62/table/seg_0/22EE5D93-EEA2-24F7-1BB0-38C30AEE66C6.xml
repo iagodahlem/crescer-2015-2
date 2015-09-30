@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="22EE5D93-EEA2-24F7-1BB0-38C30AEE66C6" name="EmpregadoProjeto">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 20:02:32 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDEmpregadoProjeto" id="91BC6649-0E5D-E2B2-001B-7E4E0403C13B">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 20:07:23 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDEmpregado" id="466FE7A6-A8CF-A3E2-0D6E-B9AA604F2E9E">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 20:02:32 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="15A2D701-586D-9AF9-62C7-DA1CB901572E" referredColumn="4C0A296C-ECE1-27AD-855A-62F7E568150E"/>
+</associations>
+</Column>
+<Column name="IDProjeto" id="A8856E86-0B26-DF7A-A42F-0F536E0FD420">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 20:02:32 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="360CC889-8063-ABE6-8856-C5EC6E7BD0C3" referredColumn="E83EF86E-16E0-6F13-7296-CA921A8897C5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A2466E35-87BE-59E3-DE63-BE8232F15283" name="PK_EmpregoProjeto">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 20:02:32 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="91BC6649-0E5D-E2B2-001B-7E4E0403C13B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9D9960BF-E406-60EA-B4BC-A43326184F88" name="FK_EmpregoProjeto_Empregado">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 20:02:32 UTC</createdTime>
+<generatorID>E93B24E6-78B6-117C-1663-B638DE539467</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="466FE7A6-A8CF-A3E2-0D6E-B9AA604F2E9E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BD8DD470-E72B-5F15-1F93-DBFA418E3396" name="FK_EmpregadoProjeto_Projeto">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 20:02:32 UTC</createdTime>
+<generatorID>E93B24E6-78B6-117C-1663-B638DE539467</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8856E86-0B26-DF7A-A42F-0F536E0FD420"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

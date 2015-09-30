@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9C81FC46-126B-9BE2-81A5-F7EA51EC1604" name="Projeto">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 20:02:32 UTC</createdTime>
+<generatorID>6A7FA7EA-CF64-A660-7064-2C695DE38AD9</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDProjeto" id="E83EF86E-16E0-6F13-7296-CA921A8897C5">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 20:02:32 UTC</createdTime>
+<generatorID>31758828-23E5-D041-4339-0D9F114978E0</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nome" id="AAFF86D5-FFE8-A0A0-5B39-41921C3F8330">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 20:02:32 UTC</createdTime>
+<generatorID>6D272241-C813-3836-B2A7-6529DA123061</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DataInicio" id="423089CA-02C4-931A-4A9A-2CA23FECA5A6">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 20:02:32 UTC</createdTime>
+<generatorID>5FA7A848-DC2E-7A12-03AD-AFFBECC266FE</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DataFim" id="4408AD63-90CF-1636-B937-2EE6454E7BF0">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 20:02:32 UTC</createdTime>
+<generatorID>DD22CE99-1A4E-811D-900B-3F5C0432FFE1</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="843AC140-D85E-CAD7-2E03-DE60A98A95A8" name="Projeto_PK">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-09-30 20:02:32 UTC</createdTime>
+<generatorID>8C58FDEC-94C9-1509-0F88-5B6C2DA022FA</generatorID>
+<ownerDesignName>Empregado-Projeto</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E83EF86E-16E0-6F13-7296-CA921A8897C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
