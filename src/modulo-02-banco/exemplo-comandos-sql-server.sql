@@ -1,3 +1,5 @@
+Use CursoSQL;
+
 Select * From Cidade;
 Select * From Cliente;
 Select * From Empregado;
@@ -73,6 +75,17 @@ truncate table Cidade;
 
 /* Copiar tabelas */
 Select * into CopiaCidade From Cidade;
+
+--------------
+
+/* FUNÇÕES DE GRUPO */
+
+Select COUNT(IDEmpregado) as TotalEmpregados,
+	   COUNT(1) as Total2,
+	   COUNT(*) as Total2
+	   From Empregado;
+
+Select Distinct Cargo From Empregado;
 
 --------------
 
