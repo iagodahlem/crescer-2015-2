@@ -89,6 +89,42 @@ Select Distinct Cargo From Empregado;
 
 --------------
 
+/* JOINS */
+
+-- INNER JOIN
+
+-- Explicito
+Select a.Nome as NomeAssociado,
+	   c.Nome as NomeCidade
+From   Associado a
+INNER JOIN Cidade c ON c.IDCidade = a.IDCidade
+
+-- Implicito
+Select a.Nome as NomeAssociado,
+c.Nome as NomeCidade
+From Associado a, Cidade c
+WHERE c.IDCidade = a.IDCidade
+
+	----
+
+-- LEFT (OUTER) JOIN
+
+Select a.Nome as NomeAssociado,
+	   c.Nome as NomeCidade
+From Associado a
+LEFT JOIN Cidade c ON c.IDCidade = a.IDCidade
+
+	----
+
+-- SELF JOIN (auto-relacionamento)
+
+Select e.NomeEmpregado as NomeEmpregado,
+	   g.NomeEmpregado as NomeGerente
+From Empregado e
+  INNER JOIN Empregado g ON e.IDGerente = g.IDEmpregado
+
+--------------
+
 /* Lista estrutura da tabela determinada */
 SP_HELP 'Cliente'
 
