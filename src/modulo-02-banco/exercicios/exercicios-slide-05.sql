@@ -18,8 +18,8 @@ LEFT JOIN Cidade as c ON c.IDCidade = a.IDCidade;
 
 Select UF as Estados, 
 	   COUNT(Nome) as TotalDeCidades 
-From Cidade 
-Where EXISTS (Select 1 From Associado a Where a.IDCidade = NULL)
+From Cidade as c
+Where NOT EXISTS (Select 1 From Associado a Where a.IDCidade = c.IDCidade)
 GROUP BY UF;
 
 select * from Associado;
