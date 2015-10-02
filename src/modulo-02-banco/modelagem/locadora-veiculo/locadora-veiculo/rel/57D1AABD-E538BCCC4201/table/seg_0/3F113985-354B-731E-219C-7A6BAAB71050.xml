@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3F113985-354B-731E-219C-7A6BAAB71050" name="ModeloOpcional">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDModelo" id="B877701C-4B3A-ABE2-6E49-3A65922E2B2D">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="514CCE48-ED5B-86D2-EA1E-5DBF89C34944" referredColumn="FB051D1D-E443-A260-FFE9-1B6AC67E1240"/>
+</associations>
+</Column>
+<Column name="IDOpcional" id="49F2AE0E-5923-B110-9CF9-F27F0D7AAE03">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="57E75905-BA31-C2BE-1AB3-6A1ABCBE9FA5" referredColumn="AAD6373F-B7EC-92D7-783D-6C605F9BD9F8"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="96F7B501-4658-18BE-8585-10A8678E6C05" name="PK_ModeloOpcional">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B877701C-4B3A-ABE2-6E49-3A65922E2B2D"/>
+<colUsage columnID="49F2AE0E-5923-B110-9CF9-F27F0D7AAE03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ECA9F160-607E-466D-B212-D3C0FB840F0B" name="FK_Modelo">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>8F8B05D0-C79E-B402-36CB-935F8827541B</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B877701C-4B3A-ABE2-6E49-3A65922E2B2D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4E470CF4-5810-5F72-19C8-DBC4231B9514" name="FK_Opcional">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>8F8B05D0-C79E-B402-36CB-935F8827541B</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="49F2AE0E-5923-B110-9CF9-F27F0D7AAE03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

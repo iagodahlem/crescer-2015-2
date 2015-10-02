@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PlanoAdicional" directorySegmentName="seg_0" id="AA183DDA-BF34-371E-ED5E-20DB477043D2">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:24:16 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>99BC3F09-6FD6-EB2E-A399-D8FBA0D910B3</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D9BD68D4-EF3F-5E58-8CEB-5A1A00E37243</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

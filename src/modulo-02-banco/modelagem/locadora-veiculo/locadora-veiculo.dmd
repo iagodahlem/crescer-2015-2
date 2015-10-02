@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="locadora-veiculo" id="6D98EE89-F6DE-A7A1-3662-682DC954021F" version="3.5">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 16:34:03 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>6D98EE89-F6DE-A7A1-3662-682DC954021F</designId>
+</OSDM_Design>

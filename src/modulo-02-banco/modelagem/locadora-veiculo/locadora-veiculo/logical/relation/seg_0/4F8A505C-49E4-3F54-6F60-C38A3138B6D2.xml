@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FabricanteModelo" directorySegmentName="seg_0" id="4F8A505C-49E4-3F54-6F60-C38A3138B6D2">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:00:52 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<sourcePk>0F5605CE-C4C2-6579-4807-EC15AB882667</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>80C71C12-3BE3-E90F-37AC-C387FBB87967</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>646E43A9-F3F8-EDAC-2786-FF6EC56C6AF2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
