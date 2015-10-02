@@ -1,15 +1,10 @@
+-- Exemplos de comandos vistos em aula durante o Projeto CRESCER - CWI
+-- Módulo 02 - Banco de Dados
+
 Use CursoSQL;
 
-Select * From Cidade;
-Select * From Cliente;
-Select * From Empregado;
-Select * From Associado;
-
---------------
-
-Insert into Cidade (IDCidade, Nome, UF) values (1, 'São Leopoldo', 'RS');
-
---------------
+-- COMANDOS DDL
+---------------
 
 Create Table Cliente (
 	IDCliente	int IDENTITY (1,1)	NOT NULL,
@@ -47,6 +42,8 @@ alter table Cliente add constraint PK_Cliente primary key (IDCliente);
 alter table Cidade add constraint PK_Cidade primary key (IDCidade);
 
 --------------
+
+Insert into Cidade (IDCidade, Nome, UF) values (1, 'São Leopoldo', 'RS');
 
 /* Altera dados já existentes na tabela determinada */
 Update  Cidade
