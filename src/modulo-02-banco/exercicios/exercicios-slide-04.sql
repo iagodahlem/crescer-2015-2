@@ -1,4 +1,4 @@
-/* Exercicios slide 04 - 01 */
+/* Exercicios slide 04 */
 
 Use CursoSQL;
 
