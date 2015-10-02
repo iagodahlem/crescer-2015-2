@@ -1,15 +1,10 @@
+-- Exemplos de comandos vistos em aula durante o Projeto CRESCER - CWI
+-- Módulo 02 - Banco de Dados
+
 Use CursoSQL;
 
-Select * From Cidade;
-Select * From Cliente;
-Select * From Empregado;
-Select * From Associado;
-
---------------
-
-Insert into Cidade (IDCidade, Nome, UF) values (1, 'São Leopoldo', 'RS');
-
---------------
+-- COMANDOS DDL
+---------------
 
 Create Table Cliente (
 	IDCliente	int IDENTITY (1,1)	NOT NULL,
@@ -47,6 +42,8 @@ alter table Cliente add constraint PK_Cliente primary key (IDCliente);
 alter table Cidade add constraint PK_Cidade primary key (IDCidade);
 
 --------------
+
+Insert into Cidade (IDCidade, Nome, UF) values (1, 'São Leopoldo', 'RS');
 
 /* Altera dados já existentes na tabela determinada */
 Update  Cidade
@@ -86,6 +83,42 @@ Select COUNT(IDEmpregado) as TotalEmpregados,
 	   From Empregado;
 
 Select Distinct Cargo From Empregado;
+
+--------------
+
+/* JOINS */
+
+-- INNER JOIN
+
+-- Explicito
+Select a.Nome as NomeAssociado,
+	   c.Nome as NomeCidade
+From   Associado a
+INNER JOIN Cidade c ON c.IDCidade = a.IDCidade
+
+-- Implicito
+Select a.Nome as NomeAssociado,
+c.Nome as NomeCidade
+From Associado a, Cidade c
+WHERE c.IDCidade = a.IDCidade
+
+	----
+
+-- LEFT (OUTER) JOIN
+
+Select a.Nome as NomeAssociado,
+	   c.Nome as NomeCidade
+From Associado a
+LEFT JOIN Cidade c ON c.IDCidade = a.IDCidade
+
+	----
+
+-- SELF JOIN (auto-relacionamento)
+
+Select e.NomeEmpregado as NomeEmpregado,
+	   g.NomeEmpregado as NomeGerente
+From Empregado e
+  INNER JOIN Empregado g ON e.IDGerente = g.IDEmpregado
 
 --------------
 

@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A7C94B82-EB8C-3487-6A44-5EB85AE5A98C" name="ServicoCliente">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<ordsAlias>clienteservico</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCliente" id="295595D2-B671-5FD6-2561-52E8D59A964C">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="30E38304-E53C-2012-3A91-EE3FD9AB6AA5" referredColumn="B41681E9-CEBE-B249-B13C-9FA08A8CBEFD"/>
+</associations>
+</Column>
+<Column name="IDServico" id="8B66DC33-92B0-C3EE-AF48-3DAE99D49C00">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2F7DFEA9-2ED5-6E81-F03B-9B6F2CD9B44D" referredColumn="13611F1E-653D-D91E-BE53-C752EA455D3D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0BADCCA7-0D1D-7F0F-14E0-67986961A1A7" name="PK_ClienteServico">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="295595D2-B671-5FD6-2561-52E8D59A964C"/>
+<colUsage columnID="8B66DC33-92B0-C3EE-AF48-3DAE99D49C00"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E3772455-A0E8-DA30-64DB-CCF314532072" name="FK_Cliente">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>4DB101EB-9F2E-632E-C6EE-479F3A6A36B4</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="295595D2-B671-5FD6-2561-52E8D59A964C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="53FDE808-2110-316E-A39B-9095170700DE" name="FK_Servico">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>4DB101EB-9F2E-632E-C6EE-479F3A6A36B4</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8B66DC33-92B0-C3EE-AF48-3DAE99D49C00"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

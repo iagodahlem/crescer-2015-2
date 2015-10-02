@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1CD95651-6AFF-0B72-CA7D-C6D7A6484D82" name="Empresa">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>B50093DD-E376-171C-D5B6-A27032100C4F</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDEmpresa" id="9C3A88AC-07AD-BA12-345A-A5671F2F338B">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>ACBA03BF-A8D4-7CA2-1C85-D76E88293A14</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NomeFantasia" id="CAAC8716-BC5F-C21F-0BB4-84DAC77B6EED">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>7B5B531B-8BAF-D872-19B9-BE8179AAEC5D</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RazaoSocial" id="D7A067FE-488F-0CA9-8B65-5C8330EA10AA">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>4F285A6B-5F70-347B-1E33-F50A9387666F</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CNPJ" id="61121E0F-6C07-141A-4EE1-BA856E0CEB41">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>34227056-C1DE-2C1C-864B-A1EC896632E0</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="36BC6E79-015D-C210-34C8-456A6868D76C" name="PK_Empresa">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>A25552D0-1586-EBB1-B7DA-CF57DD8B7D95</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9C3A88AC-07AD-BA12-345A-A5671F2F338B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

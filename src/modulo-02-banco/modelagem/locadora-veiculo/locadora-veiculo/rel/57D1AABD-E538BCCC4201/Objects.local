@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="1FC9AAB4-7773-9696-B242-AF037EA74CA5" name="Acessorio" seqName="seg_0"/>
+   <object objectType="Table" objectID="E3BD9A41-117C-FD7B-AE51-131DFCB1AF08" name="Adicional" seqName="seg_0"/>
+   <object objectType="Table" objectID="6437016C-ADDE-ED44-23C6-D713BE05FAB2" name="Cliente" seqName="seg_0"/>
+   <object objectType="Table" objectID="1CD95651-6AFF-0B72-CA7D-C6D7A6484D82" name="Empresa" seqName="seg_0"/>
+   <object objectType="Table" objectID="7BF7DB58-63A0-42FE-9DBA-4146197442D0" name="Fabricante" seqName="seg_0"/>
+   <object objectType="Table" objectID="A6083D05-70F5-7ED1-FCC8-7BC9A447B871" name="Modelo" seqName="seg_0"/>
+   <object objectType="Table" objectID="414CB386-464E-D098-5647-FCACD90CF6FC" name="ModeloAcessorio" seqName="seg_0"/>
+   <object objectType="Table" objectID="3F113985-354B-731E-219C-7A6BAAB71050" name="ModeloOpcional" seqName="seg_0"/>
+   <object objectType="Table" objectID="C62ADCB0-0450-E42F-31DA-518DF6D52B3D" name="Opcional" seqName="seg_0"/>
+   <object objectType="Table" objectID="6F31E5F1-6495-9495-514D-15AEA965DB75" name="Plano" seqName="seg_0"/>
+   <object objectType="Table" objectID="9AEE3506-09FF-B61A-7B71-3325B1E3308C" name="PlanoAdicional" seqName="seg_0"/>
+   <object objectType="Table" objectID="8083BF03-3AD5-AEA2-5C61-15A7AA6C1F5F" name="Servico" seqName="seg_0"/>
+   <object objectType="Table" objectID="A7C94B82-EB8C-3487-6A44-5EB85AE5A98C" name="ServicoCliente" seqName="seg_0"/>
+   <object objectType="Table" objectID="08261AB1-B247-B252-D7FC-495A01121B21" name="ServicoEmpresa" seqName="seg_0"/>
+   <object objectType="Table" objectID="55DE4BC6-A4E5-5FC4-035D-B14A67D4B43F" name="Veiculo" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="63EDFA34-F24A-46C0-B054-0D899A749471" name="FK_Acessorio" seqName="seg_0" containerID="414CB386-464E-D098-5647-FCACD90CF6FC" refContainerID="1FC9AAB4-7773-9696-B242-AF037EA74CA5"/>
+   <object objectType="FKIndexAssociation" objectID="89DA6F22-4685-1394-16D1-7F50927003D5" name="FK_Adicional" seqName="seg_0" containerID="9AEE3506-09FF-B61A-7B71-3325B1E3308C" refContainerID="E3BD9A41-117C-FD7B-AE51-131DFCB1AF08"/>
+   <object objectType="FKIndexAssociation" objectID="30E38304-E53C-2012-3A91-EE3FD9AB6AA5" name="FK_Cliente" seqName="seg_0" containerID="A7C94B82-EB8C-3487-6A44-5EB85AE5A98C" refContainerID="6437016C-ADDE-ED44-23C6-D713BE05FAB2"/>
+   <object objectType="FKIndexAssociation" objectID="2E225CB2-5A8F-E831-5D8C-1926FD644C90" name="FK_Cliente_Empresa" seqName="seg_0" containerID="6437016C-ADDE-ED44-23C6-D713BE05FAB2" refContainerID="1CD95651-6AFF-0B72-CA7D-C6D7A6484D82"/>
+   <object objectType="FKIndexAssociation" objectID="F6A92F19-0728-469D-58ED-B6E773C060F0" name="FK_Empresa" seqName="seg_0" containerID="08261AB1-B247-B252-D7FC-495A01121B21" refContainerID="1CD95651-6AFF-0B72-CA7D-C6D7A6484D82"/>
+   <object objectType="FKIndexAssociation" objectID="514CCE48-ED5B-86D2-EA1E-5DBF89C34944" name="FK_Modelo" seqName="seg_0" containerID="3F113985-354B-731E-219C-7A6BAAB71050" refContainerID="A6083D05-70F5-7ED1-FCC8-7BC9A447B871"/>
+   <object objectType="FKIndexAssociation" objectID="64D4A4C7-B4A7-2047-F434-35FA6A047B2F" name="FK_Modelo_Fabricante" seqName="seg_0" containerID="A6083D05-70F5-7ED1-FCC8-7BC9A447B871" refContainerID="7BF7DB58-63A0-42FE-9DBA-4146197442D0"/>
+   <object objectType="FKIndexAssociation" objectID="7664C3FB-833A-2EBA-28E3-8DFBF1481BB9" name="FK_Modelov2" seqName="seg_0" containerID="414CB386-464E-D098-5647-FCACD90CF6FC" refContainerID="A6083D05-70F5-7ED1-FCC8-7BC9A447B871"/>
+   <object objectType="FKIndexAssociation" objectID="57E75905-BA31-C2BE-1AB3-6A1ABCBE9FA5" name="FK_Opcional" seqName="seg_0" containerID="3F113985-354B-731E-219C-7A6BAAB71050" refContainerID="C62ADCB0-0450-E42F-31DA-518DF6D52B3D"/>
+   <object objectType="FKIndexAssociation" objectID="ADA39FF8-5013-6FA3-C78E-A7AE009DF85D" name="FK_Plano" seqName="seg_0" containerID="9AEE3506-09FF-B61A-7B71-3325B1E3308C" refContainerID="6F31E5F1-6495-9495-514D-15AEA965DB75"/>
+   <object objectType="FKIndexAssociation" objectID="2F7DFEA9-2ED5-6E81-F03B-9B6F2CD9B44D" name="FK_Servico" seqName="seg_0" containerID="A7C94B82-EB8C-3487-6A44-5EB85AE5A98C" refContainerID="8083BF03-3AD5-AEA2-5C61-15A7AA6C1F5F"/>
+   <object objectType="FKIndexAssociation" objectID="F1C683B6-279B-F55E-61CB-6152FA878C0E" name="FK_Servico_Plano" seqName="seg_0" containerID="8083BF03-3AD5-AEA2-5C61-15A7AA6C1F5F" refContainerID="6F31E5F1-6495-9495-514D-15AEA965DB75"/>
+   <object objectType="FKIndexAssociation" objectID="F2A8CC4A-9993-5178-17D0-D489B970DC2C" name="FK_Servico_Veiculo" seqName="seg_0" containerID="55DE4BC6-A4E5-5FC4-035D-B14A67D4B43F" refContainerID="8083BF03-3AD5-AEA2-5C61-15A7AA6C1F5F"/>
+   <object objectType="FKIndexAssociation" objectID="6DDE9A9E-6AF5-CF30-5DA0-FA248492E309" name="FK_Servicov1" seqName="seg_0" containerID="08261AB1-B247-B252-D7FC-495A01121B21" refContainerID="8083BF03-3AD5-AEA2-5C61-15A7AA6C1F5F"/>
+   <object objectType="FKIndexAssociation" objectID="51410DC0-8A7B-F529-8763-C62759A55C76" name="FK_Veiculo_Modelo" seqName="seg_0" containerID="55DE4BC6-A4E5-5FC4-035D-B14A67D4B43F" refContainerID="A6083D05-70F5-7ED1-FCC8-7BC9A447B871"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

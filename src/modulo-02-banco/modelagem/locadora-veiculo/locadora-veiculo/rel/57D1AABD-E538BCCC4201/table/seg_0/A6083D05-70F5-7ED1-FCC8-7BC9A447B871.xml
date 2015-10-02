@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A6083D05-70F5-7ED1-FCC8-7BC9A447B871" name="Modelo">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>646E43A9-F3F8-EDAC-2786-FF6EC56C6AF2</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDModelo" id="FB051D1D-E443-A260-FFE9-1B6AC67E1240">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>527024BB-1344-AD4D-1F8B-C0200A95F836</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nome" id="4FA3873E-4A4E-B966-5905-CF52D0D90A0D">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>13B58B57-5DAB-7EE1-36D3-0357824754D2</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Ano" id="D24D1F49-8A16-89E7-3FB7-F416783FF0F3">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>16C1DC27-C8A2-2ED8-85B5-68D8F42AB1B2</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cor" id="2CDCA90E-EE9A-5A1F-849F-F202D4AE855B">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>B9D6E6A9-9D48-E1A9-EE2A-41CED3BE698E</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDFabricante" id="3F1F733B-B76B-544E-F25D-215396C43E25">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>34914AD8-826B-5A26-C901-B9CA45A52C58</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="64D4A4C7-B4A7-2047-F434-35FA6A047B2F" referredColumn="8289133C-131D-56BF-77E5-2B70D3D4E3E4"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8E654222-BC8C-F318-DA66-923C8757E481" name="PK_Modelo">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>4F31805F-5DA1-E2AA-0DC0-E86A70E93878</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FB051D1D-E443-A260-FFE9-1B6AC67E1240"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="947E1386-7F5A-BEA0-EE4B-504C8C92071E" name="FK_Modelo_Fabricante">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>4F8A505C-49E4-3F54-6F60-C38A3138B6D2</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3F1F733B-B76B-544E-F25D-215396C43E25"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

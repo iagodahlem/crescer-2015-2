@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="646E43A9-F3F8-EDAC-2786-FF6EC56C6AF2" name="Modelo">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 16:46:26 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDModelo" id="527024BB-1344-AD4D-1F8B-C0200A95F836">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 16:47:07 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nome" id="13B58B57-5DAB-7EE1-36D3-0357824754D2">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 16:48:16 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Ano" id="16C1DC27-C8A2-2ED8-85B5-68D8F42AB1B2">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 16:48:32 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Cor" id="B9D6E6A9-9D48-E1A9-EE2A-41CED3BE698E">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 16:48:55 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDFabricante" id="34914AD8-826B-5A26-C901-B9CA45A52C58">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:00:52 UTC</createdTime>
+<generatorID>4F8A505C-49E4-3F54-6F60-C38A3138B6D2</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<referedAttribute>9DBC82D7-6BA6-8F46-D0A9-20738E8461D5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4F31805F-5DA1-E2AA-0DC0-E86A70E93878" name="Modelo PK">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 16:47:17 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>527024BB-1344-AD4D-1F8B-C0200A95F836</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

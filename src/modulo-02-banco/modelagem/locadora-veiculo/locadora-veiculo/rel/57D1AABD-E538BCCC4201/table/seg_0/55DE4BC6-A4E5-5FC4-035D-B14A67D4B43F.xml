@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="55DE4BC6-A4E5-5FC4-035D-B14A67D4B43F" name="Veiculo">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>7B63EC58-E4F0-320F-BB45-A565A8127F38</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDVeiculo" id="938A1F7A-63B6-4886-C776-27BDDB66F83D">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>46ADA8CA-14C2-FF2E-B667-7E396FB93D35</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDModelo" id="DFCFF962-5481-3109-C767-EAD650E2263E">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>F08D8214-221F-A939-B553-D0707040E4DC</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="51410DC0-8A7B-F529-8763-C62759A55C76" referredColumn="FB051D1D-E443-A260-FFE9-1B6AC67E1240"/>
+</associations>
+</Column>
+<Column name="IDServico" id="F5611013-078F-9B63-6D0E-6C388572811E">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>2EA9A77D-3C8F-9A2D-FC2E-F59E6CA7F6EE</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F2A8CC4A-9993-5178-17D0-D489B970DC2C" referredColumn="13611F1E-653D-D91E-BE53-C752EA455D3D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5D0A8053-E4BF-90C2-040F-79132ECB353E" name="PK_Veiculo">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>6F3C329D-5397-F00A-0B2D-699293A769CB</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="938A1F7A-63B6-4886-C776-27BDDB66F83D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0C365485-15E0-DFDF-7476-6ACC2947E2B8" name="FK_Servico_Veiculo">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>5208E3D5-03D1-A8F7-6862-C3BA06417823</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F5611013-078F-9B63-6D0E-6C388572811E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A2C9B1EE-EEBC-DE3A-1204-C29591902998" name="FK_Veiculo_Modelo">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:28:38 UTC</createdTime>
+<generatorID>87AEA9A2-2142-A7F5-E251-505906193F75</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DFCFF962-5481-3109-C767-EAD650E2263E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D9BD68D4-EF3F-5E58-8CEB-5A1A00E37243" name="Adicional">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:22:28 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDAdicional" id="30DD3452-7DD7-759B-CB98-2E91E1B573DF">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:22:41 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nome" id="0CEC9074-4C06-E3B5-F315-0EB15B28FD29">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:22:56 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="89AC1CF1-DD2E-065D-9571-EC1D1DCA8930" name="Adicional PK">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:22:53 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>30DD3452-7DD7-759B-CB98-2E91E1B573DF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="3844EEA2-46D1-B2A4-A1C0-E63A58D63089" name="Acessorio" seqName="seg_0"/>
+   <object objectType="Entity" objectID="D9BD68D4-EF3F-5E58-8CEB-5A1A00E37243" name="Adicional" seqName="seg_0"/>
+   <object objectType="Entity" objectID="D2F4DE9F-6921-F6FA-BEB3-0A8F45E27E05" name="Cliente" seqName="seg_0"/>
+   <object objectType="Entity" objectID="B50093DD-E376-171C-D5B6-A27032100C4F" name="Empresa" seqName="seg_0"/>
+   <object objectType="Entity" objectID="80C71C12-3BE3-E90F-37AC-C387FBB87967" name="Fabricante" seqName="seg_0"/>
+   <object objectType="Entity" objectID="646E43A9-F3F8-EDAC-2786-FF6EC56C6AF2" name="Modelo" seqName="seg_0"/>
+   <object objectType="Entity" objectID="57BC34CC-BCBA-829F-2181-F9AE2DB4F04D" name="Opcional" seqName="seg_0"/>
+   <object objectType="Entity" objectID="99BC3F09-6FD6-EB2E-A399-D8FBA0D910B3" name="Plano" seqName="seg_0"/>
+   <object objectType="Entity" objectID="AB9430E9-2568-2437-2FFD-1416075B20E5" name="Servico" seqName="seg_0"/>
+   <object objectType="Entity" objectID="7B63EC58-E4F0-320F-BB45-A565A8127F38" name="Veiculo" seqName="seg_0"/>
+   <object objectType="Relation" objectID="4DB101EB-9F2E-632E-C6EE-479F3A6A36B4" name="ClienteServico" seqName="seg_0"/>
+   <object objectType="Relation" objectID="4EE2456C-B00C-9578-5F58-5587960E1003" name="EmpresaCliente" seqName="seg_0"/>
+   <object objectType="Relation" objectID="5D458B31-D7D4-454E-95C1-8DE90331A454" name="EmpresaServico" seqName="seg_0"/>
+   <object objectType="Relation" objectID="4F8A505C-49E4-3F54-6F60-C38A3138B6D2" name="FabricanteModelo" seqName="seg_0"/>
+   <object objectType="Relation" objectID="76C1B35A-D2E7-E598-CC17-734AD3D97658" name="ModeloAcessorio" seqName="seg_0"/>
+   <object objectType="Relation" objectID="8F8B05D0-C79E-B402-36CB-935F8827541B" name="ModeloOpcional" seqName="seg_0"/>
+   <object objectType="Relation" objectID="AA183DDA-BF34-371E-ED5E-20DB477043D2" name="PlanoAdicional" seqName="seg_0"/>
+   <object objectType="Relation" objectID="BE196A6E-5C11-E90C-D819-F80C72B9DC8F" name="ServicoPlano" seqName="seg_0"/>
+   <object objectType="Relation" objectID="5208E3D5-03D1-A8F7-6862-C3BA06417823" name="ServicoVeiculo" seqName="seg_0"/>
+   <object objectType="Relation" objectID="87AEA9A2-2142-A7F5-E251-505906193F75" name="VeiculoModelo" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

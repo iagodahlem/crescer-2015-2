@@ -1,9 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Empregado-Projeto" id="015CC914-038C-8C1E-E17D-9C821E3EA018" version="3.5">
-<createdBy>iago.lorensini</createdBy>
-<createdTime>2015-09-30 19:33:06 UTC</createdTime>
-<generatorID>Gerado pelo usuário</generatorID>
-<ownerDesignName>Empregado-Projeto</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>015CC914-038C-8C1E-E17D-9C821E3EA018</designId>
-</OSDM_Design>

@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7B63EC58-E4F0-320F-BB45-A565A8127F38" name="Veiculo">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 16:43:38 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDVeiculo" id="46ADA8CA-14C2-FF2E-B667-7E396FB93D35">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 16:43:52 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDModelo" id="F08D8214-221F-A939-B553-D0707040E4DC">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 16:58:41 UTC</createdTime>
+<generatorID>87AEA9A2-2142-A7F5-E251-505906193F75</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>527024BB-1344-AD4D-1F8B-C0200A95F836</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDServico" id="2EA9A77D-3C8F-9A2D-FC2E-F59E6CA7F6EE">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 17:18:36 UTC</createdTime>
+<generatorID>5208E3D5-03D1-A8F7-6862-C3BA06417823</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>EBD9FB91-2151-1603-C59C-A65703081DE2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6F3C329D-5397-F00A-0B2D-699293A769CB" name="Veiculo PK">
+<createdBy>iago.lorensini</createdBy>
+<createdTime>2015-10-02 16:44:06 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>locadora-veiculo</ownerDesignName>
+<engineerTo>
+<item key="57D1AABD-F364-127D-F646-E538BCCC4201" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>46ADA8CA-14C2-FF2E-B667-7E396FB93D35</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
