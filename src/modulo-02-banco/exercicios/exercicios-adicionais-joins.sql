@@ -60,11 +60,26 @@ GROUP BY
 ORDER BY 
 	TotalClientes) b;
 
+-- 6
+SELECT
+	Pedido.IDPedido,
+	Pedido.DataEntrega, 
+	Pedido.ValorPedido, 
+	PedidoItem.Quantidade as QuantidadeItens,
+	Cliente.Nome as NomeCliente
+FROM Pedido
+	INNER JOIN PedidoItem ON PedidoItem.IDPedido = Pedido.IDPedido
+	INNER JOIN Cliente ON Cliente.IDCliente = Pedido.IDCliente
+	INNER JOIN  ON PedidoItem.IDPedido = Pedido.IDPedido
+WHERE 
+	Pedido.DataEntrega BETWEEN '2015-10-01' AND '2015-10-31' AND
+	NOT EXISTS ();
 
+-- 7
+SELECT * FROM Produto pr
+INNER JOIN ProdutoMaterial prMa ON prMa.IDMaterial = 15386;
 
-
-
-Select Cliente.Nome as NomeCliente,
-	   Cidade.UF as NomeEstado
-From   Cliente
-INNER JOIN Cidade ON Cidade.IDCidade = Cliente.IDCidade;
+Select a.Nome as NomeAssociado,
+	   c.Nome as NomeCidade
+From   Associado a
+INNER JOIN Cidade c ON c.IDCidade = a.IDCidade
