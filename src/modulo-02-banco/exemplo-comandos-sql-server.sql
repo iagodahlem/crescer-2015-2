@@ -146,7 +146,7 @@ From
 	Cidade
 Where UF in ('RS', 'SC', 'PR');
 
---------------
+----------------------------
 
 -- FUNÇÕES DE GRUPO
 
