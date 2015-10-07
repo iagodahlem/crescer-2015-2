@@ -27,18 +27,6 @@ public class EstrategiaNoturnosPorUltimoTest
         exercito.atacar(new ArrayList<Dwarf>(Arrays.asList(balin, stalin)));
         
         // Assert
-        ArrayList<Elfo> ordemAtaques = exercito.getOrdemDoUltimoAtaque();
-
-        /*
-        int noturnosQueAtiraram = 0;
-        for (Elfo elfo : ordemAtaques) {
-            if (elfo instanceof ElfoNoturno) {
-                noturnosQueAtiraram++;
-            }
-        }
-        */
-
-        //assertEquals(2, noturnosQueAtiraram);
         assertEquals(vidaEsperada, balin.getVida(), .0);
         assertEquals(vidaEsperada, stalin.getVida(), .0);
 

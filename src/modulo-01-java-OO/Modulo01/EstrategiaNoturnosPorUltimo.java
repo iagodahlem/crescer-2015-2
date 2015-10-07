@@ -28,12 +28,12 @@ public class EstrategiaNoturnosPorUltimo implements EstrategiaDeAtaque {
         int count = 0;
         
         for (Elfo elfoAtacante : verdes) {
-            count++;
             if (quantidadeDeVerdes != count) {
                 ordemDoUltimoAtaque.add(elfoAtacante);
                 for (Dwarf dwarf : dwarves) {
                     elfoAtacante.atirarFlecha(dwarf);
                 }
+                count++;
             }
             if (quantidadeDeVerdes == count) {
                 for (Elfo elfoAtacante2 : noturnos) {

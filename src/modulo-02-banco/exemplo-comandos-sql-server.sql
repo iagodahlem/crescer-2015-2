@@ -79,10 +79,18 @@ Insert into Cidade
 values 
 	(1, 'São Leopoldo', 'RS');
 
+--------------
+
+-- UPDATE
+
 /* Altera dados já existentes na tabela determinada */
 Update  Cidade
 Set		Nome = 'Novo Hamburgo'
 Where	IDCidade = 1;
+
+--------------
+
+-- DELETE
 
 /* Delete linha inteira da tabela determinada e estipulada pela clausula WHERE */
 Delete From Cidade
@@ -90,28 +98,57 @@ Where		IDCidade = 1;
 
 --------------
 
--- TRANSAÇÕES
-
-/* Inicia uma transação */
-begin transaction;
-
-/* Salva alterações dentro da transação */
-commit;
-
-/* Desfaz alterações dentro da transação */
-rollback;
-
-/* Apaga a tabela e reseta geral */
-truncate table Cidade;
+-- SELECT
 
 --------------
 
-/* Copiar tabelas */
+Select 
+	Nome_Cidade as Nome,
+	UF			as Estado
+From 
+	Cidade;
+
+--------------
+
+-- Copiar tabelas
 Select * into CopiaCidade From Cidade;
 
 --------------
 
-/* FUNÇÕES DE GRUPO */
+-- OPERAÇÕES
+
+Select 
+	NomeEmpregado as Nome,
+	salario		  as SalarioMensal,
+    (salario*12)  as SalarioAnual
+From 
+	Empregado;
+
+--------------
+
+-- ORDER BY
+
+-- ordenando o resultado dos relatórios
+Select 
+	Nome, UF
+From 
+	Cidade
+Order by 
+	Nome ASC -- ou DESC;
+
+--------------
+
+-- OPERADORES SQL
+
+Select 
+	IDCidade, Nome, UF
+From 
+	Cidade
+Where UF in ('RS', 'SC', 'PR');
+
+--------------
+
+-- FUNÇÕES DE GRUPO
 
 Select COUNT(IDEmpregado) as TotalEmpregados,
 	   COUNT(1) as Total2,
@@ -120,9 +157,27 @@ Select COUNT(IDEmpregado) as TotalEmpregados,
 
 Select Distinct Cargo From Empregado;
 
---------------
+----------------------------
 
-/* JOINS */
+-- TRANSAÇÕES
+
+-- Inicia uma transação
+begin transaction;
+
+-- Salva alterações dentro da transação
+commit;
+
+-- Desfaz alterações dentro da transação
+rollback;
+
+-- Apaga a tabela todos os dados da tabela e não permite desfazer as alterações
+truncate table Cidade;
+
+----------------------------
+
+-- JOINS
+
+--------------
 
 -- INNER JOIN
 
@@ -138,27 +193,25 @@ c.Nome as NomeCidade
 From Associado a, Cidade c
 WHERE c.IDCidade = a.IDCidade
 
-	----
+--------------
 
 -- LEFT (OUTER) JOIN
-
 Select a.Nome as NomeAssociado,
 	   c.Nome as NomeCidade
 From Associado a
 LEFT JOIN Cidade c ON c.IDCidade = a.IDCidade
 
-	----
+--------------
 
 -- SELF JOIN (auto-relacionamento)
-
 Select e.NomeEmpregado as NomeEmpregado,
 	   g.NomeEmpregado as NomeGerente
 From Empregado e
   INNER JOIN Empregado g ON e.IDGerente = g.IDEmpregado
 
---------------
+----------------------------
 
-/* Lista estrutura da tabela determinada */
+-- Listar estrutura da tabela determinada
 SP_HELP 'Cliente'
 
 --------------
