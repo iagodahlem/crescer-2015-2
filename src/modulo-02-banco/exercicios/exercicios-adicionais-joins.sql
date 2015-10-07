@@ -8,13 +8,17 @@ SELECT
 FROM 
 	Pedido 
 WHERE 
-	DataPedido BETWEEN '2015-09-01' AND '2015-09-30';
+	DataPedido BETWEEN convert(datetime, '01/09/2015', 103) 
+				   AND convert(datetime, '30/09/2015', 103)+.99999;
+
+create index IX_Pedido_DataPedido on Pedido (DataPedido)
 
 -- 2
 SELECT * FROM 
 	Cliente 
 WHERE 
-	Nome LIKE '%LTDA%' or RazaoSocial LIKE '%LTDA%'
+	   Nome		   LIKE '%LTDA%' 
+	or RazaoSocial LIKE '%LTDA%'
 
 -- 3
 INSERT INTO 
@@ -23,13 +27,14 @@ VALUES
 	('Galocha Maragato', 35.67, 77.95, 'A');
 
 -- 4
-SELECT * FROM 
+SELECT IDProduto,
+	   Nome
+FROM 
 	Produto 
 WHERE 
-	Nome = 'Galocha Maragato' OR 
-	(NOT EXISTS (Select 1 
+	NOT EXISTS (Select 1 
 				 From PedidoItem
-				 WHERE PedidoItem.IDProduto = Produto.IDProduto));
+				 WHERE PedidoItem.IDProduto = Produto.IDProduto);
 
 -- 5
 SELECT * FROM 
@@ -74,12 +79,49 @@ FROM Pedido
 WHERE 
 	Pedido.DataEntrega BETWEEN '2015-10-01' AND '2015-10-31' AND
 	NOT EXISTS ();
+	
+---
+
+ Select p.IDPedido, 
+        c.IDCliente, 
+		c.Nome, 
+        p.ValorPedido, p.DataPedido, p.DataEntrega
+ From   Pedido p
+   inner join Cliente c on c.IDCliente = p.IDCliente
+ Where  DataEntrega between convert(datetime, '01/10/2015', 103)
+                        and convert(datetime, '31/10/2015', 103)+.99999   -- garante que será o último instante daquele dia
+ and    exists (Select 1 
+                From   PedidoItem i
+				where  i.IDPedido = p.IDPedido
+				and    exists (select 1
+				               from   ProdutoMaterial pm
+							   where  pm.IDProduto = i.IDProduto
+							   and    pm.IDMaterial in (14650,15703,15836,16003,16604,17226)
+							   )
+				)
 
 -- 7
 SELECT * FROM Produto pr
 INNER JOIN ProdutoMaterial prMa ON prMa.IDMaterial = 15386;
 
-Select a.Nome as NomeAssociado,
-	   c.Nome as NomeCidade
-From   Associado a
-INNER JOIN Cidade c ON c.IDCidade = a.IDCidade
+Select IDProduto, Nome
+From   Produto p
+Where  exists (select 1
+               from    ProdutoMaterial pm
+			   where   pm.IDProduto  = p.IDProduto
+			   and     pm.IDMaterial = 15836);
+
+-- 8
+Select pro.IDProduto, pro.Nome
+From   Produto pro
+Where  NOT EXISTS (Select 1
+                   From   ProdutoMaterial pm
+			       where  pm.IDProduto = pro.IDProduto );
+
+-- 9
+Select TOP 1
+       Substring( Nome, 1, charIndex(' ', Nome)-1) PrimeiroNome, 
+       count(1) Total
+From   Cliente
+Group  by Substring( Nome, 1, charIndex(' ', Nome)-1)  
+Order by Total DESC;

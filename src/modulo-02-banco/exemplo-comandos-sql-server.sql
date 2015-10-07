@@ -215,3 +215,7 @@ From Empregado e
 SP_HELP 'Cliente'
 
 --------------
+
+-- INDEX
+
+create index IX_Pedido_DataPedido on Pedido (DataPedido)
