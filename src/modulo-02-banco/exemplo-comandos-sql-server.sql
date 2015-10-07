@@ -3,8 +3,13 @@
 
 Use CursoSQL;
 
+------------------------------
+
 -- COMANDOS DDL
+
 ---------------
+
+-- CREATE
 
 Create Table Cliente (
 	IDCliente	int IDENTITY (1,1)	NOT NULL,
@@ -30,20 +35,49 @@ Create Table Empregado (
 	IDCidade	int			NOT NULL,
 		constraint PK_Empregado		 Primary Key (IDEmpregado),
 		constraint CC_Empregado_Sexo Check (Sexo in ('F', 'M')), 
-		constraint FK_Emprego_Cidade Foreign Key (IDCidade) References Cidade (IDCidade)
+		constraint FK_Emprego_Cidade Foreign Key (IDCidade) 
+			References Cidade (IDCidade)
 );
 
 --------------
 
-alter table Cliente drop constraint PK_Cliente_28374892374;
+-- ALTER
 
-alter table Cliente add constraint PK_Cliente primary key (IDCliente);
+-- Adiciona uma nova coluna a determinada tabela
+Alter Table Cidade Add CodigoIBGE Integer;
 
-alter table Cidade add constraint PK_Cidade primary key (IDCidade);
+-- Altera determinada coluna
+Alter Table Cidade Alter column IBGE decimal(8);
+
+-- Renomeia uma coluna
+exec sp_RENAME 'Cidade.CodigoIBGE' , 'Cod_IBGE', 'COLUMN'
+-- Sintaxe:
+exec sp_RENAME 'TableName.[OldColumnName]' , '[NewColumnName]', 'COLUMN'
+
+-- Altera constraints
+Alter Table Cliente Drop constraint PK_Cliente_28374892374;
+Alter Table Cliente Add constraint PK_Cliente primary key (IDCliente);
+Alter Table Cidade Add constraint PK_Cidade primary key (IDCidade);
 
 --------------
 
-Insert into Cidade (IDCidade, Nome, UF) values (1, 'São Leopoldo', 'RS');
+-- DROP
+
+-- Deleta tabelas
+Drop Table Cidade;
+
+------------------------------
+
+-- COMANDOS DML
+
+--------------
+
+-- INSERT
+
+Insert into Cidade 
+	(IDCidade, Nome, UF) 
+values 
+	(1, 'São Leopoldo', 'RS');
 
 /* Altera dados já existentes na tabela determinada */
 Update  Cidade
@@ -55,6 +89,8 @@ Delete From Cidade
 Where		IDCidade = 1;
 
 --------------
+
+-- TRANSAÇÕES
 
 /* Inicia uma transação */
 begin transaction;
