@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CidadeCandidato" directorySegmentName="seg_0" id="C9AD26E4-737C-59C7-96DE-BBDBA89296B0">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:10:48 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<sourcePk>D1151096-D527-5A49-FED5-87B884820152</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>415BF998-0377-6C9F-478F-2EF4BABA8585</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D49C4F70-9C5B-6A3A-88C6-351EA98E4BE3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

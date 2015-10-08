@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D12FAACB-C9C2-F427-B59F-1E0FFE8798CF" name="Voto">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:16:07 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDVoto" id="2875DAD6-3BF9-4A42-8B14-EBA7B937D595">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:17:03 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="97EC1991-E4EE-2A24-7A13-9486E4311588" name="PK_Voto">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:17:03 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2875DAD6-3BF9-4A42-8B14-EBA7B937D595"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

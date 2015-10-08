@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="61BE6EFA-F2D0-57A7-53F0-4ECC7D5B3DD9" name="Eleitor">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>6A18714C-8D70-1FA3-11CC-3CCC46A0829D</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDEleitor" id="E7F70759-BD1C-FD59-B23A-29BE53083359">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>42D294BA-6CE5-99C8-367C-33AF598DA6BE</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NomeCompleto" id="3080C05F-E6CF-D869-E9EE-A7BCFCCF01D3">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>CF3FA1D9-4C05-CE37-E751-33DD9DC9F2D8</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TituloEleitoral" id="8F5AF4EC-F9E7-4D74-E823-C7E56375813E">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>4B7D7130-B603-89B6-B1F0-E6CA823FC994</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RG" id="4D2310A4-15A3-42FC-C539-71358353ECA8">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>FDDB0D5F-9D11-3D1D-1C8E-28B35D3DB896</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DataNascimento" id="059833CB-BB3D-156A-1A3B-AFFF82AAAF04">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>611AA835-5E70-4757-55B8-E1DF657C589F</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Zona" id="E6C314AF-68AA-9864-4FDE-353ABE361D6E">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>708ED352-DF8A-E57A-E5B7-3E16ECCFA639</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Secao" id="A78C91C9-E0FF-8AAA-CB27-7BF13AC4E6A3">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>D680C7EF-199A-8590-57EB-EB2AE07070DE</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D4D1C43A-9102-D6C4-D09C-0CE9ED520903" name="PK_Eleitor">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>EA668385-0118-02CC-08BD-E461D9542C37</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E7F70759-BD1C-FD59-B23A-29BE53083359"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

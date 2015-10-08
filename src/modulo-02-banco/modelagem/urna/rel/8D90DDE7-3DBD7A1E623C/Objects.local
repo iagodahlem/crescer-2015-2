@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="11323FB6-EF7D-3FF2-CD00-B357A1E8402C" name="Candidato" seqName="seg_0"/>
+   <object objectType="Table" objectID="0255D56E-4A28-D757-8312-D43B60368835" name="Cidade" seqName="seg_0"/>
+   <object objectType="Table" objectID="61BE6EFA-F2D0-57A7-53F0-4ECC7D5B3DD9" name="Eleitor" seqName="seg_0"/>
+   <object objectType="Table" objectID="D12FAACB-C9C2-F427-B59F-1E0FFE8798CF" name="Voto" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="70F09ADE-B260-BC9A-FAFC-1C14D7B56C9C" name="FK_Candidato_Cidade" seqName="seg_0" containerID="11323FB6-EF7D-3FF2-CD00-B357A1E8402C" refContainerID="0255D56E-4A28-D757-8312-D43B60368835"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

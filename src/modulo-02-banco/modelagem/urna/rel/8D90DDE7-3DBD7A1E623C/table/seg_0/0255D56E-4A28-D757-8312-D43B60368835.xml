@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0255D56E-4A28-D757-8312-D43B60368835" name="Cidade">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>415BF998-0377-6C9F-478F-2EF4BABA8585</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCidade" id="62D90E48-00E7-7D7F-C039-3E13D8967923">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>0CC24803-BF92-7E6E-2CEF-341935264106</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nome" id="2DAE41CA-880C-1762-3433-3FA7A9DAC8C2">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>77A955FB-E7B9-C55F-338F-C122C78DCC0D</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UF" id="59E4087E-726A-DA38-E21B-B2555F533603">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>9E8071EC-290F-C91A-3BD0-733A34CA7B58</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DACA937C-9D44-3BA1-00F9-9155918A70CE" name="PK_Cidade">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:11:26 UTC</createdTime>
+<generatorID>D1151096-D527-5A49-FED5-87B884820152</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="62D90E48-00E7-7D7F-C039-3E13D8967923"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

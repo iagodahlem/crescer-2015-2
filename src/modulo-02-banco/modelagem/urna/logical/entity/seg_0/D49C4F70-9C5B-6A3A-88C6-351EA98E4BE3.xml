@@ -1,0 +1,169 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D49C4F70-9C5B-6A3A-88C6-351EA98E4BE3" name="Candidato">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 00:53:38 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDCandidato" id="52774B6E-3CE0-A908-B217-FD1510FF4042">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 00:54:12 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NomeCompleto" id="459F4A11-03D9-11C6-19C2-3570BE9A3FC7">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 00:54:37 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NomePopular" id="DDD97DDF-5903-5976-D9C8-CEACCAEAA25A">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 00:55:03 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DataNascimento" id="40B5939D-137E-6EDA-640D-EB7D7F374D1C">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 00:55:22 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="RegistroTER" id="9731C332-701B-06FD-8F2B-4C5267CCD05C">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 00:55:49 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Partido" id="C9FBB996-0372-E5B3-AE87-D4E67D3A9019">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 00:58:46 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Foto" id="65CF3214-FE1F-7BB8-2E89-E0C16B19E0A1">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 00:59:13 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Numero" id="83327F4A-7B4E-A7DA-C035-B6A3E69B2EE3">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 00:59:23 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Cargo" id="AEC4F490-016E-FAD2-629C-21C0E2ACAA74">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:00:02 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDCidade" id="5012993A-0A9E-5441-74A2-BDE37E81BA84">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:10:48 UTC</createdTime>
+<generatorID>C9AD26E4-737C-59C7-96DE-BBDBA89296B0</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<referedAttribute>0CC24803-BF92-7E6E-2CEF-341935264106</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6AC62122-2391-414D-2B82-869EA2882332" name="Candidato PK">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 00:54:36 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>52774B6E-3CE0-A908-B217-FD1510FF4042</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
