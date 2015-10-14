@@ -1,8 +1,17 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.relational.RelationalDesign>
    <object objectType="Table" objectID="11323FB6-EF7D-3FF2-CD00-B357A1E8402C" name="Candidato" seqName="seg_0"/>
+   <object objectType="Table" objectID="BE06A07A-F28D-39D8-F99D-4D38E0E52898" name="Cargo" seqName="seg_0"/>
    <object objectType="Table" objectID="0255D56E-4A28-D757-8312-D43B60368835" name="Cidade" seqName="seg_0"/>
    <object objectType="Table" objectID="61BE6EFA-F2D0-57A7-53F0-4ECC7D5B3DD9" name="Eleitor" seqName="seg_0"/>
-   <object objectType="Table" objectID="D12FAACB-C9C2-F427-B59F-1E0FFE8798CF" name="Voto" seqName="seg_0"/>
+   <object objectType="Table" objectID="E56E1EFB-A2F1-265D-A414-5E117078AC38" name="Partido" seqName="seg_0"/>
+   <object objectType="Table" objectID="705A5324-F037-73BB-646B-301CDBA46E9E" name="Urna" seqName="seg_0"/>
+   <object objectType="Table" objectID="5BC82297-9763-B3A9-A90D-A6EFE6DE8CC6" name="Voto" seqName="seg_0"/>
+   <object objectType="Table" objectID="D12FAACB-C9C2-F427-B59F-1E0FFE8798CF" name="Votov1" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="03F6BA3F-B1F5-4F7A-9D66-6AF63AB6461C" name="FK_Candidato_Cargo" seqName="seg_0" containerID="11323FB6-EF7D-3FF2-CD00-B357A1E8402C" refContainerID="BE06A07A-F28D-39D8-F99D-4D38E0E52898"/>
    <object objectType="FKIndexAssociation" objectID="70F09ADE-B260-BC9A-FAFC-1C14D7B56C9C" name="FK_Candidato_Cidade" seqName="seg_0" containerID="11323FB6-EF7D-3FF2-CD00-B357A1E8402C" refContainerID="0255D56E-4A28-D757-8312-D43B60368835"/>
+   <object objectType="FKIndexAssociation" objectID="D1B071C2-8A8D-726F-7FEE-B78E35F6E7B4" name="FK_Candidato_Eleitor" seqName="seg_0" containerID="11323FB6-EF7D-3FF2-CD00-B357A1E8402C" refContainerID="61BE6EFA-F2D0-57A7-53F0-4ECC7D5B3DD9"/>
+   <object objectType="FKIndexAssociation" objectID="9525184F-CA83-5F35-B058-1A5252D11824" name="FK_Candidato_Partido" seqName="seg_0" containerID="11323FB6-EF7D-3FF2-CD00-B357A1E8402C" refContainerID="E56E1EFB-A2F1-265D-A414-5E117078AC38"/>
+   <object objectType="FKIndexAssociation" objectID="C249B4CC-734A-309F-3F51-B745CD921DA9" name="FK_Urna_Eleitor" seqName="seg_0" containerID="705A5324-F037-73BB-646B-301CDBA46E9E" refContainerID="61BE6EFA-F2D0-57A7-53F0-4ECC7D5B3DD9"/>
+   <object objectType="FKIndexAssociation" objectID="416868CE-2101-DD56-E49B-06EE487F8A27" name="FK_Voto_Candidato" seqName="seg_0" containerID="5BC82297-9763-B3A9-A90D-A6EFE6DE8CC6" refContainerID="11323FB6-EF7D-3FF2-CD00-B357A1E8402C"/>
 </oracle.dbtools.crest.model.design.relational.RelationalDesign>

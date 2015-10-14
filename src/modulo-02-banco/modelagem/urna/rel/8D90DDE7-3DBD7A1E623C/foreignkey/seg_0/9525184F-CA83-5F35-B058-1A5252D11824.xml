@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9525184F-CA83-5F35-B058-1A5252D11824" containerWithKeyObject="11323FB6-EF7D-3FF2-CD00-B357A1E8402C" localFKIndex="D9F53E62-4031-B064-5D99-905EC5FBD934" name="FK_Candidato_Partido">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:47:26 UTC</createdTime>
+<generatorID>774A9DBE-2BC7-5503-2D8B-30C7168AB9C0</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E56E1EFB-A2F1-265D-A414-5E117078AC38</referredTableID>
+<keyObject>D7986F82-7EAD-4E24-3CA6-90374C05BB6B</keyObject>
+<referredKeyID>D7986F82-7EAD-4E24-3CA6-90374C05BB6B</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

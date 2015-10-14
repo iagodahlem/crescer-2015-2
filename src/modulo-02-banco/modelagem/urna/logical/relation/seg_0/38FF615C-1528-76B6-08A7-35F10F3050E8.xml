@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CargoCandidato" directorySegmentName="seg_0" id="38FF615C-1528-76B6-08A7-35F10F3050E8">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:38:03 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<sourcePk>78A4234C-15A6-BE84-6C04-DFE8FE749177</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>EED46163-9998-2AEF-27B5-4476607475C4</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D49C4F70-9C5B-6A3A-88C6-351EA98E4BE3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

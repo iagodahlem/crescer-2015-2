@@ -70,7 +70,21 @@
 <logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="RegistroTER" id="9731C332-701B-06FD-8F2B-4C5267CCD05C">
+<Attribute name="IDCidade" id="5012993A-0A9E-5441-74A2-BDE37E81BA84">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:10:48 UTC</createdTime>
+<generatorID>C9AD26E4-737C-59C7-96DE-BBDBA89296B0</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<referedAttribute>0CC24803-BF92-7E6E-2CEF-341935264106</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="RegistroTRE" id="9731C332-701B-06FD-8F2B-4C5267CCD05C">
 <createdBy>iagodahlem</createdBy>
 <createdTime>2015-10-08 00:55:49 UTC</createdTime>
 <generatorID>Gerado pelo usuário</generatorID>
@@ -80,21 +94,23 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Partido" id="C9FBB996-0372-E5B3-AE87-D4E67D3A9019">
+<Attribute name="IDPartido" id="D88EAE71-6D32-A3C9-7F99-506932ADE4D1">
 <createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 00:58:46 UTC</createdTime>
-<generatorID>Gerado pelo usuário</generatorID>
+<createdTime>2015-10-08 01:38:45 UTC</createdTime>
+<generatorID>774A9DBE-2BC7-5503-2D8B-30C7168AB9C0</generatorID>
 <ownerDesignName>urna</ownerDesignName>
 <engineerTo>
 <item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
 </engineerTo>
+<referedAttribute>8545BB6B-9177-26C5-81FD-DCAB24CC0141</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>200</dataTypeSize>
-<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Foto" id="65CF3214-FE1F-7BB8-2E89-E0C16B19E0A1">
 <createdBy>iagodahlem</createdBy>
@@ -106,7 +122,9 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Numero" id="83327F4A-7B4E-A7DA-C035-B6A3E69B2EE3">
 <createdBy>iagodahlem</createdBy>
@@ -122,29 +140,29 @@
 <dataTypeSize>10</dataTypeSize>
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Cargo" id="AEC4F490-016E-FAD2-629C-21C0E2ACAA74">
+<Attribute name="IDCargo" id="9B62FBE3-299B-01C9-FBFE-73EA86A5F784">
 <createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:00:02 UTC</createdTime>
-<generatorID>Gerado pelo usuário</generatorID>
+<createdTime>2015-10-08 01:38:03 UTC</createdTime>
+<generatorID>38FF615C-1528-76B6-08A7-35F10F3050E8</generatorID>
 <ownerDesignName>urna</ownerDesignName>
 <engineerTo>
 <item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
 </engineerTo>
+<referedAttribute>D70D226C-A692-90BA-F3BF-8CB0CB33A65F</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="IDCidade" id="5012993A-0A9E-5441-74A2-BDE37E81BA84">
+<Attribute name="IDEleitor" id="0F080910-E60B-1BD1-52CA-060639395AF6">
 <createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:10:48 UTC</createdTime>
-<generatorID>C9AD26E4-737C-59C7-96DE-BBDBA89296B0</generatorID>
+<createdTime>2015-10-08 17:40:39 UTC</createdTime>
+<generatorID>6D00974A-4C87-EF16-7C20-E715E5A402EE</generatorID>
 <ownerDesignName>urna</ownerDesignName>
 <engineerTo>
 <item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
 </engineerTo>
-<referedAttribute>0CC24803-BF92-7E6E-2CEF-341935264106</referedAttribute>
+<referedAttribute>42D294BA-6CE5-99C8-367C-33AF598DA6BE</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
@@ -157,8 +175,9 @@
 <createdTime>2015-10-08 00:54:36 UTC</createdTime>
 <generatorID>Gerado pelo usuário</generatorID>
 <ownerDesignName>urna</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

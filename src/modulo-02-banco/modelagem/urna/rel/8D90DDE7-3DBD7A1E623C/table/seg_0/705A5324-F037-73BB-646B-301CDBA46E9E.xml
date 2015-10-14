@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="705A5324-F037-73BB-646B-301CDBA46E9E" name="Urna">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 18:00:34 UTC</createdTime>
+<generatorID>B3D837A2-6387-D432-88C0-A825C5F246AD</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDUrna" id="ABA4A110-6AB8-16A0-81D8-28A0E7EC328E">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 18:00:34 UTC</createdTime>
+<generatorID>48FC97E1-E251-70A5-14E5-CA86F298698D</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDEleitor" id="BF388B28-9F0B-922E-2936-B3795E73DFD4">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 18:00:34 UTC</createdTime>
+<generatorID>2972E467-736D-6A83-6476-055089AEAF00</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C249B4CC-734A-309F-3F51-B745CD921DA9" referredColumn="E7F70759-BD1C-FD59-B23A-29BE53083359"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="79635355-BD7C-3D67-B9A7-58FE3A9313A1" name="PK_Urna">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 18:00:34 UTC</createdTime>
+<generatorID>EF863653-D841-BC5D-6A52-317A1E5510A1</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ABA4A110-6AB8-16A0-81D8-28A0E7EC328E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="406F4A80-3B8E-8A32-4945-3667E73E0AC7" name="FK_Urna_Eleitor">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 18:00:35 UTC</createdTime>
+<generatorID>1878EE5A-41FB-A6A6-0468-16FB6D5EE198</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BF388B28-9F0B-922E-2936-B3795E73DFD4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

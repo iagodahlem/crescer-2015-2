@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Historico" directorySegmentName="seg_0" id="1878EE5A-41FB-A6A6-0468-16FB6D5EE198">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 17:56:43 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<sourcePk>EA668385-0118-02CC-08BD-E461D9542C37</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>6A18714C-8D70-1FA3-11CC-3CCC46A0829D</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B3D837A2-6387-D432-88C0-A825C5F246AD</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="415BF998-0377-6C9F-478F-2EF4BABA8585" name="Cidade">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B3D837A2-6387-D432-88C0-A825C5F246AD" name="Urna">
 <createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:03:36 UTC</createdTime>
+<createdTime>2015-10-08 17:42:00 UTC</createdTime>
 <generatorID>Gerado pelo usuário</generatorID>
 <ownerDesignName>urna</ownerDesignName>
 <engineerTo>
@@ -16,9 +16,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="IDCidade" id="0CC24803-BF92-7E6E-2CEF-341935264106">
+<Attribute name="IDUrna" id="48FC97E1-E251-70A5-14E5-CA86F298698D">
 <createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:03:44 UTC</createdTime>
+<createdTime>2015-10-08 17:42:09 UTC</createdTime>
 <generatorID>Gerado pelo usuário</generatorID>
 <ownerDesignName>urna</ownerDesignName>
 <engineerTo>
@@ -29,48 +29,33 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Nome" id="77A955FB-E7B9-C55F-338F-C122C78DCC0D">
+<Attribute name="IDEleitor" id="2972E467-736D-6A83-6476-055089AEAF00">
 <createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:03:55 UTC</createdTime>
-<generatorID>Gerado pelo usuário</generatorID>
+<createdTime>2015-10-08 17:56:43 UTC</createdTime>
+<generatorID>1878EE5A-41FB-A6A6-0468-16FB6D5EE198</generatorID>
 <ownerDesignName>urna</ownerDesignName>
 <engineerTo>
 <item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
 </engineerTo>
+<referedAttribute>42D294BA-6CE5-99C8-367C-33AF598DA6BE</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>200</dataTypeSize>
-<ownDataTypeParameters>200,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="UF" id="9E8071EC-290F-C91A-3BD0-733A34CA7B58">
-<createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:04:09 UTC</createdTime>
-<generatorID>Gerado pelo usuário</generatorID>
-<ownerDesignName>urna</ownerDesignName>
-<engineerTo>
-<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>2</dataTypeSize>
-<ownDataTypeParameters>2,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="D1151096-D527-5A49-FED5-87B884820152" name="Cidade PK">
+<identifier id="EF863653-D841-BC5D-6A52-317A1E5510A1" name="Urna PK">
 <createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:03:53 UTC</createdTime>
+<createdTime>2015-10-08 17:42:19 UTC</createdTime>
 <generatorID>Gerado pelo usuário</generatorID>
 <ownerDesignName>urna</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="false"/>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>0CC24803-BF92-7E6E-2CEF-341935264106</attributeRef>
+<attributeRef>48FC97E1-E251-70A5-14E5-CA86F298698D</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

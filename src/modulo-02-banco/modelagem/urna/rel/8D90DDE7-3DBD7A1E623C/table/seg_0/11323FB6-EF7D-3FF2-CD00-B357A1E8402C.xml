@@ -69,26 +69,16 @@
 <colAssociation fkAssociation="70F09ADE-B260-BC9A-FAFC-1C14D7B56C9C" referredColumn="62D90E48-00E7-7D7F-C039-3E13D8967923"/>
 </associations>
 </Column>
-<Column name="RegistroTER" id="56BEC27C-9930-7368-AE8D-4212FCE973F7">
+<Column name="RegistroTRE" id="56BEC27C-9930-7368-AE8D-4212FCE973F7">
 <createdBy>iagodahlem</createdBy>
 <createdTime>2015-10-08 01:11:26 UTC</createdTime>
 <generatorID>9731C332-701B-06FD-8F2B-4C5267CCD05C</generatorID>
 <ownerDesignName>urna</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Partido" id="B515DA8D-C22E-F031-65ED-70F013DD5CC1">
-<createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:11:26 UTC</createdTime>
-<generatorID>C9FBB996-0372-E5B3-AE87-D4E67D3A9019</generatorID>
-<ownerDesignName>urna</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>200</dataTypeSize>
-<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="Foto" id="21557B88-9E4A-BAB5-415C-F76C87D4ECC3">
@@ -98,7 +88,9 @@
 <ownerDesignName>urna</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="Numero" id="C2BB84A5-EBE1-8207-ED35-DD528DF3BBEE">
@@ -113,17 +105,50 @@
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Cargo" id="7387A8DD-9A1E-3081-0EA0-6FDEC58E1C44">
+<Column name="IDCargo" id="3B691EAF-5B23-4302-6205-F7FD76F3F2E5">
 <createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:11:26 UTC</createdTime>
-<generatorID>AEC4F490-016E-FAD2-629C-21C0E2ACAA74</generatorID>
+<createdTime>2015-10-08 01:47:26 UTC</createdTime>
+<generatorID>9B62FBE3-299B-01C9-FBFE-73EA86A5F784</generatorID>
 <ownerDesignName>urna</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="03F6BA3F-B1F5-4F7A-9D66-6AF63AB6461C" referredColumn="1BF24562-03E1-A1AC-93FC-4D0C8A1E6B1C"/>
+</associations>
+</Column>
+<Column name="IDPartido" id="A03F35C2-10B9-D094-E096-FEEE0B16B999">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:47:26 UTC</createdTime>
+<generatorID>D88EAE71-6D32-A3C9-7F99-506932ADE4D1</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9525184F-CA83-5F35-B058-1A5252D11824" referredColumn="780EB579-FA04-9904-8F86-212FE2568110"/>
+</associations>
+</Column>
+<Column name="IDEleitor" id="56A0E88D-F3A8-4286-BB36-8E0840B914C6">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 18:00:34 UTC</createdTime>
+<generatorID>0F080910-E60B-1BD1-52CA-060639395AF6</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D1B071C2-8A8D-726F-7FEE-B78E35F6E7B4" referredColumn="E7F70759-BD1C-FD59-B23A-29BE53083359"/>
+</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -139,6 +164,18 @@
 <colUsage columnID="A881BEE0-2A40-1A90-0A43-1BB960001C68"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="96ADC069-CBAF-790A-7ED0-1CA15A3BB3CB" name="Candidato__IDX">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 18:00:35 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>6D00974A-4C87-EF16-7C20-E715E5A402EE</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="56A0E88D-F3A8-4286-BB36-8E0840B914C6"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="EA9817F3-5DA7-6DB6-96AF-4A74089A76D5" name="FK_Candidato_Cidade">
 <createdBy>iagodahlem</createdBy>
 <createdTime>2015-10-08 01:11:26 UTC</createdTime>
@@ -148,6 +185,39 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="6F15B609-EF68-F564-87A5-76B988A91678"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B1FFDB9F-30E5-D3C8-F538-9CBC34A888DD" name="FK_Candidato_Cargo">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:47:26 UTC</createdTime>
+<generatorID>38FF615C-1528-76B6-08A7-35F10F3050E8</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3B691EAF-5B23-4302-6205-F7FD76F3F2E5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D9F53E62-4031-B064-5D99-905EC5FBD934" name="FK_Candidato_Partido">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:47:26 UTC</createdTime>
+<generatorID>774A9DBE-2BC7-5503-2D8B-30C7168AB9C0</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A03F35C2-10B9-D094-E096-FEEE0B16B999"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E5822A0F-6D70-D3FC-15A8-FF10461B98E7" name="FK_Candidato_Eleitor">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 18:00:35 UTC</createdTime>
+<generatorID>6D00974A-4C87-EF16-7C20-E715E5A402EE</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="56A0E88D-F3A8-4286-BB36-8E0840B914C6"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

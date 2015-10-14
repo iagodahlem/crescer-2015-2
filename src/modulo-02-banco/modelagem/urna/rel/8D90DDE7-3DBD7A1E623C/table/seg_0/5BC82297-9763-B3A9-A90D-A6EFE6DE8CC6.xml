@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5BC82297-9763-B3A9-A90D-A6EFE6DE8CC6" name="Voto">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:50:31 UTC</createdTime>
+<generatorID>BB590AC8-71CC-42A7-40A4-388960ADBEFA</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDVoto" id="531E91F8-A596-2F4D-394E-3606D103B17A">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 18:00:35 UTC</createdTime>
+<generatorID>0D199024-6311-E4E5-2D66-F878626ABF9F</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDCandidato" id="BF339D7F-DE3F-FFF5-F812-A4EBFDAA4B89">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 18:00:35 UTC</createdTime>
+<generatorID>E7ED3227-8403-8E57-6E41-FECC2CD20933</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="416868CE-2101-DD56-E49B-06EE487F8A27" referredColumn="A881BEE0-2A40-1A90-0A43-1BB960001C68"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="375A806A-7EC6-EFF2-8D51-8D6D083154EA" name="PK_Votov2">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 18:00:35 UTC</createdTime>
+<generatorID>DD43E77B-6AD3-7580-3E35-AFC9D3A5B823</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="531E91F8-A596-2F4D-394E-3606D103B17A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E18F2328-0A30-9493-F83F-1C73C7A7A125" name="FK_Voto_Candidato">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 18:00:35 UTC</createdTime>
+<generatorID>4A85056C-EB64-4F5D-12A4-FA1871437F40</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BF339D7F-DE3F-FFF5-F812-A4EBFDAA4B89"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

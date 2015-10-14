@@ -1,7 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.logical.LogicalDesign>
    <object objectType="Entity" objectID="D49C4F70-9C5B-6A3A-88C6-351EA98E4BE3" name="Candidato" seqName="seg_0"/>
+   <object objectType="Entity" objectID="EED46163-9998-2AEF-27B5-4476607475C4" name="Cargo" seqName="seg_0"/>
    <object objectType="Entity" objectID="415BF998-0377-6C9F-478F-2EF4BABA8585" name="Cidade" seqName="seg_0"/>
    <object objectType="Entity" objectID="6A18714C-8D70-1FA3-11CC-3CCC46A0829D" name="Eleitor" seqName="seg_0"/>
+   <object objectType="Entity" objectID="66A81417-B071-53E1-AA30-AB53EFCAB2C9" name="Partido" seqName="seg_0"/>
+   <object objectType="Entity" objectID="B3D837A2-6387-D432-88C0-A825C5F246AD" name="Urna" seqName="seg_0"/>
+   <object objectType="Entity" objectID="BB590AC8-71CC-42A7-40A4-388960ADBEFA" name="Voto" seqName="seg_0"/>
+   <object objectType="Relation" objectID="4A85056C-EB64-4F5D-12A4-FA1871437F40" name="CandidatoVoto" seqName="seg_0"/>
+   <object objectType="Relation" objectID="38FF615C-1528-76B6-08A7-35F10F3050E8" name="CargoCandidato" seqName="seg_0"/>
    <object objectType="Relation" objectID="C9AD26E4-737C-59C7-96DE-BBDBA89296B0" name="CidadeCandidato" seqName="seg_0"/>
+   <object objectType="Relation" objectID="6D00974A-4C87-EF16-7C20-E715E5A402EE" name="EleitorCandidato" seqName="seg_0"/>
+   <object objectType="Relation" objectID="1878EE5A-41FB-A6A6-0468-16FB6D5EE198" name="Historico" seqName="seg_0"/>
+   <object objectType="Relation" objectID="774A9DBE-2BC7-5503-2D8B-30C7168AB9C0" name="PartidoCandidato" seqName="seg_0"/>
 </oracle.dbtools.crest.model.design.logical.LogicalDesign>

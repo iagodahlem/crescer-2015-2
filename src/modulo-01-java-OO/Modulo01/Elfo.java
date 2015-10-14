@@ -17,8 +17,8 @@ public class Elfo extends Personagem {
     public Elfo(String nome, int flechas) {
         this.nome = nome;
         this.flechas = flechas;
-        this. vida = 100;
-        this. experiencia = 0;
+        this.vida = 100;
+        this.experiencia = 0;
         this.status = Status.VIVO;
         this.inventario = new Inventario();
         this.contador ++;

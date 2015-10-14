@@ -112,6 +112,20 @@
 <dataTypeSize>30</dataTypeSize>
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="Voto" id="45A6F294-CF45-E5C0-B8EA-BF1D39B96AA7">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 17:37:23 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="EA668385-0118-02CC-08BD-E461D9542C37" name="Eleitor PK">
@@ -119,8 +133,9 @@
 <createdTime>2015-10-08 01:01:07 UTC</createdTime>
 <generatorID>Gerado pelo usuário</generatorID>
 <ownerDesignName>urna</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

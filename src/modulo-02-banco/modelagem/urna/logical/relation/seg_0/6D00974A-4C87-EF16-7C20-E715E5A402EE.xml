@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="EleitorCandidato" directorySegmentName="seg_0" id="6D00974A-4C87-EF16-7C20-E715E5A402EE">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 17:40:39 UTC</createdTime>
+<generatorID>Gerado pelo usuário</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<engineerTo>
+<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
+</engineerTo>
+<sourcePk>EA668385-0118-02CC-08BD-E461D9542C37</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>6A18714C-8D70-1FA3-11CC-3CCC46A0829D</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>D49C4F70-9C5B-6A3A-88C6-351EA98E4BE3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="415BF998-0377-6C9F-478F-2EF4BABA8585" name="Cidade">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EED46163-9998-2AEF-27B5-4476607475C4" name="Cargo">
 <createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:03:36 UTC</createdTime>
+<createdTime>2015-10-08 01:34:26 UTC</createdTime>
 <generatorID>Gerado pelo usuário</generatorID>
 <ownerDesignName>urna</ownerDesignName>
 <engineerTo>
@@ -16,9 +16,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="IDCidade" id="0CC24803-BF92-7E6E-2CEF-341935264106">
+<Attribute name="IDCargo" id="D70D226C-A692-90BA-F3BF-8CB0CB33A65F">
 <createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:03:44 UTC</createdTime>
+<createdTime>2015-10-08 01:34:36 UTC</createdTime>
 <generatorID>Gerado pelo usuário</generatorID>
 <ownerDesignName>urna</ownerDesignName>
 <engineerTo>
@@ -29,9 +29,9 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Nome" id="77A955FB-E7B9-C55F-338F-C122C78DCC0D">
+<Attribute name="Tipo" id="0AA07A63-5055-280E-631B-318DB2D362AC">
 <createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:03:55 UTC</createdTime>
+<createdTime>2015-10-08 01:34:50 UTC</createdTime>
 <generatorID>Gerado pelo usuário</generatorID>
 <ownerDesignName>urna</ownerDesignName>
 <engineerTo>
@@ -40,28 +40,14 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>200</dataTypeSize>
-<ownDataTypeParameters>200,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="UF" id="9E8071EC-290F-C91A-3BD0-733A34CA7B58">
-<createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:04:09 UTC</createdTime>
-<generatorID>Gerado pelo usuário</generatorID>
-<ownerDesignName>urna</ownerDesignName>
-<engineerTo>
-<item key="8D90DDE7-89EA-AC4B-41E1-3DBD7A1E623C" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>2</dataTypeSize>
-<ownDataTypeParameters>2,,</ownDataTypeParameters>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="D1151096-D527-5A49-FED5-87B884820152" name="Cidade PK">
+<identifier id="78A4234C-15A6-BE84-6C04-DFE8FE749177" name="Cargo PK">
 <createdBy>iagodahlem</createdBy>
-<createdTime>2015-10-08 01:03:53 UTC</createdTime>
+<createdTime>2015-10-08 01:34:48 UTC</createdTime>
 <generatorID>Gerado pelo usuário</generatorID>
 <ownerDesignName>urna</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
@@ -70,7 +56,7 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>0CC24803-BF92-7E6E-2CEF-341935264106</attributeRef>
+<attributeRef>D70D226C-A692-90BA-F3BF-8CB0CB33A65F</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

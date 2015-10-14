@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E56E1EFB-A2F1-265D-A414-5E117078AC38" name="Partido">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:47:26 UTC</createdTime>
+<generatorID>66A81417-B071-53E1-AA30-AB53EFCAB2C9</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDPartido" id="780EB579-FA04-9904-8F86-212FE2568110">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:47:26 UTC</createdTime>
+<generatorID>8545BB6B-9177-26C5-81FD-DCAB24CC0141</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NomePartido" id="25C3F299-6784-4288-32B3-E7573B55B9EA">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:47:26 UTC</createdTime>
+<generatorID>569C185D-C889-1412-D6FB-3DCB122B84A0</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D7986F82-7EAD-4E24-3CA6-90374C05BB6B" name="PK_Partido">
+<createdBy>iagodahlem</createdBy>
+<createdTime>2015-10-08 01:47:26 UTC</createdTime>
+<generatorID>B94059A0-0408-F1B7-9D21-D87C05D9D528</generatorID>
+<ownerDesignName>urna</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="780EB579-FA04-9904-8F86-212FE2568110"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
