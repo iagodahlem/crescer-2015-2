@@ -199,3 +199,6 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+# Arquivos do exercicio secreto 'PizzariaIluminati' proposto pelo Ben-Hur
+src/modulo-01-java-OO/PizzariaIluminati/*
