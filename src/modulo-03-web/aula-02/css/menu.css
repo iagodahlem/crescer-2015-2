@@ -1,0 +1,22 @@
+/* ==========================================
+	Menu
+========================================== */
+
+.header {
+	width: 100%;
+	padding: 20px 15px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+	background: #fff;
+	box-sizing: border-box;
+}
+
+.logo {
+	width: 137px;
+	height: 27px;
+	margin: 4px 0 0;
+	background: url("../img/logo.png") no-repeat;
+}
+
+.nav-link {
+	padding: 10px 0px 10px 30px;
+}

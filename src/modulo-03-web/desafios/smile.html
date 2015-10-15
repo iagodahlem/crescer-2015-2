@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Smile</title>
+		
+		<style>
+			body {
+				margin:0;
+				padding:0;
+				background: #f6f6f6;
+				font: normal 10px/1.1em sans-serif;
+				background: #f6f6f6;
+			}
+
+			.body {
+				width: 300px;
+				margin: 150px auto 0;
+				position: relative;
+			}
+
+			.smile {
+				width: 300px;
+				height: 300px;
+				border-radius: 50%;
+				background-color: #ffba00;
+			}
+
+			.eyes {
+				position: absolute;
+				top: 60px;
+				left: 42px;
+			}
+
+			.eye {
+				position: relative;
+				float:left;
+				height: 98px;
+				width: 98px;
+				background: #000;
+				border-radius: 50%;
+			}
+
+			.eye:first-child {
+				margin-right: 20px;
+			}
+
+			.eye-white {
+				display: block;
+				width: 88px;
+				height: 88px;
+				background: #fff;
+				position: absolute;
+				top: 12%;
+				left: 0;
+				right: 0;
+				margin: -7px auto 0;
+				border-radius: 50%;
+			}
+
+			.iris {
+				display: block;
+				width: 80px;
+				height: 80px;
+				background: #000;
+				position: absolute;
+				top: 13%;
+				left: 0;
+				right: 0;
+				margin: -7px auto 0;
+				border-radius: 50%;
+			}
+
+			.brightness {
+				display: block;
+				width: 20px;
+				height: 20px;
+				background: #fff;
+				position: absolute;
+				top: 20%;
+				left: -52px;
+				right: 0;
+				margin: -7px auto 0;
+				border-radius: 50%;
+			}
+
+			.mouth {
+				width: 250px;
+				height: 200px;
+				border-radius: 50%;
+				position: relative;
+				display: block;
+				top: 48px;
+				left: 25px;
+				border-bottom: 8px solid black;
+			}
+
+			.mouth:before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 80px;
+				left: -14px;
+				height: 20px;
+				width: 20px;
+				border-bottom: 3px solid #000;
+				border-radius: 50%;
+				-webkit-transform: rotate(-20deg);
+				-moz-transform: rotate(-20deg);
+				transform: rotate(-20deg);
+			}
+
+			.mouth:after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 80px;
+				left: 244px;
+				height: 20px;
+				width: 20px;
+				border-bottom: 3px solid #000;
+				border-radius: 50%;	
+				-webkit-transform: rotate(20deg);
+				-moz-transform: rotate(20deg);
+				transform: rotate(20deg);
+			}
+
+			.autor {
+				position: absolute;
+				bottom: 20px;
+				right: 20px;
+				color: #000;
+				font-size: 1.6em;
+				line-height: 1.2em;
+			}
+
+			.autor a {
+				color: #2b2b2b;
+				font-weight: bolder;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<!-- Corpo do documento -->
+			<div class="body">
+
+				<!-- Cabeça do Smile -->
+					<div class="smile">
+
+						<!-- Corpo dos olhos -->
+							<div class="eyes">
+
+								<!-- Olho 1 -->
+									<div class="eye">
+										<div class="eye-white">
+											<div class="iris">
+												<div class="brightness"></div>
+											</div>
+										</div>
+									</div>
+
+								<!-- Olho 2 -->
+									<div class="eye">
+										<div class="eye-white">
+											<div class="iris">
+												<div class="brightness"></div>
+											</div>
+										</div>
+									</div>
+							</div>
+
+						<!-- Boca -->
+							<div class="mouth">
+							</div>
+					</div>
+			</div>
+
+			<!-- Autor -->
+				<p class="autor">
+					Autor: <a href="http://iagodahlem.com">Iago Dahlem Lorensini</a>
+				</p>
+	</body>
+</html>
