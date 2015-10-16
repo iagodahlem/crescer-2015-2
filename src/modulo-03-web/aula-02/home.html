@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/menu.css" />
 		<link rel="stylesheet" href="css/banner.css" />
 		<link rel="stylesheet" href="css/section.css" />
+		<link rel="stylesheet" href="css/footer.css" />
 	</head>
 	<body>
 
@@ -16,6 +17,11 @@
 
 				<!-- LOGO -->
 					<h1 class="logo text-hidden pull-left">CWI Software</h1>
+
+					<input id="mobile-menu" type="checkbox" />
+					<label for="mobile-menu" class="mobile-menu block pull-right">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 124"><path d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z"/></svg>
+					</label>
 
 				<!-- MENU -->
 					<nav class="pull-right">
@@ -52,37 +58,70 @@
 		<!-- FIM BANNER -->
 
 		<!-- SECTION -->
-			<section class="section">
-	    		<div class="column1 pull-left">
-	    			<article>
-	    				<h2>Meu post!</h2>
-	    				<p>
-	    					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem dolorem, dolor facilis nisi doloribus omnis corporis! Maiores quae, recusandae suscipit qui possimus tempora. Possimus fugiat numquam, ut laudantium similique impedit iste itaque ullam quibusdam, quia perferendis adipisci cumque saepe! Iste impedit sit vel molestias perferendis quo magni maiores minus magnam.
-	    				</p>
-	    			</article>
-	    			<article>
-	    				<h2>Meu post 2!</h2>
-	    				<p>
-	    					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem dolorem, dolor facilis nisi doloribus omnis corporis! Maiores quae, recusandae suscipit qui possimus tempora. Possimus fugiat numquam, ut laudantium similique impedit iste itaque ullam quibusdam, quia perferendis adipisci cumque saepe! Iste impedit sit vel molestias perferendis quo magni maiores minus magnam.
-	    				</p>
-	    			</article>
-	    		</div>
-				<aside class="aside pull-right">
-					<article>
-						<h3>Outra postagem</h3>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi ullam cum aliquam amet esse sequi consectetur aut dolorum quaerat corrupti fugiat assumenda recusandae id inventore quos dolor distinctio, animi expedita nobis iusto qui, illo \dolorem eaque accusantium? Deleniti suscipit rerum dolore nam animi sunt rem doloremque, expedita totam placeat assumenda.
-						</p>
-					</article>
-					<article>
-						<h3>Outra postagem</h3>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi ullam cum aliquam amet esse sequi consectetur aut dolorum quaerat corrupti fugiat assumenda recusandae id inventore quos dolor distinctio, animi expedita nobis iusto qui, illo dolorem eaque accusantium? Deleniti suscipit rerum dolore nam animi sunt rem doloremque, expedita totam placeat assumenda.
-						</p>
-					</article>
-				</aside>
+			<section class="container">
+	    		<div class="row">
+		    		<div class="col col-l-8 col-m-6 col-s-12">
+		    			<article>
+		    				<h2>Meu post!</h2>
+		    				<p>
+		    					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem dolorem, dolor facilis nisi doloribus omnis corporis! Maiores quae, recusandae suscipit qui possimus tempora. Possimus fugiat numquam, ut laudantium similique impedit iste itaque ullam quibusdam, quia perferendis adipisci cumque saepe! Iste impedit sit vel molestias perferendis quo magni maiores minus magnam.
+		    					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem dolorem, dolor facilis nisi doloribus omnis corporis! Maiores quae, recusandae suscipit qui possimus tempora. Possimus fugiat numquam, ut laudantium similique impedit iste itaque ullam quibusdam, quia perferendis adipisci cumque saepe! Iste impedit sit vel molestias perferendis quo magni maiores minus magnam.
+		    				</p>
+		    			</article>
+		    			<article>
+		    				<h2>Meu post 2!</h2>
+		    				<p>
+		    					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem dolorem, dolor facilis nisi doloribus omnis corporis! Maiores quae, recusandae suscipit qui possimus tempora. Possimus fugiat numquam, ut laudantium similique impedit iste itaque ullam quibusdam, quia perferendis adipisci cumque saepe! Iste impedit sit vel molestias perferendis quo magni maiores minus magnam.
+		    					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem dolorem, dolor facilis nisi doloribus omnis corporis! Maiores quae, recusandae suscipit qui possimus tempora. Possimus fugiat numquam, ut laudantium similique impedit iste itaque ullam quibusdam, quia perferendis adipisci cumque saepe! Iste impedit sit vel molestias perferendis quo magni maiores minus magnam.
+		    				</p>
+		    			</article>
+		    		</div>
+					<aside class="col col-l-4 col-m-6 col-s-12">
+						<article>
+							<h3>Outra postagem</h3>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi ullam cum aliquam amet esse sequi consectetur aut dolorum quaerat corrupti fugiat assumenda recusandae id inventore quos dolor distinctio, animi expedita nobis iusto qui, illo \dolorem eaque accusantium? Deleniti suscipit rerum dolore nam animi sunt rem doloremque, expedita totam placeat assumenda.
+							</p>
+						</article>
+						<article>
+							<h3>Outra postagem</h3>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi ullam cum aliquam amet esse sequi consectetur aut dolorum quaerat corrupti fugiat assumenda recusandae id inventore quos dolor distinctio, animi expedita nobis iusto qui, illo dolorem eaque accusantium? Deleniti suscipit rerum dolore nam animi sunt rem doloremque, expedita totam placeat assumenda.
+							</p>
+						</article>
+					</aside>
+				</div>
     		</section>
 		<!-- FIM SECTION -->
+
+		<!-- FOOTER -->
+			<footer class="footer text-center">
+
+	    		<nav>
+					<ul class="reset-list">
+						<li class="inline-block">
+							<a class="nav-link inline-block" href="#">Home</a>
+						</li>
+						<li class="inline-block">
+							<a class="nav-link inline-block" href="#">Produtos</a>
+						</li>
+						<li class="inline-block">
+							<a class="nav-link inline-block" href="#">Serviços</a>
+						</li>
+						<li class="inline-block">
+							<a class="nav-link inline-block" href="#">Sobre</a>
+						</li>
+						<li class="inline-block">
+							<a class="nav-link inline-block" href="#">Contato</a>
+						</li>
+					</ul>
+				</nav>
+
+	    		<p class="copyright">
+	    			&copy; Copyright 2015 - Alguns direitos reservados.
+	    		</p>
+	    	</footer>
+	    <!-- FIM FOOTER -->
 
 	</body>
 </html>
