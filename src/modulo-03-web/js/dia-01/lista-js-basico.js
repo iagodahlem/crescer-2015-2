@@ -1,6 +1,6 @@
-/* ======================================= 
-	Exercicios de functions básico
-   ======================================= */
+/* ======================================= *
+ *	Exercicios de functions básico         *
+ * ======================================= */
 
 // 1
 function dailyGame(num) {
@@ -21,4 +21,16 @@ function maiorTexto(texto) {
     	}
   	}
   	return maior;
+}
+
+// 3
+function imprime(nomes, fn) {
+    for (i = 0; i < nomes.length; i++) {
+        var nome = nomes[i];
+        fn(nome);
+    }
+}
+
+function instrutor(instrutor) {
+    console.log('Olá querido instrutor: ', instrutor);
 }
