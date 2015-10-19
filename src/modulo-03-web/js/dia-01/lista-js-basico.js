@@ -15,7 +15,7 @@ function dailyGame(num) {
 // 2
 function maiorTexto(texto) {
  	var maior = texto[0];
-  	for (i = 1; i < texto.length; i++) {
+  	for (var i = 1; i < texto.length; i++) {
     	if (texto[i].length > maior.length) {
       		maior = texto[i];
     	}
@@ -29,7 +29,7 @@ function maiorTexto(texto) {
 function imprime(nomes, fn) {
     var valida = typeof fn;
     if (valida === 'function') {
-        for (i = 0; i < nomes.length; i++) {
+        for (var i = 0; i < nomes.length; i++) {
             var nome = nomes[i];
             fn(nome);
         }
@@ -49,7 +49,7 @@ function instrutor(instrutor) {
 // 4
 function fiboSum(n) {
     var sum = 1, pen = 0, ult = 1, atual = 0;
-    for (i = 1; i < n; i++) {
+    for (var i = 1; i < n; i++) {
         atual = pen + ult;
         pen = ult;
         ult = atual;
@@ -62,6 +62,9 @@ function fiboSum(n) {
 
 // 5
 function excelis(col) {
+    if (col.length !== 1) {
+        var valor = col.toUpperCase().charCodeAt() - 64;    
+    }
     var valor = col.toUpperCase().charCodeAt() - 64;
     return valor;
 }
