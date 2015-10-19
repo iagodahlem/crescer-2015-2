@@ -62,5 +62,6 @@ function fiboSum(n) {
 
 // 5
 function excelis(col) {
-
+    var valor = col.toUpperCase().charCodeAt() - 64;
+    return valor;
 }
