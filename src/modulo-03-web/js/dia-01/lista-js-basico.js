@@ -68,3 +68,14 @@ function excelis(col) {
     var valor = col.toUpperCase().charCodeAt() - 64;
     return valor;
 }
+
+// 6
+function queroCafe(mascada, preco) {
+    var precos = [];
+    for (var i = 0; i < preco.length; i++) {
+        if (preco[i] <= mascada) {
+            precos.push(preco[i]);
+        }
+    }
+    console.log(precos.sort().toString());
+}
