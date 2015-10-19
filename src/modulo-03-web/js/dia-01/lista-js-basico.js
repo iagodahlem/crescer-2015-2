@@ -71,11 +71,19 @@ function excelis(col) {
 
 // 6
 function queroCafe(mascada, preco) {
-    var precos = [];
-    for (var i = 0; i < preco.length; i++) {
-        if (preco[i] <= mascada) {
-            precos.push(preco[i]);
+    var mascadaType = typeof mascada;
+    var precoType = typeof preco;
+    
+    if (mascadaType === 'number' && precoType === 'object') {
+        var precos = [];
+        for (var i = 0; i < preco.length; i++) {
+            if (preco[i] <= mascada) {
+                precos.push(preco[i]);
+            }
         }
+        console.log(precos.sort().toString());
     }
-    console.log(precos.sort().toString());
+    else {
+        console.log('Valores passados não são validos.');
+    }
 }
