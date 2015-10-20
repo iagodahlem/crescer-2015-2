@@ -2,21 +2,37 @@
  *	Exemplos de funções JavaScript         *
  * ======================================= */
 
-// Função auto declaravel
+// DECLARAÇÃO DE FUNÇÕES E FUNÇÕES BÁSICAS
+
+// função atribuida a variavel
+var fn = function() {
+	return 'hello JS.'
+};
+
+// função auto declaravel
 (function(texto){
 	alert(texto);
 })('oi');
 
-throw new Error('');
+/*============================*/
 
+// EXEMPLOS DE FORS
+
+// for in
 var arr = ['a', 'b', 'c'];
 for (var prop in arr) {
 	console.log(arr[prop]);
 };
 
-// FOR EACH
+// for each
 exemplo.forEach() {
 	function(elem, i) {
 		console.log();
-	}
-}
+	};
+};
+
+/*============================*/
+
+throw new Error('');
+
+/*============================*/
