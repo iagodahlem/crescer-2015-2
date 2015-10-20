@@ -3,23 +3,24 @@
  * ======================================= */
 
 // 1
-function daisyGame(num) {
-  	if (num % 2 === 0 ) {
-    	console.log('Love me not');
-	}
+function daisyGame(petals) {
+  	if (isNumber(petals)) {
+        return 'Love me' + (petals % 2 === 0 ? ' not' : '');
+    }
     else {
-        console.log('Love me');
+        throw new Error('Parametro informado não é um numero.');
     }
 };
 
 /*============================*/
 
 // 2
-function maiorTexto(texto) {
- 	var maior = texto[0];
-  	for (var i = 1; i < texto.length; i++) {
-    	if (texto[i].length > maior.length) {
-      		maior = texto[i];
+function maiorTexto(textos) {
+ 	var maior = '';
+    var len = textos.length;
+  	for (var i = 0; i < len; i++) {
+    	if (textos[i].length > maior.length) {
+      		maior = textos[i];
     	}
   	}
   	return maior;
@@ -29,16 +30,14 @@ function maiorTexto(texto) {
 
 // 3
 function imprime(nomes, fn) {
-    var valida = typeof fn;
-    if (valida === 'function') {
+    if (isFunction(fn)) {
         for (var i = 0; i < nomes.length; i++) {
             var nome = nomes[i];
             fn(nome);
         }
     }
     else {
-        console.log('Jabulani: \n');
-        console.log('Type error: paramêtro passado não é uma função.');
+        return('Jabulani: \n', 'Type error: paramêtro passado não é uma função.');
     }
 };
 
@@ -68,21 +67,34 @@ function excelis(col) {
     return valor;
 };
 
+/*============================*/
+
 // 6
 function queroCafe(mascada, preco) {
     var mascadaType = typeof mascada;
     var precoType = typeof preco;
 
-    if (mascadaType === 'number' && precoType === 'object') {
+    if (isNumber && precoType === 'object') {
         var precos = [];
         for (var i = 0; i < preco.length; i++) {
             if (preco[i] <= mascada) {
                 precos.push(preco[i]);
             }
         }
-        console.log(precos.sort().toString());
+        return (precos.sort().toString());
     }
     else {
-        console.log('Valores passados não são validos.');
+        return ('Valores passados não são validos.');
     }
+};
+
+/*============================*/
+
+// funções para utilização nas demais funções
+function isNumber(n) {
+    return typeof n === 'number';
+};
+
+function isFunction(fn) {
+    return typeof fn === 'function';
 };
