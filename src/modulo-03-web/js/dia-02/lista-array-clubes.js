@@ -34,8 +34,10 @@ function somaPorContinentais(arr) {
 };
 
 // 2.C
-function somaPorMundiais(arr) {
-	return somaPorTitulo(2, arr);
+function somaPorTodosTitulos(arr) {
+	return somaPorTitulo(0, arr)
+		 + somaPorTitulo(1, arr)
+		 + somaPorTitulo(2, arr);
 };
 
 /*============================*/
@@ -43,59 +45,38 @@ function somaPorMundiais(arr) {
 // Exercicio 3 
 function apenasOsMelhores(arr) {
 	return arr
-		.filter(function(club) {
-				return club.titulos[0].qtd > 18;
-		});
+	.filter(function(club) {
+		return club.titulos[0].qtd > 18;
+	});
 };
 
 /*============================*/
 
-// Coleção para utilização dos exercicios
+// Exercicio 4
 
-var clubes = [
-	{
-		nome: 'Arsenal',
-		titulos: [
-			{ desc: 'Nacionais', qtd: 13 },
-			{ desc: 'Continentais', qtd: 0 },
-			{ desc: 'Mundiais', qtd: 0 }
-		]
-	}, 
-	{
-		nome: 'Manchester United',
-		titulos: [
-			{ desc: 'Nacionais', qtd: 20 },
-			{ desc: 'Continentais', qtd: 3 },
-			{ desc: 'Mundiais', qtd: 2 }
-		]
-	},
-	{
-		nome: 'Liverpool',
-		titulos: [
-			{ desc: 'Nacionais', qtd: 18 },
-			{ desc: 'Continentais', qtd: 5 },
-			{ desc: 'Mundiais', qtd: 0 }
-		]
-	},
-	{
-		nome: 'Chelsea Football Club',
-		titulos: [
-			{ desc: 'Nacionais', qtd: 5 },
-			{ desc: 'Continentais', qtd: 1 },
-			{ desc: 'Mundiais', qtd: 0 }
-		]
-	}
-];
+/* 
+	Exemplo de utilização de map() e reduce()
+ */
+
+function calcularIdadeMedia(arr) {
+	var soma = arr
+		.map(function(elem) {
+			return new Date().getFullYear() - elem.fundacao.getFullYear();
+		})
+		.reduce(function(acumulador, elem) {
+			return acumulador + elem;
+		}, 0);
+	return soma / arr.length;
+};
 
 /*============================*/
 
-// Funções extras para utilização nas demais funções
+// Funções auxiliares para utilização nas demais funções
 
 function ordenaPorTitulo(indTitulo, arr) {
-	return arr.sort(
-		function(a, b) {
-			return a.titulos[indTitulo].qtd < b.titulos[indTitulo].qtd;
-		});
+	return arr.sort(function(a, b) {
+		return a.titulos[indTitulo].qtd < b.titulos[indTitulo].qtd;
+	});
 };
 
 function somaPorTitulo(indTitulo, arr) {
@@ -105,3 +86,46 @@ function somaPorTitulo(indTitulo, arr) {
 	});
 	return sum;
 };
+
+/*============================*/
+
+// Coleção para utilização dos exercicios
+
+var clubes = [
+	{
+		nome: 'Arsenal',
+		fundacao: new Date(1886, 0, 1),
+		titulos: [
+			{ desc: 'Nacionais', qtd: 13 },
+			{ desc: 'Continentais', qtd: 0 },
+			{ desc: 'Mundiais', qtd: 0 }
+		]
+	}, 
+	{
+		nome: 'Manchester United',
+		fundacao: new Date(1878, 0, 1),
+		titulos: [
+			{ desc: 'Nacionais', qtd: 20 },
+			{ desc: 'Continentais', qtd: 3 },
+			{ desc: 'Mundiais', qtd: 2 }
+		]
+	},
+	{
+		nome: 'Liverpool',
+		fundacao: new Date(1892, 2, 15),
+		titulos: [
+			{ desc: 'Nacionais', qtd: 18 },
+			{ desc: 'Continentais', qtd: 5 },
+			{ desc: 'Mundiais', qtd: 0 }
+		]
+	},
+	{
+		nome: 'Chelsea Football Club',
+		fundacao: new Date(1905, 2, 10),
+		titulos: [
+			{ desc: 'Nacionais', qtd: 5 },
+			{ desc: 'Continentais', qtd: 1 },
+			{ desc: 'Mundiais', qtd: 0 }
+		]
+	}
+];
