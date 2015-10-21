@@ -5,18 +5,18 @@
 // Exercicio 1
 
 // 1.A
-function ordenaPorNacionais(arr) {
-  	return ordenaPorTitulo(0, arr);
+function ordenaPorNacionais(clubes) {
+  	return ordenaPorTitulo(0, clubes);
 };
 
 // 1.B
-function ordenaPorContinentais(arr) {
-	return ordenaPorTitulo(1, arr);
+function ordenaPorContinentais(clubes) {
+	return ordenaPorTitulo(1, clubes);
 };
 
 // 1.C
-function ordenaPorMundiais(arr) {
-	return ordenaPorTitulo(2, arr);
+function ordenaPorMundiais(clubes) {
+	return ordenaPorTitulo(2, clubes);
 };
 
 /*============================*/
@@ -24,48 +24,47 @@ function ordenaPorMundiais(arr) {
 // Exercicio 2
 
 // 2.A
-function somaPorNacionais(arr) {
-	return somaPorTitulo(0, arr);
+function somaPorNacionais(clubes) {
+	return somaPorTitulo(0, clubes);
 };
 
 // 2.B
-function somaPorContinentais(arr) {
-	return somaPorTitulo(1, arr);
+function somaPorContinentais(clubes) {
+	return somaPorTitulo(1, clubes);
 };
 
 // 2.C
-function somaPorTodosTitulos(arr) {
-	return somaPorTitulo(0, arr)
-		 + somaPorTitulo(1, arr)
-		 + somaPorTitulo(2, arr);
+function somaPorTodosTitulos(clubes) {
+	return somaPorNacionais(clubes)
+		+ somaPorContinentais(clubes)
+		+ somaPorTitulo(2, clubes);
 };
 
 /*============================*/
 
 // Exercicio 3 
-function apenasOsMelhores(arr) {
-	return arr
-	.filter(function(club) {
-		return club.titulos[0].qtd > 18;
+function apenasOsMelhores(clubes) {
+	return clubes.filter(function(elem) {
+		return elem.titulos[0].qtd > 18;
 	});
 };
 
 /*============================*/
 
 // Exercicio 4
+// Exemplo de utilização de map() e reduce()
 
-/* 
-	Exemplo de utilização de map() e reduce()
- */
-
-function calcularIdadeMedia(arr) {
-	var soma = arr
+function calcularIdadeMedia(clubes) {
+	var soma = clubes
 		.map(function(elem) {
+			// Projeta a idade de cada Clube
 			return new Date().getFullYear() - elem.fundacao.getFullYear();
 		})
 		.reduce(function(acumulador, elem) {
+			// Reduz a todas as idades somadas
 			return acumulador + elem;
 		}, 0);
+	// Retorna a média das idades
 	return soma / arr.length;
 };
 
@@ -73,18 +72,16 @@ function calcularIdadeMedia(arr) {
 
 // Funções auxiliares para utilização nas demais funções
 
-function ordenaPorTitulo(indTitulo, arr) {
-	return arr.sort(function(a, b) {
-		return a.titulos[indTitulo].qtd < b.titulos[indTitulo].qtd;
+function ordenaPorTitulo(indiceTitulo, clubes) {
+	return clubes.sort(function(a, b) {
+		return a.titulos[indiceTitulo].qtd < b.titulos[indTitulo].qtd;
 	});
 };
 
-function somaPorTitulo(indTitulo, arr) {
-	var sum = 0;
-	arr.forEach(function(value) {
-		sum += value.titulos[indTitulo].qtd;
-	});
-	return sum;
+function somaPorTitulo(indiceTitulo, clubes) {
+	return clubes.reduce(function(acumulador, elem) {
+		return acumulador + elem.titulos[indiceTitulo].qtd;
+	}, 0);
 };
 
 /*============================*/
