@@ -16,11 +16,9 @@ function daisyGame(petals) {
 
 // 2
 function maiorTexto(textos) {
- 	var maior = '';
-    var len = textos.length;
-  	for (var i = 0; i < len; i++) {
-    	if (textos[i].length > maior.length) {
-      		maior = textos[i];
+  	for (var i = 0, maiorTexto = '', len = textos.length; i < len; i++) {
+    	if (textos[i].length > maiorTexto.length) {
+      		maiorTexto = textos[i];
     	}
   	}
   	return maior;
@@ -31,10 +29,7 @@ function maiorTexto(textos) {
 // 3
 function imprime(nomes, fn) {
     if (isFunction(fn)) {
-        for (var i = 0; i < nomes.length; i++) {
-            var nome = nomes[i];
-            fn(nome);
-        }
+        nomes.forEach(fn);
     }
     else {
         return('Jabulani: \n', 'Type error: paramêtro passado não é uma função.');
@@ -48,7 +43,17 @@ function instrutor(instrutor) {
 /*============================*/
 
 // 4
+// Implementação recursiva
+function fibonacci(n) {
+    if (n === 1) return 1;
+    if (n === 2) return 1;
+
+    return fibonacci(n - 1) + fibonacci(n - 2);
+};
+
 function fiboSum(n) {
+    return fibonacci(n+2)-1;
+    /* Implementação sem recursão
     var sum = 1, pen = 0, ult = 1, atual = 0;
     for (var i = 1; i < n; i++) {
         atual = pen + ult;
@@ -57,14 +62,18 @@ function fiboSum(n) {
         sum += atual;
     }
     return sum;
+    */
 };
 
 /*============================*/
 
 // 5
 function excelis(col) {
-    var valor = col.toUpperCase().charCodeAt() - 64;
-    return valor;
+    referencia = referencia.toUpperCase();
+    for (var i = 0, soma = 0, len = referencia.length; i < len; i++) {
+        soma = soma * 26 + (referencia.charCodeAt(i) - 64);
+    }
+    return soma;
 };
 
 /*============================*/
