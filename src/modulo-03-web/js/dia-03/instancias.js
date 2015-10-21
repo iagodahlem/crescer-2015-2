@@ -1,6 +1,6 @@
-/* ======================================= *
- *	Instâncias das classes 				   *
- * ======================================= */
+/* ================================================= *
+ *	Instâncias das classes Item e CarrinhoDeCompras  *
+ * ================================================= */
 
 // instância carrinho
 var carrinho = new CarrinhoDeCompras();
