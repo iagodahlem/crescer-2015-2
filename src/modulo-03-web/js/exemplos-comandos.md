@@ -1,18 +1,38 @@
-/* ======================================= *
- *	Exemplos de funções JavaScript         *
- * ======================================= */
+# Exemplos de comandos JavaScript
 
-// DECLARAÇÃO DE FUNÇÕES E FUNÇÕES BÁSICAS
+## Funções
 
-// função atribuida a variavel
+### Criação e chamada
+
+* Função atribuida a variavel
+```
 var fn = function() {
 	return 'hello JS.'
 };
+```
 
-// função auto declaravel
+* Função auto declaravel
+```
 (function(texto){
 	alert(texto);
 })('oi');
+```
+
+### Outras formas de chamar funções
+
+* .call
+```
+function soma(num1, num2) { return num1 + num2 };
+
+soma.call(null, 1, 2);
+soma.call(undefined, 1, 2);
+soma.call(this, 1, 2);
+```
+
+* .apply
+```
+soma.apply(this, [1,2]);
+```
 
 /*============================*/
 
@@ -113,17 +133,7 @@ setInterval()
 
 /*============================*/
 
-// Outras formas de chamar funções
 
-// CALL
-function soma(num1, num2) { return num1 + num2 };
-
-soma.call(null, 1, 2);
-soma.call(undefined, 1, 2);
-soma.call(this, 1, 2);
-
-// APPLY
-soma.apply(this, [1,2]);
 
 /*============================*/
 
