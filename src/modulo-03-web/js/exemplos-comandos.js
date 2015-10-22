@@ -104,3 +104,31 @@ ARRAY.map(function(clube) {
 		nome: clube.nome += ' FC', clube;
 	}
 });
+
+/*============================*/
+
+setTimeOut()
+
+setInterval()
+
+/*============================*/
+
+// Outras formas de chamar funções
+
+// CALL
+function soma(num1, num2) { return num1 + num2 };
+
+soma.call(null, 1, 2);
+soma.call(undefined, 1, 2);
+soma.call(this, 1, 2);
+
+// APPLY
+soma.apply(this, [1,2]);
+
+/*============================*/
+
+// API DOM
+
+document
+document.all
+document.all.innerHTML = '';

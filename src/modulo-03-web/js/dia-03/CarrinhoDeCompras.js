@@ -35,27 +35,6 @@ CarrinhoDeCompras.prototype.sortearDesconto = function() {
 	return Math.random() < 0.4; 
 }
 
-// Under Pressure
-CarrinhoDeCompras.prototype.forcarCompra = function() {
-	if (!this.intervalo) {
-		// var self = this;
-		// self.itens
-		this.intervalo = setInterval(function(){
-			this.itens.forEach(function(elem) {
-				elem.valorUnitario += elem.valorUnitario * 0.1;
-				console.log('Valor:', elem.valorUnitario);
-			})
-		}.bind(this), 5000);
-	}
-};
-
-// Conclui pedido 
-CarrinhoDeCompras.prototype.concluirPedido = function() {
-	clearInterval(this.intervalo);
-	// limpa propriedade intervalo
-	delete this.intervalo;
-};
-
 // Retorna indice do Item contido em Itens através de seu sku
 CarrinhoDeCompras.prototype.getIndexOfItem = function(sku) {
 	return this.itens.map(function(elem) {
