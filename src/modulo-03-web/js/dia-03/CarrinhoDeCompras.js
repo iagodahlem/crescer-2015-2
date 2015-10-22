@@ -2,8 +2,8 @@
  *	Definição da classe CarrinhoDeCompras  *
  * ======================================= */
 
-function CarrinhoDeCompras() {
-	this.itens = [];
+function CarrinhoDeCompras(itens) {
+	this.itens = itens || [];
 };
 
 // Método para adicionar Itens ao Carrinho

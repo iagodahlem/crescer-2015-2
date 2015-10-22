@@ -2,11 +2,12 @@
  *	Definição da classe Item			   *
  * ======================================= */
 
-function Item(sku, descricao, quantidade, valorUnitario) {
-	this.sku = sku;
-	this.descricao = descricao;
-	this.quantidade = quantidade;
-	this.valorUnitario = valorUnitario;
+function Item(options) {
+	options = options || {};
+	this.sku = options.sku;
+	this.descricao = options.descricao;
+	this.quantidade = options.quantidade || 0;
+	this.valorUnitario = options.valorUnitario;
 };
 
 // Retorna o sub-total de Item
