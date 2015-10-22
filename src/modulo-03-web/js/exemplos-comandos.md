@@ -31,34 +31,53 @@ soma.call(this, 1, 2);
 
 * .apply
 ```
+function soma(num1, num2) { return num1 + num2 };
+
 soma.apply(this, [1,2]);
 ```
+## Fors
 
-/*============================*/
+* for
+```
+for (var i = 0, len = array.length; i < len; i++) {
+	// comandos...
+};
+```
 
-// EXEMPLOS DE FORS
+* for in
 
-// for in
+```
 var arr = ['a', 'b', 'c'];
 for (var prop in arr) {
 	console.log(arr[prop]);
 };
+```
 
-// for each
+* for each
+```
 exemplo.forEach() {
 	function(elem, i) {
-		console.log();
+		console.log(elem);
 	};
 };
+```
 
-/*============================*/
+## Error
 
+```
 throw new Error('');
+```
 
-/*============================*/
+## Array
 
-// Funções para Array
+```
+var arr = [];
+var arr = ['1', '2', '3'];
+```
 
+### Funções de Array
+
+```
 arr.reverse();
 
 var arr1 = ['one', 'two'];
@@ -74,7 +93,9 @@ arr2.pop();
 arr2.push();
 
 arr2.splice(parametro1, parametro2);
-parametro1 = a partir da onde; parametro2 = até aonde;
+// parametro1 = a partir da onde 
+// parametro2 = até aonde;
+```
 
 /*============================*/
 
