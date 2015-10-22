@@ -5,14 +5,14 @@
 ### Criação e chamada
 
 * Função atribuida a variavel
-```
+```javascript
 var fn = function() {
 	return 'hello JS.'
 };
 ```
 
 * Função auto declaravel
-```
+```javascript
 (function(texto){
 	alert(texto);
 })('oi');
@@ -21,7 +21,7 @@ var fn = function() {
 ### Outras formas de chamar funções
 
 * .call
-```
+```javascript
 function soma(num1, num2) { return num1 + num2 };
 
 soma.call(null, 1, 2);
@@ -70,7 +70,7 @@ throw new Error('');
 
 ## Array
 
-```
+```javascript
 var arr = [];
 var arr = ['1', '2', '3'];
 ```
