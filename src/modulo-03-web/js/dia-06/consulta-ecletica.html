@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Consulta Ecletica</title>
+
+	<style>
+		body {
+			font-family: sans-serif;
+			margin: 0;
+		}
+
+		.menu {
+			width: 100%;
+			height: 88px;
+			margin: 0;
+			background: #fff;
+			color: #000;
+			border-bottom: solid 1px #000;
+		}
+
+		.menu h1 {
+			margin: 0 0 15px 0;
+			display: inline-block;
+			position: relative;
+			top: 10px;
+			left: 2%;
+		}
+
+		.pesquisa {
+			width: 100%;
+			text-align: center;
+		}
+
+		.pesquisa input {
+			width: 77%;
+		}
+
+		.pesquisa button {
+			width: 18%;
+		}
+	</style>
+</head>
+<body>
+	<div class="menu">
+		<h1>Consulta Eclética</h1>
+
+		<div class="pesquisa">
+			<input id="busca" type="text" placeholder="Faça sua busca">
+			<button id="btnPesquisar">Pesquisar</button>
+		</div>
+	</div>
+
+	<section class="section">
+		<ul id="images"></ul>
+	</section>
+
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script>
+		function pesquisar() {
+			var resultado = $('#busca').val().replace(' ', '+');
+			var urlPesquisa = 'https://api.spotify.com/v1/search?q=' + resultado + '&type=artist';
+
+			$.get(urlPesquisa).done(function(data) {
+				consultarAlbuns(data.artists.items[0].id);
+			});
+		};
+
+		function consultarAlbuns(idArtista) {
+			var urlAlbuns = 'https://api.spotify.com/v1/artists/' + idArtista + '/albums?limit=50';
+			var $images = $('#images');
+			$.get(urlAlbuns)
+			.done(function(data) {
+				var images = data.items;
+				images.forEach(function(elem) {
+					$images.append(
+						$('<img>')
+						.attr('src', elem.images[1].url)
+						.attr('alt', elem.name)
+					)
+				});
+			});
+			$images.empty();
+		};
+
+		$('#btnPesquisar').click(function() {
+			pesquisar();
+		});
+	</script>
+</body>
+</html>

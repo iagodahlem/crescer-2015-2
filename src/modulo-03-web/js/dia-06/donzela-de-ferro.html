@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Donzela de Ferro</title>
+</head>
+<body>
+	<h1>Donzela de Ferro</h1>
+
+	<section>
+		<ul>
+			<li id="images"></li>
+		</ul>
+	</section>
+
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script>
+		$(function() {
+			var urlIronMaiden = 'https://api.spotify.com/v1/artists/6mdiAmATAx73kdxrNrnlao/albums?limit=50';
+			var $images = $('#images');
+			$.get(urlIronMaiden)
+			.done(function(data) {
+				var images = data.items;
+				images.forEach(function(elem) {
+					$images.append(
+						$('<img>')
+						.attr('src', elem.images[1].url)
+						.attr('alt', elem.name)
+					)
+				});
+			});
+	    });
+	</script>
+</body>
+</html>
