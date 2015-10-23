@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>AJAX</title>
+	</head>
+	<body>
+		<h1>Hello AJAX</h1>
+
+		<button id="btnConsultar">Consultar</button>
+    	<button id="btnInserir">Inserir</button>
+
+
+	    <section>
+	    	<ul id="pessoas"></ul>
+	    </section>
+
+    	<!-- SCRIPTS -->
+			<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+			
+
+			<script>
+			/*
+				$(function() {
+					console.log('Carregou DOM jQuery');
+				});
+			*/
+			</script>
+			<script type="text/javascript">
+			/*
+				$(function() {
+					$.get('https://api.spotify.com/v1/search?query=megadeth&offset=0&limit=20&type=artist')
+					.done(function(data) {
+						var images = data.artists.items[0].images;
+						images.forEach(function(elem) {
+							$('h2').append(
+								$('<img>')
+								.attr('src', elem.url)
+								.attr('alt', 'Megadéti')
+								)
+						});
+					});
+				});
+			*/
+		    </script>
+		    <script>
+		    /*
+		    	$(function() {
+		    		$.get('http:localhost:3000/pessoas')
+		    		.done(function(data) {
+		    			var nome = data;
+		    			data.forEach(function(elem) {
+		    				$('body').append(
+		    					$('<p>')
+		    						.html(elem.nome)
+		    					)
+		    			});
+		    		});
+		    	});
+		    */
+		    </script>
+
+			<script>
+				$(function() {
+
+			        var urlPessoas = 'http://localhost:3000/pessoas';
+
+			        function consultarSpotify() {
+			          	$.get('https://api.spotify.com/v1/search?query=megadeth&offset=0&limit=20&type=artist')
+			          	.done(function(data) {
+			            	var images = data.artists.items[0].images;
+			            	images.forEach(function(elem) {
+			              		$('h2').append(
+			                	$('<img>')
+			                  		.attr('src', elem.url)
+			                		.attr('alt', 'Megadéti')
+			              		)
+			            	});
+			          	});
+			        };
+
+			        function consultarPessoas() {
+			        	var $pessoas = $('#pessoas');
+			          	$pessoas.html('');
+			          	$.get(urlPessoas).done(function(pessoas) {
+			            	pessoas.forEach(function(pessoa) {
+			              		$pessoas.append(
+			                		$('<li>').html(pessoa.nome)
+			              		);
+			            	});
+			          	});
+			        }
+
+			        $('#btnConsultar').click(consultarSpotify);
+			        $('#btnInserir').click(function() {
+			          	$.post(urlPessoas, 
+			            	{ nome: 'Novo aluno', idade: 666 }
+			          	);
+			          	consultarPessoas();
+			        });
+		        
+		      	});
+			</script>
+
+		<!-- Fim SCRIPTS -->
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery</title>
+	</head>
+	<body>
+		<h1>Hello jQuery!</h1>
+
+		<input name="nome" type="text" placeholder="Digite seu nome">
+		<input name="idade" type="text" placeholder="Sua idade">
+
+		<ul>
+			<li>
+				<small id="novos">Novos conceitos</small>	
+			</li>
+			<li>
+				<small id="red">Projeto Crescer</small>		
+			</li>
+		</ul>
+
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		
+		<script>
+			window.onload = function() {
+				console.log('Carregou onload');
+			};
+
+			/*
+			document.addEventListener('DOMContentLoad', function() {
+				console.log('Carregou DOM nativo');
+			});
+			*/
+			$(function() {
+				console.log('Carregou DOM jQuery');
+			});
+		</script>
+	</body>
+</html>

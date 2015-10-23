@@ -1,0 +1,52 @@
+{
+  "pessoas": [
+    {
+      "nome": "Bernardo",
+      "idade": 27,
+      "celulares": [
+        {
+          "modelo": "iPhone"
+        }
+      ]
+    },
+    {
+      "nome": "Ben Hur",
+      "idade": 27,
+      "celulares": [
+        {
+          "modelo": "iPhone"
+        }
+      ]
+    },
+    {
+      "nome": "Novo aluno",
+      "idade": 666,
+      "id": "8ac7d493-190b-46b2-8121-156d7a00e99c"
+    },
+    {
+      "nome": "Novo aluno",
+      "idade": 666,
+      "id": "0b897a58-c8a5-4a00-a184-f69d27c3c9f3"
+    },
+    {
+      "nome": "Novo aluno",
+      "idade": 666,
+      "id": "a22938a2-6efd-478d-9a69-83aaebb6122d"
+    },
+    {
+      "nome": "Novo aluno",
+      "idade": 666,
+      "id": "f5719db2-772c-4c12-8cb5-d8174135a8ae"
+    },
+    {
+      "nome": "Novo aluno",
+      "idade": 666,
+      "id": "ee4def04-a8f4-4082-92cd-704430be4730"
+    },
+    {
+      "nome": "Novo aluno",
+      "idade": 666,
+      "id": "5e753c80-bdca-4903-a095-c179aea49ec9"
+    }
+  ]
+}
