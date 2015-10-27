@@ -58,11 +58,11 @@
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script>
 		function pesquisar() {
-			var resultado = $('#busca').val().replace(' ', '+');
+			var resultado = $('#busca').val().replace(' ', '+').toLowerCase();
 			var urlPesquisa = 'https://api.spotify.com/v1/search?q=' + resultado + '&type=artist';
-
 			$.get(urlPesquisa).done(function(data) {
-				consultarAlbuns(data.artists.items[0].id);
+				var id = data.artists.items[0].id;
+				consultarAlbuns(id);
 			});
 		};
 
