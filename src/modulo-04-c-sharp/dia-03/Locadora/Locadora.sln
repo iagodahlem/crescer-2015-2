@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locadora.UI", "Locadora.UI\Locadora.UI.csproj", "{0F2071AD-C0BA-492A-B428-4DBAC8967329}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locadora.Dominio", "Locadora.Dominio\Locadora.Dominio.csproj", "{2AF0A243-DC34-4D61-B244-841366C3128E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocadoraTestes", "LocadoraTestes\LocadoraTestes.csproj", "{54591EAD-5FDB-4E87-BA1A-9F8116BCC742}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F2071AD-C0BA-492A-B428-4DBAC8967329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F2071AD-C0BA-492A-B428-4DBAC8967329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F2071AD-C0BA-492A-B428-4DBAC8967329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F2071AD-C0BA-492A-B428-4DBAC8967329}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AF0A243-DC34-4D61-B244-841366C3128E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AF0A243-DC34-4D61-B244-841366C3128E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AF0A243-DC34-4D61-B244-841366C3128E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AF0A243-DC34-4D61-B244-841366C3128E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54591EAD-5FDB-4E87-BA1A-9F8116BCC742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54591EAD-5FDB-4E87-BA1A-9F8116BCC742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54591EAD-5FDB-4E87-BA1A-9F8116BCC742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54591EAD-5FDB-4E87-BA1A-9F8116BCC742}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
