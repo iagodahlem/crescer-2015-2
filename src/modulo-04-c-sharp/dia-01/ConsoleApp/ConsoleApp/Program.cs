@@ -11,8 +11,8 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             var agenda = new Agenda();
-            var operacao = "";
-            var valida = true;
+            string operacao;
+            bool valida = true;
 
             while (true)
             {
@@ -47,6 +47,7 @@ namespace ConsoleApp
                 Console.WriteLine("(digite Q para sair)");
                 Console.WriteLine("L - Listar Contatos | O - Listar Contatos Ordenados | A - Adicionar Contato");
                 Console.WriteLine("R - Remover Contato pelo Nome | N - Remover Contato pelo Numero");
+
                 operacao = Console.ReadLine();
 
                 valida = operacao != null || operacao == "l" || operacao == "o" || operacao == "a" || operacao == "r" || operacao == "n" || operacao == "q" ? true : false;
