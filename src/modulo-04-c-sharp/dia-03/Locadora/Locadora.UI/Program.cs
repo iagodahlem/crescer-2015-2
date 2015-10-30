@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace Locadora.UI
 {
@@ -12,15 +11,64 @@ namespace Locadora.UI
     {
         static void Main(string[] args)
         {
-            BaseDeDados basee = new BaseDeDados();
-            //basee.CadastrarJogo("nome do jogo", 30, Categoria.AVENTURA);
+            // Constantes para operações
+            const string cadastrar = "c";
+            const string pesquisar = "p";
+            const string editar = "e";
+            const string exportar = "x";
+            const string sair = "q";
+            string operacao;
 
-            foreach (XElement jogo in basee.XmlJogos.Elements("jogo"))
+            while (true)
             {
-                Console.WriteLine(jogo);
-            }
+                Console.Clear();
 
-            Console.Read();
+                // Menu
+                var menu = new Menu();
+
+                // Operações
+                Console.WriteLine("Digite a letra correspondente com a operação que deseja realizar: {0}C - Cadastrar novo jogo {0}P - Pesquisar jogo pelo nome", Environment.NewLine);
+                operacao = Console.ReadLine();
+                var operacoes = new Operacao();
+
+                switch (operacao)
+                {
+                    case cadastrar:
+                        {
+                            operacoes.Cadastrar();
+                            break;
+                        }
+
+                    case pesquisar:
+                        {
+                            operacoes.Pesquisar();
+                            break;
+                        }
+
+                    case editar:
+                        {
+                            break;
+                        }
+
+                    case exportar:
+                        {
+                            break;
+                        }
+
+                    case sair:
+                        {
+                            goto sair;
+                        }
+
+                    default:
+                        {
+                            Console.WriteLine(Mensagens.OPERACAO_INVALIDA);
+                            break;
+                        }
+                    sair:
+                    break;
+                }
+            }
         }
     }
 }

@@ -13,5 +13,13 @@ namespace Locadora.Dominio
         public string Nome { get; private set; }
         public double Preco { get; private set; }
         public Categoria Categoria { get; private set; }
+
+        public Jogo(int id, string nome, double preco, Categoria categoria)
+        {
+            Id = id;
+            Nome = nome;
+            Preco = preco;
+            Categoria = categoria;
+        }
     }
 }

@@ -8,10 +8,10 @@ namespace Locadora.Dominio
 {
     public enum Categoria
     {
-        RPG,
-        CORRIDA,
-        AVENTURA,
-        LUTA,
-        ESPORTE
+        RPG = 0,
+        CORRIDA = 1,
+        AVENTURA = 2,
+        LUTA = 3,
+        ESPORTE = 4
     }
 }

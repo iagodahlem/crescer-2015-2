@@ -20,9 +20,9 @@ Tasks
 
 			2. jogo - done
 				1. métodos
-				2. pesquisar jogos por nome
-				3. editar jogo
-				4. gerar relatório txt
+					1. pesquisar jogos por nome - serialização
+					2. editar jogo
+					3. gerar relatório txt
 
 			3. cliente
 
