@@ -20,6 +20,17 @@ namespace DbFuncionarios
             //    Console.WriteLine();
             //}
 
+            var baseDeDados = new BaseDeDados();
+            var listaOrdenada = baseDeDados.OrdenadosPorCategoria();
+            var buscaRapida = baseDeDados.BuscaRapida();
+
+            var buscaPorNome = baseDeDados.BuscarPorNome("lucas");
+
+            foreach (var funcionario in buscaRapida)
+            {
+                Console.WriteLine(funcionario);
+            }
+
             Console.Read();
         }
 

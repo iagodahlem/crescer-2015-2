@@ -11,11 +11,14 @@ namespace DbFuncionariosTestes
         [TestMethod]
         public void BaseDeDadosOrdenaFuncionariosPorCategoria()
         {
+            // arrange
             var baseDeDados = new BaseDeDados();
 
-            baseDeDados.OrdenadosPorCategoria();
+            // act
+            var listaObtida = baseDeDados.OrdenadosPorCategoria();
 
-            Assert;
+            // assert
+            //Assert.AreEqual();
         }
     }
 }
