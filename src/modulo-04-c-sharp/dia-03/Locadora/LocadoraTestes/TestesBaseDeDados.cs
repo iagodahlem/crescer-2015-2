@@ -70,11 +70,11 @@ namespace LocadoraTestes
         }
 
         [TestMethod]
-        public void PesquisaJogoERetornaJogoCorreto()
+        public void PesquisaJogoERetornaNomeCorreto()
         {
             // arrange
             var baseDeDados = new BaseDeDados();
-            var jogoEsperado = new Jogo("Top Gear", 20, Categoria.CORRIDA);
+            var jogoEsperado = new Jogo(1 ,"Top Gear", 20, Categoria.CORRIDA);
             string nomeEsperado = jogoEsperado.Nome;
             double precoEsperado = jogoEsperado.Preco;
 
@@ -84,6 +84,22 @@ namespace LocadoraTestes
 
             // assert
             Assert.AreEqual(nomeEsperado, nomeObtido);
+        }
+
+        [TestMethod]
+        public void PesquisaJogoERetornaPrecoCorreto()
+        {
+            // arrange
+            var baseDeDados = new BaseDeDados();
+            var jogoEsperado = new Jogo(1, "Top Gear", 20, Categoria.CORRIDA);
+            double precoEsperado = jogoEsperado.Preco;
+
+            // act
+            var jogoObtido = baseDeDados.PesquisaJogoPorNome("Top Gear");
+            double precoObtido = jogoObtido[0].Preco;
+
+            // assert
+            Assert.AreEqual(precoEsperado, precoObtido);
         }
     }
 }

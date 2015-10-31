@@ -10,7 +10,10 @@ namespace Locadora.UI
     {
         // Menu
         public const string TITULO = "LOCADORA DE JOGOS";
-        
+        public const string MENSAGEM_OPERACOES = "Digite a letra correspondente com a operação que deseja realizar: ";
+        public const string TIPOS_OPERACAO = "C - CADASTRAR NOVO JOGO | P - PESQUISAR JOGO PELO NOME";
+        public const string VOLTAR_MENU = "Pressione qualquer tecla para voltar ao menu inicial...";
+
         // Erros
         public const string OPERACAO_INVALIDA = "Operação solicitada inválida. Por favor, tente novamente digitando uma operação existente.";
 

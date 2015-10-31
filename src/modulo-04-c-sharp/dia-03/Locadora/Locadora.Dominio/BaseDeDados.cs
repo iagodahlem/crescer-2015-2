@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +10,36 @@ namespace Locadora.Dominio
 {
     public class BaseDeDados
     {
-        public const string ENDERECO_BASE = @"C:\Users\iagodahlem\Desktop\arquivos\game_store.xml";
-        public XElement XmlJogos { get; set; }
+        private const string ENDERECO_BASE = @"C:\Users\iagodahlem\Desktop\arquivos\game_store.xml";
+        private const string ENDERECO_RELATORIO = @"C:\Users\iagodahlem\Desktop\arquivos\relatorio.txt";
+        private XElement XmlJogos { get; set; }
+        private List<Jogo> ListaJogos { get; set; }
+        private int Id { get; set; }
+        private string NomeJogo { get; set; }
+        private double Preco { get; set; }
+        private string Categoria { get; set; }
 
         // Construtor
         public BaseDeDados()
         {
             XmlJogos = XElement.Load(ENDERECO_BASE);
+            ListaJogos = new List<Jogo>();
+            CarregaListaJogos();
+        }
+
+        // foreach que percorre a base Xml, cria instancias de Jogo
+        private List<Jogo> CarregaListaJogos()
+        {
+            foreach (XElement jogo in XmlJogos.Elements("jogo"))
+            {
+                Id = (int)jogo.Attribute("id");
+                NomeJogo = (string)jogo.Element("nome");
+                Preco = (double)jogo.Element("preco");
+                Categoria = (string)jogo.Element("categoria");
+
+                ListaJogos.Add(new Jogo(Id, NomeJogo, Preco, (Categoria)Enum.Parse(typeof(Categoria), Categoria)));
+            }
+            return ListaJogos;
         }
 
         // Método para retornar a quantidade de Jogos na Base xml
@@ -67,29 +91,23 @@ namespace Locadora.Dominio
         // Método para pesquisar um jogo pelo nome
         public List<Jogo> PesquisaJogoPorNome(string nome)
         {
-            // Variaveis para utilização
-            var listaJogos = new List<Jogo>();
-            int id;
-            string nomeJogo;
-            double preco;
-            string categoria;
-
-            // foreach que percorre a base Xml, cria instancias de Jogo, adicionando-as a uma lista, sendo filtrada posteriormente
-            foreach (XElement jogo in XmlJogos.Elements("jogo"))
-            {
-                id = (int)jogo.Attribute("id");
-                nomeJogo = (string)jogo.Element("nome");
-                preco = (double)jogo.Element("preco");
-                categoria = (string)jogo.Element("categoria");
-
-                listaJogos.Add(new Jogo(id, nomeJogo, preco, (Categoria)Enum.Parse(typeof(Categoria), categoria)));
-            }
-            return listaJogos.Where(nomeDoJogo => nomeDoJogo.Nome.Contains(nome)).ToList();
+            var listaFiltrada = ListaJogos.Where(nomeDoJogo => nomeDoJogo.Nome.Contains(nome)).ToList();
+            return listaFiltrada;
         }
 
-        public void EditarJogo(string nome, double preco, Categoria categoria)
+        public void EditarJogo(int id, string nome, string categoria)
         {
+            // Retorna jogo pesquisado pelo Id
+            //var jogoASerEditado = XmlJogos.Elements("jogo").Where(idJogo => idJogo.Attribute("id").Equals(id));
+            //jogoASerEditado.Element("nome").Value = nome;
+            //jogo.Element("Categoria").Value = nome;
+        }
 
+        public void ExportarRelatorio()
+        {
+            //string relatorio;
+
+            //File.AppendAllText(ENDERECO_RELATORIO, relatorio);
         }
     }
 }
