@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Locadora.Dominio;
 
 namespace LocadoraTestes
@@ -8,7 +7,7 @@ namespace LocadoraTestes
     public class TestesBaseDeDados
     {
         [TestMethod]
-        public void BaseDeDadosRecebeNovoJogoEQuantidadeEh21()
+        public void BaseDeDadosRecebeNovoJogoEQuantidadeÉ21()
         {
             // arrange
             BaseDeDados baseDeDados = new BaseDeDados();
@@ -39,7 +38,7 @@ namespace LocadoraTestes
         }
 
         [TestMethod]
-        public void NovoJogoCadastradoERecebeOIdSeguinteAoElementoAnterior()
+        public void UmJogoCadastradoERecebeOIdSeguinteAoElementoAnterior()
         {
             // arrange
             var baseDeDados = new BaseDeDados();
@@ -47,7 +46,7 @@ namespace LocadoraTestes
 
             // act
             baseDeDados.CadastrarJogoTeste("GTA V", 100, Categoria.AVENTURA);
-            int idObtido = baseDeDados.GetIdJogo();
+            int idObtido = baseDeDados.GetIdUltimoJogo();
 
             // assert
             Assert.AreEqual(idEsperado, idObtido);
@@ -63,7 +62,7 @@ namespace LocadoraTestes
             // act
             baseDeDados.CadastrarJogoTeste("GTA V", 100, Categoria.AVENTURA);
             baseDeDados.CadastrarJogoTeste("GTA X", 100, Categoria.AVENTURA);
-            int idObtido = baseDeDados.GetIdJogo();
+            int idObtido = baseDeDados.GetIdUltimoJogo();
 
             // assert
             Assert.AreEqual(idEsperado, idObtido);
@@ -76,7 +75,7 @@ namespace LocadoraTestes
             var baseDeDados = new BaseDeDados();
             var jogoEsperado = new Jogo(1 ,"Top Gear", 20, Categoria.CORRIDA);
             string nomeEsperado = jogoEsperado.Nome;
-            double precoEsperado = jogoEsperado.Preco;
+            decimal precoEsperado = jogoEsperado.Preco;
 
             // act
             var jogoObtido = baseDeDados.PesquisaJogoPorNome("Top Gear");
@@ -92,14 +91,29 @@ namespace LocadoraTestes
             // arrange
             var baseDeDados = new BaseDeDados();
             var jogoEsperado = new Jogo(1, "Top Gear", 20, Categoria.CORRIDA);
-            double precoEsperado = jogoEsperado.Preco;
+            decimal precoEsperado = jogoEsperado.Preco;
 
             // act
             var jogoObtido = baseDeDados.PesquisaJogoPorNome("Top Gear");
-            double precoObtido = jogoObtido[0].Preco;
+            decimal precoObtido = jogoObtido[0].Preco;
 
             // assert
             Assert.AreEqual(precoEsperado, precoObtido);
+        }
+
+        [TestMethod]
+        public void EditarJogo()
+        {
+            // arrange
+            var baseDeDados = new BaseDeDados();
+            var jogoEsperado = new Jogo(1, "Chrono Trigger Editado", 60, Categoria.RPG);
+
+            // act
+            baseDeDados.EditarJogo(1, "Chrono Trigger Editado", 60, "RPG");
+            var jogoEditado = baseDeDados.PesquisaJogoPorId(1);
+
+            // assert
+            Assert.AreEqual(jogoEsperado.Nome, jogoEditado[0].Nome);
         }
     }
 }

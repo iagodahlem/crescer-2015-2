@@ -22,7 +22,7 @@ namespace Locadora.UI
 
         // Variaveis para utilização nos métodos
         string nome;
-        double preco;
+        decimal preco;
         Categoria categoria;
 
         // Método para selecionar Operação a ser executada

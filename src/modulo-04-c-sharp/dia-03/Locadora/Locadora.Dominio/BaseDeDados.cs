@@ -11,103 +11,119 @@ namespace Locadora.Dominio
     public class BaseDeDados
     {
         private const string ENDERECO_BASE = @"C:\Users\iagodahlem\Desktop\arquivos\game_store.xml";
-        private const string ENDERECO_RELATORIO = @"C:\Users\iagodahlem\Desktop\arquivos\relatorio.txt";
+        private const string ENDERECO_BASE_TESTE = @"C:\Users\iagodahlem\Desktop\arquivos\game_store_teste.xml";
         private XElement XmlJogos { get; set; }
-        private List<Jogo> ListaJogos { get; set; }
-        private int Id { get; set; }
-        private string NomeJogo { get; set; }
-        private double Preco { get; set; }
-        private string Categoria { get; set; }
+        public Jogo Jogo { get; set; }
+        private List<Jogo> ListaJogos { get; set; } = new List<Jogo>();
 
-        // Construtor
         public BaseDeDados()
         {
-            XmlJogos = XElement.Load(ENDERECO_BASE);
-            ListaJogos = new List<Jogo>();
+            CarregaBase(ENDERECO_BASE);
             CarregaListaJogos();
+            //ListaJogos = new List<Jogo>();
         }
 
-        // foreach que percorre a base Xml, cria instancias de Jogo
-        private List<Jogo> CarregaListaJogos()
+        public void CadastrarJogo(string nome, decimal preco, Categoria categoria)
         {
-            foreach (XElement jogo in XmlJogos.Elements("jogo"))
-            {
-                Id = (int)jogo.Attribute("id");
-                NomeJogo = (string)jogo.Element("nome");
-                Preco = (double)jogo.Element("preco");
-                Categoria = (string)jogo.Element("categoria");
+            int id = GetIdUltimoJogo() + 1;
 
-                ListaJogos.Add(new Jogo(Id, NomeJogo, Preco, (Categoria)Enum.Parse(typeof(Categoria), Categoria)));
-            }
-            return ListaJogos;
+            var novoJogo = new Jogo(id, nome, preco, categoria);
+
+            var jogoXElement = ConverterJogoParaXElement(novoJogo);
+
+            XmlJogos.Add(jogoXElement);
+
+            SalvaArquivo(ENDERECO_BASE);
         }
 
-        // Método para retornar a quantidade de Jogos na Base xml
+        public void CadastrarJogoTeste(string nome, decimal preco, Categoria categoria)
+        {
+            int id = GetIdUltimoJogo() + 1;
+
+            var novoJogo = new Jogo(id, nome, preco, categoria);
+
+            var jogoXElement = ConverterJogoParaXElement(novoJogo);
+
+            XmlJogos.Add(jogoXElement);
+        }
+
+        public List<Jogo> PesquisaJogoPorNome(string nome)
+        {
+            var listaFiltrada = ListaJogos.Where(nomeDoJogo => nomeDoJogo.Nome.Contains(nome)).ToList();
+
+            return listaFiltrada;
+        }
+
+        public List<Jogo> PesquisaJogoPorId(int idPesquisa)
+        {
+            var jogo = ListaJogos.Where(id => id.Id == idPesquisa).ToList();
+            return jogo;
+        }
+
+        public void EditarJogo(int id, string nome, decimal preco, string categoria)
+        {
+            var jogoASerEditado = PesquisaJogoPorId(id);
+            var jogoXElement = ConverterJogoParaXElement(jogoASerEditado[0]);
+
+            jogoXElement.Element("nome").SetValue(nome);
+            jogoXElement.Element("preco").SetValue(preco);
+            jogoXElement.Element("categoria").SetValue(categoria);
+
+            SalvaArquivo(ENDERECO_BASE_TESTE);
+        }
+
+        public void ExportarRelatorio()
+        {
+            
+        }
+
         public int GetQuantidadeDeJogos()
         {
             return XmlJogos.Elements("jogo").Count();
         }
 
-        // Método para retornar o Id do ultimo jogo
-        public int GetIdJogo()
+        public int GetIdUltimoJogo()
         {
-            int id;
-            var ids = new List<int>();
+            CarregaListaJogos();
+            int idUltimoJogo = ListaJogos.Last().Id;
 
+            return idUltimoJogo;
+        }
+
+        private void CarregaBase(string enderecoBase)
+        {
+            XmlJogos = XElement.Load(enderecoBase);
+        }
+
+        private void SalvaArquivo(string enderecoArquivo)
+        {
+            XmlJogos.Save(enderecoArquivo);
+        }
+
+        private List<Jogo> CarregaListaJogos()
+        {
             foreach (XElement jogo in XmlJogos.Elements("jogo"))
             {
-                id = (int)jogo.FirstAttribute;
-                ids.Add(id);
+                int id = (int)jogo.Attribute("id");
+                string nomeJogo = (string)jogo.Element("nome");
+                decimal preco = (decimal)jogo.Element("preco");
+                string categoria = (string)jogo.Element("categoria");
+
+                ListaJogos.Add(new Jogo(id, nomeJogo, preco, (Categoria)Enum.Parse(typeof(Categoria), categoria)));
             }
-            id = ids.Last();
 
-            return id;
+            return ListaJogos;
         }
 
-        // Método para Cadastrar novo Jogo conformes os parametros no arquivo xml
-        public void CadastrarJogo(string nome, double preco, Categoria categoria)
+        private XElement ConverterJogoParaXElement(Jogo jogo)
         {
-            // Variavel que retorna o ultimo id existente no arquivo xml
-            int id = XmlJogos.Elements("jogo").Count() + 1;
+            var xElementJogo = new XElement("jogo",
+                new XAttribute("id", jogo.Id),
+                new XElement("nome", jogo.Nome),
+                new XElement("preco", jogo.Preco),
+                new XElement("categoria", jogo.Categoria));
 
-            // Monta novo jogo a ser adicionado
-            var novoJogo = new XElement("jogo", new XAttribute("id", id), new XElement("nome", nome), new XElement("preco", preco), new XElement("categoria", categoria));
-
-            // Adiciona novo jogo ao arquivo
-            XmlJogos.Add(novoJogo);
-
-            // Salva arquivo
-            XmlJogos.Save(ENDERECO_BASE);
-        }
-
-        // Método identico ao anterior porem não salva o arquivo, utilizada apenas para testes
-        public void CadastrarJogoTeste(string nome, double preco, Categoria categoria)
-        {
-            int id = XmlJogos.Elements("jogo").Count() + 1;
-            var novoJogo = new XElement("jogo", new XAttribute("id", id), new XElement("nome", nome), new XElement("preco", preco), new XElement("categoria", categoria));
-            XmlJogos.Add(novoJogo);
-        }
-
-        // Método para pesquisar um jogo pelo nome
-        public List<Jogo> PesquisaJogoPorNome(string nome)
-        {
-            var listaFiltrada = ListaJogos.Where(nomeDoJogo => nomeDoJogo.Nome.Contains(nome)).ToList();
-            return listaFiltrada;
-        }
-
-        public void EditarJogo(int id, string nome, string categoria)
-        {
-            // Retorna jogo pesquisado pelo Id
-            //var jogoASerEditado = XmlJogos.Elements("jogo").Where(idJogo => idJogo.Attribute("id").Equals(id));
-            //jogoASerEditado.Element("nome").Value = nome;
-            //jogo.Element("Categoria").Value = nome;
-        }
-
-        public void ExportarRelatorio()
-        {
-            //string relatorio;
-
-            //File.AppendAllText(ENDERECO_RELATORIO, relatorio);
+            return xElementJogo;
         }
     }
 }
