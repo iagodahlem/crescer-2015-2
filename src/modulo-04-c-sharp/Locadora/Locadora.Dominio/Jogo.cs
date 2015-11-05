@@ -38,6 +38,8 @@ namespace Locadora.Dominio
             builder.AppendLine("Nome: " + this.Nome);
             builder.AppendLine("Preço: " + this.Preco.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
             builder.AppendLine("Categoria: " + this.Categoria);
+            builder.AppendLine("Descricão: " + this.Descricao);
+            builder.AppendLine("Selo: " + this.Selo);
 
             return builder.ToString();
         }
