@@ -24,6 +24,10 @@ namespace Locadora.Repositorio.ADO
                 sql.Append(" Preco = @paramPreco, ");
                 sql.Append(" IdCategoria = @paramIdCategoria, ");
                 sql.Append(" IdClienteLocacao = @paramIdClienteLocacao ");
+                sql.Append(" Descricao = @paramDescricao ");
+                sql.Append(" IdSelo = @paramIdSelo ");
+                sql.Append(" Imagem = @paramImagem");
+                sql.Append(" Video = @paramVideo ");
                 sql.Append(" WHERE Id = @paramId ");
 
                 IDbCommand comando = conexao.CreateCommand();
@@ -32,6 +36,10 @@ namespace Locadora.Repositorio.ADO
                 comando.AddParam("paramPreco", entidade.Preco);
                 comando.AddParam("paramIdCategoria", (int)entidade.Categoria);
                 comando.AddParam("paramIdClienteLocacao", entidade.IdClienteLocacao);
+                comando.AddParam("paramDescricao", entidade.Descricao);
+                comando.AddParam("paramIdSelo", (int)entidade.Selo);
+                comando.AddParam("paramImagem", entidade.Imagem);
+                comando.AddParam("paramVideo", entidade.Video);
                 comando.AddParam("paramId", entidade.Id);
 
                 conexao.Open();
