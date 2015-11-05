@@ -1,0 +1,28 @@
+﻿@model RelatorioModel
+@{
+    ViewBag.Title = "Relatorio de Jogos";
+}
+
+<h2>Relatorio de Jogos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+        </tr>
+    <thead>
+    <tbody>
+        @foreach (var jogo in @Model.ListaJogos)
+        {
+            <tr>
+                <td>@jogo.Id</td>
+                <td>@jogo.Nome</td>
+                <td>@jogo.Categoria</td>
+                <td>@jogo.Preco.ToString("c")</td>
+            </tr>
+        }
+    </tbody>
+</table>
