@@ -151,6 +151,10 @@ namespace Locadora.Repositorio.ADO
             jogo.Nome = reader["Nome"].ToString();
             jogo.Preco = Convert.ToDecimal(reader["Preco"]);
             jogo.Categoria = (Categoria)Convert.ToInt32(reader["IdCategoria"]);
+            jogo.Descricao = reader["Descricao"].ToString();
+            jogo.Selo= (Selo)Convert.ToInt32(reader["IdSelo"]);
+            jogo.Imagem = reader["Imagem"].ToString();
+            jogo.Video = reader["Video"].ToString();
 
             return jogo;
         }
