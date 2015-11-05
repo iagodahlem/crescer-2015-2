@@ -58,7 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SQL\01 - CriarBase.sql" />
-    <Content Include="SQL\02 - PopularJogos.sql" />
+    <Content Include="SQL\03 - PopularJogos.sql" />
+    <Content Include="SQL\02 - AlterTables.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
