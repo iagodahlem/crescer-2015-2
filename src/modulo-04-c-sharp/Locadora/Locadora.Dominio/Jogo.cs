@@ -59,6 +59,8 @@ namespace Locadora.Dominio
                     && this.Nome == jogoComp.Nome
                     && this.Preco == jogoComp.Preco
                     && this.Categoria == jogoComp.Categoria
+                    && this.Descricao == jogoComp.Descricao
+                    && this.Selo == jogoComp.Selo
                     && this.IdClienteLocacao == jogoComp.IdClienteLocacao;
             }
 
