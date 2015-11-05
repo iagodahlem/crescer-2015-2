@@ -1,0 +1,63 @@
+﻿.background {
+    width: 100%;
+    background-image: url('Images/background-1.jpg'), url('https://static.pexels.com/photos/498/playing-sony-console-controller.jpg');
+    background-position: center;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+.banner {
+    width: 100%;
+    height: 380px;
+    margin: auto;
+    padding-top: 20px;
+    font-size: 24px;
+}
+
+.banner-text {
+    margin: 100px 0;
+}
+
+.text-shadow {
+    text-shadow: 0 0 8px #000;
+}
+
+.title {
+    font-size: 80px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.btn-position {
+    position: relative;
+    left: 45%;
+}
+
+.footer {
+    margin: 20px 0;
+    text-shadow: 0 0 12px #555;
+}
+
+.heart {
+    font-size: 16px;
+    color: red;
+    margin: 5px;
+    -webkit-transform: scale(.8);
+    transform: scale(.8);
+    animation: heart-beat 2s infinite;
+}
+
+@keyframes heart-beat {
+    0% {
+        -webkit-transform: scale(.8);
+        transform: scale(.5);
+    }
+    50% {
+        -webkit-transform: scale(.5);
+        transform: scale(.5);
+    }
+    100% {
+        -webkit-transform: scale(.8);
+        transform: scale(.8);
+    }
+}
