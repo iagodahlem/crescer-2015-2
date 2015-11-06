@@ -11,9 +11,14 @@
             <th>Nome</th>
             <th>Categoria</th>
             <th>Preço</th>
-            <th>Selo</th>
+            <th colspan="2">Selo</th>
         </tr>
     <thead>
+    <tfoot>
+        <tr>
+            <td colspan="5">Quantidade de Jogos: @Model.QuantidadeTotal</td>
+        </tr>
+    </tfoot>
     <tbody>
         @foreach (var jogo in @Model.ListaJogos)
         {
@@ -22,13 +27,8 @@
                 <td>@jogo.Categoria</td>
                 <td>@jogo.Preco.ToString("c")</td>
                 <td>@jogo.Selo</td>
-                <td>@Html.ActionLink("Detalhes do jogo", "JogoDetalhes", new { id = jogo.Id })</td>
+                <td align="right">@Html.ActionLink("Detalhes", "JogoDetalhes", new { id = jogo.Id })</td>
             </tr>
         }
     </tbody>
-    <tfoot>
-        <tr>
-            <td>Quantidade de Jogos: @Model.QuantidadeTotal</td>
-        </tr>
-    </tfoot>
 </table>
