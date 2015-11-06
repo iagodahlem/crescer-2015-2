@@ -10,7 +10,7 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top header-shadow">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -21,11 +21,9 @@
                 @Html.ActionLink("Locadora CWI Crescer", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-
                 <form class="navbar-form pull-right" action="@Url.Action("JogosDisponiveis", "Relatorio")" method="get">
                     <input class="form-control" type="search" name="nome" placeholder="Pesquisar jogo" />
                 </form>
-
                 <ul class="nav navbar-nav pull-right">
                     <li>@Html.ActionLink("Listar Jogos", "JogosDisponiveis", "Relatorio")</li>
                 </ul>
@@ -36,13 +34,12 @@
     <div class="background">
         <div class="container body-content">
             @RenderBody()
-            <footer class="footer text-center">
-                <div class="fb-like"></div>
-                <p class="footer-shadow">
-                    Feito com <span class="heart">♥</span> por <a href="https://github.com/iagodahlem" target="_blank">Iago Dahlem Lorensini</a>
-                </p>
-            </footer>
         </div>
+        <footer class="footer text-center">
+            <p>
+                Feito com <span class="heart">♥</span> por <a href="https://github.com/iagodahlem" target="_blank">Iago Dahlem Lorensini</a>
+            </p>
+        </footer>
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>

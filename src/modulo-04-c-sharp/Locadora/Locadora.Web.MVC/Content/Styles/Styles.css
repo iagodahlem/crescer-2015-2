@@ -6,16 +6,8 @@
     background-attachment: fixed;
 }
 
-.add-on .input-group-btn > .btn {
-  border-left-width:0;left:-2px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-}
-
-.add-on .form-control:focus {
- box-shadow:none;
- -webkit-box-shadow:none; 
- border-color:#cccccc; 
+.header-shadow {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 /*=========================*/
@@ -59,8 +51,15 @@
 }
 
 .footer {
-    margin: 20px 0;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.footer p {
+    margin: 0;
 }
 
 /*=========================*/
