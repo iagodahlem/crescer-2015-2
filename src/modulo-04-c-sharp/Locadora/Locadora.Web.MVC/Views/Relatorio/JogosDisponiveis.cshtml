@@ -5,7 +5,7 @@
 
 <h2 class="view-title text-center">Relatorio de Jogos</h2>
 
-<table class="table table-background">
+<table class="table table-striped table-bordered table-background">
     <thead>
         <tr>
             <th>Nome</th>
@@ -30,7 +30,7 @@
                 <td>@jogo.Categoria</td>
                 <td>@jogo.Preco.ToString("c")</td>
                 <td>@jogo.Selo</td>
-                <td align="right">@Html.ActionLink("Detalhes", "JogoDetalhes", new { id = jogo.Id })</td>
+                <td align="center">@Html.ActionLink("Detalhes", "JogoDetalhes", new { id = jogo.Id })</td>
             </tr>
         }
     </tbody>

@@ -73,16 +73,9 @@
 
 /*=========================*/
 
-.table-text-left {
-    text-align: left;
-}
-
-.table-text-right {
-    text-align: right;
-}
-
-.table-shadow {
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.4)
+.table-background {
+    background-color: #fff;
+    color: #222;
 }
 
 .table-img {
