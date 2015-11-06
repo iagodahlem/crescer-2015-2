@@ -21,7 +21,9 @@
                 @Html.ActionLink("Locadora CWI Crescer", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav"></ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Listar Jogos", "JogosDisponiveis", "Relatorio")</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -29,10 +31,10 @@
     <div class="background">
         <div class="container body-content">
             @RenderBody()
-            <hr />
+
             <footer class="text-center footer">
                 <p class="footer-shadow">
-                    &copy; @DateTime.Now.Year - CWI Crescer - Desenvolvido por <a href="https://github.com/iagodahlem" target="_blank">Iago Dahlem Lorensini</a> com <span class="heart">♥</span>
+                    &copy; @DateTime.Now.Year - CWI Crescer - Desenvolvido com <span class="heart">♥</span> por <a href="https://github.com/iagodahlem" target="_blank">Iago Dahlem Lorensini</a> 
                 </p>
             </footer>
         </div>

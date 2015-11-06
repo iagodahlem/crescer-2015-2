@@ -38,7 +38,6 @@ namespace Locadora.Web.MVC.Controllers
         {
             var jogoModel = new JogoDetalhesModel()
             {
-                Id = repositorio.BuscarPorId(id).Id,
                 Nome = repositorio.BuscarPorId(id).Nome,
                 Categoria = repositorio.BuscarPorId(id).Categoria.ToString(),
                 Preco = repositorio.BuscarPorId(id).Preco,
