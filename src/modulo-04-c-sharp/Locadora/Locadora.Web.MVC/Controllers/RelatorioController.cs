@@ -12,7 +12,7 @@ namespace Locadora.Web.MVC.Controllers
     {
         public IJogoRepositorio repositorio = new Locadora.Repositorio.ADO.JogoRepositorio();
 
-        public ActionResult JogosDisponiveis()
+        public ActionResult JogosDisponiveis(string nomeJogo) // if pra chamar método
         {
             var relatorioModel = new RelatorioModel();
 
@@ -32,6 +32,23 @@ namespace Locadora.Web.MVC.Controllers
             relatorioModel.QuantidadeTotal = relatorioModel.ListaJogos.Count();
 
             return View(relatorioModel);
+        }
+
+        public ActionResult JogoDetalhes(int id)
+        {
+            var jogoModel = new JogoDetalhesModel()
+            {
+                Id = repositorio.BuscarPorId(id).Id,
+                Nome = repositorio.BuscarPorId(id).Nome,
+                Categoria = repositorio.BuscarPorId(id).Categoria.ToString(),
+                Preco = repositorio.BuscarPorId(id).Preco,
+                Descricao = repositorio.BuscarPorId(id).Descricao,
+                Selo = repositorio.BuscarPorId(id).Selo.ToString(),
+                Imagem = repositorio.BuscarPorId(id).Imagem,
+                Video = repositorio.BuscarPorId(id).Video
+            };
+            
+            return View(jogoModel);
         }
     }
 }

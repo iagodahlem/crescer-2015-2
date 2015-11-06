@@ -3,12 +3,11 @@
     ViewBag.Title = "Relatorio de Jogos";
 }
 
-<h2 class="text-center">Relatorio de Jogos</h2>
+<h2 class="view-title text-center">Relatorio de Jogos</h2>
 
 <table class="table table-background">
     <thead>
         <tr>
-            <th>#</th>
             <th>Nome</th>
             <th>Categoria</th>
             <th>Preço</th>
@@ -19,17 +18,16 @@
         @foreach (var jogo in @Model.ListaJogos)
         {
             <tr>
-                <td>@jogo.Id</td>
                 <td>@jogo.Nome</td>
                 <td>@jogo.Categoria</td>
                 <td>@jogo.Preco.ToString("c")</td>
                 <td>@jogo.Selo</td>
+                <td>@Html.ActionLink("Detalhes do jogo", "JogoDetalhes", new { id = jogo.Id })</td>
             </tr>
         }
     </tbody>
     <tfoot>
         <tr>
-            <td></td>
             <td>Quantidade de Jogos: @Model.QuantidadeTotal</td>
         </tr>
     </tfoot>
