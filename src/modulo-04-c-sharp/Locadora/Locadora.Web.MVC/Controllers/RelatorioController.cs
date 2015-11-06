@@ -12,11 +12,11 @@ namespace Locadora.Web.MVC.Controllers
     {
         public IJogoRepositorio repositorio = new Locadora.Repositorio.ADO.JogoRepositorio();
 
-        public ActionResult JogosDisponiveis(string nome)
+        public ActionResult JogosDisponiveis(string nomeJogo)
         {
             var relatorioModel = new RelatorioModel();
 
-            var metodoBusca = nome != null ? repositorio.BuscarPorNome(nome) : repositorio.BuscarTodos();
+            var metodoBusca = nomeJogo != null ? repositorio.BuscarPorNome(nomeJogo) : repositorio.BuscarTodos();
 
             foreach (var jogo in metodoBusca)
             {
