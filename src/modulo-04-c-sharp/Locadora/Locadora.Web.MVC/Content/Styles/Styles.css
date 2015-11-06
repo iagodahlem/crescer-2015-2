@@ -10,15 +10,6 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
-.btn-face {
-    padding: 15px;
-}
-
-fb-like-container {
-    width: 47px !important;
-    height: 20px !important;
-}
-
 /*=========================*/
 
 .banner {
@@ -62,10 +53,18 @@ fb-like-container {
 
 .footer {
     margin: 0;
-    padding: 15px 0;
-    background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.footer-copyright {
+    padding: 15px 0;
+    background-color: #222222;
+}
+
+.fb-like-container {
+    padding: 5px 0;
+    background-color: #2f2f2f;
 }
 
 .footer p {

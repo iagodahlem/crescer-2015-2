@@ -7,7 +7,6 @@
 
     <link href="~/Content/Styles/Site.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-    <link href="~/Content/Styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/Styles/Styles.css" rel="stylesheet" type="text/css" />
 
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
@@ -39,9 +38,6 @@
                     </form>
                 </div>
 
-                <div class="fb-like-container"> 
-                    <div class="fb-like btn-face pull-right"></div>
-                </div>
             </div>
         </div>
     </div>
@@ -51,17 +47,22 @@
             @RenderBody()
         </div>
 
+       
+
         <footer class="footer text-center">
-            <p>
-                Feito com <span class="heart">♥</span> por <a href="https://github.com/iagodahlem" target="_blank">Iago Dahlem Lorensini</a>
-            </p>
+            <div class="fb-like-container">
+                <div class="fb-like"></div>       
+            </div>
+            <div class="footer-copyright">
+                <p>
+                    Feito com <span class="heart">♥</span> por <a href="https://github.com/iagodahlem" target="_blank">Iago Dahlem Lorensini</a>
+                </p>
+            </div>
         </footer>
     </div>
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
 
     <div id="fb-root"></div>
     <script>
