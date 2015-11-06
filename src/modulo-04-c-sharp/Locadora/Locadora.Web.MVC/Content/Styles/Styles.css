@@ -1,6 +1,6 @@
 ﻿.background {
     width: 100%;
-    background-image: url('Images/background-1.jpg'), url('https://static.pexels.com/photos/498/playing-sony-console-controller.jpg');
+    background-image: url('../Images/background-1.jpg'), url('https://static.pexels.com/photos/498/playing-sony-console-controller.jpg');
     background-position: center;
     background-size: 100%;
     background-attachment: fixed;
