@@ -8,28 +8,28 @@
 <table class="table table-striped table-bordered table-background">
     <tbody>
         <tr>
-            <td width="340px" height="240px" rowspan="6" align="center">
+            <td width="340px" height="100px" rowspan="6" align="center">
                 <img class="table-img" src="@Model.Imagem" alt="@Model.Descricao" />
             </td>
         </tr>
         <tr>
-            <th align="right">Nome:</th>
+            <th class="table-text-right" width="220px">Nome:</th>
             <td>@Model.Nome</td>
         </tr>
         <tr>
-            <th>Descrição:</th>
+            <th class="table-text-right">Descrição:</th>
             <td>@Model.Descricao</td>
         </tr>
         <tr>
-            <th>Categoria:</th>
+            <th class="table-text-right">Categoria:</th>
             <td>@Model.Categoria</td>
         </tr>
         <tr>
-            <th>Preço:</th>
+            <th class="table-text-right">Preço:</th>
             <td>@Model.Preco.ToString("c")</td>
         </tr>
         <tr>
-            <th>Selo:</th>
+            <th class="table-text-right">Selo:</th>
             <td>@Model.Selo</td>
         </tr>
         <tr>

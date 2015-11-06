@@ -80,7 +80,11 @@
 
 .table-img {
     width: 340px;
-    height: 220px;
+    height: 180px;
+}
+
+.table-text-right {
+    text-align: right;
 }
 
 /*=========================*/
