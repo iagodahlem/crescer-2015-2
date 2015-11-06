@@ -21,7 +21,10 @@
                 @Html.ActionLink("Locadora CWI Crescer", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form pull-right" action="@Url.Action("JogosDisponiveis", "Relatorio")" method="get">
+                    <input class="form-control" type="search" name="nome" placeholder="Pesquisar jogo" />
+                </form>
+                <ul class="nav navbar-nav pull-right">
                     <li>@Html.ActionLink("Listar Jogos", "JogosDisponiveis", "Relatorio")</li>
                 </ul>
             </div>
