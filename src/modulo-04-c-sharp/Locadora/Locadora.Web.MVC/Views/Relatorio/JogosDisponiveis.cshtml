@@ -16,7 +16,10 @@
     <thead>
     <tfoot>
         <tr>
-            <td colspan="5">Quantidade de Jogos: @Model.QuantidadeTotal</td>
+            <td>Quantidade de jogos: @Model.QuantidadeTotal</td>
+            <td>Valor médio: @Model.ValorMedio.ToString("c")</td>
+            <td>Jogo mais caro: @Model.JogoMaisCaro.ToString("c")</td>
+            <td colspan="2">Jogo mais barato: @Model.JogoMaisBarato.ToString("c")</td>
         </tr>
     </tfoot>
     <tbody>

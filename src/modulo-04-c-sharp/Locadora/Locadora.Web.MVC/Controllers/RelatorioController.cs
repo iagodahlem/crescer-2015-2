@@ -30,6 +30,9 @@ namespace Locadora.Web.MVC.Controllers
             }
 
             relatorioModel.QuantidadeTotal = relatorioModel.ListaJogos.Count();
+            relatorioModel.ValorMedio = relatorioModel.ListaJogos.Sum(valorMedio => valorMedio.Preco);
+            relatorioModel.JogoMaisCaro = relatorioModel.ListaJogos.Max(maisCaro => maisCaro.Preco);
+            relatorioModel.JogoMaisBarato = relatorioModel.ListaJogos.Min(maisBarato => maisBarato.Preco);
 
             return View(relatorioModel);
         }
