@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locadora - @ViewBag.Title</title>
 
-    <link href="~/Content/Styles/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/Styles/Styles.css" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/Content/css")
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    
+    @Scripts.Render("~/bundles/modernizr")
 
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top header-shadow">
@@ -22,6 +22,7 @@
                 </button>
                 @Html.ActionLink("Locadora CWI Crescer", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Listar Jogos", "JogosDisponiveis", "Relatorio")</li>
@@ -46,8 +47,6 @@
         <div class="container body-content">
             @RenderBody()
         </div>
-
-       
 
         <footer class="footer text-center">
             <div class="fb-like-container">
