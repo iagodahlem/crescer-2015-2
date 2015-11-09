@@ -16,7 +16,7 @@ namespace Locadora.Web.MVC.Controllers
         {
             var relatorioModel = new RelatorioModel();
 
-            var metodoBusca = nomeJogo != null ? repositorio.BuscarPorNome(nomeJogo) : repositorio.BuscarTodos();
+            var metodoBusca = string.IsNullOrEmpty(nomeJogo) ? repositorio.BuscarTodos() : repositorio.BuscarPorNome(nomeJogo);
 
             foreach (var jogo in metodoBusca)
             {
@@ -31,12 +31,22 @@ namespace Locadora.Web.MVC.Controllers
                 relatorioModel.ListaJogos.Add(jogoModel);
             }
 
-            relatorioModel.QuantidadeTotal = relatorioModel.ListaJogos.Count();
-            relatorioModel.ValorMedio = relatorioModel.ListaJogos.Sum(valorMedio => valorMedio.Preco);
-            relatorioModel.JogoMaisCaro = relatorioModel.ListaJogos.Max(maisCaro => maisCaro.Preco);
-            relatorioModel.JogoMaisBarato = relatorioModel.ListaJogos.Min(maisBarato => maisBarato.Preco);
+            if (relatorioModel.ListaJogos.Count() != 0)
+            {
+                relatorioModel.QuantidadeTotal = relatorioModel.ListaJogos.Count();
+                relatorioModel.ValorMedio = relatorioModel.ListaJogos.Sum(valorMedio => valorMedio.Preco);
+                relatorioModel.JogoMaisCaro = relatorioModel.ListaJogos.Max(maisCaro => maisCaro.Preco);
+                relatorioModel.JogoMaisBarato = relatorioModel.ListaJogos.Min(maisBarato => maisBarato.Preco);
 
-            return View(relatorioModel);
+                return View(relatorioModel);
+            }
+
+            else
+            {
+                ViewBag.Mensagem = "Nenhum jogo corresponde com a sua pesquisa. Por favor, tente novamente.";
+
+                return View();
+            }
         }
 
         public ActionResult JogoDetalhes(int id)
@@ -51,7 +61,7 @@ namespace Locadora.Web.MVC.Controllers
                 Imagem = repositorio.BuscarPorId(id).Imagem,
                 Video = repositorio.BuscarPorId(id).Video
             };
-            
+
             return View(jogoModel);
         }
     }
