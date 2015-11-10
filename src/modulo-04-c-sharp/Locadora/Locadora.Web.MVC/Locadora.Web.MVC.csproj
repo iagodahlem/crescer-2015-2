@@ -173,9 +173,9 @@
       <Project>{98cfbfa0-6792-41aa-9f4c-f69ffd0c3c5c}</Project>
       <Name>Locadora.Helpers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Locadora.Repositorio.ADO\Locadora.Repositorio.ADO.csproj">
-      <Project>{14105bc9-3336-43bc-b394-6e0aa2a29751}</Project>
-      <Name>Locadora.Repositorio.ADO</Name>
+    <ProjectReference Include="..\Locadora.Repositorio.EF\Locadora.Repositorio.EF.csproj">
+      <Project>{4dba5e8e-5474-4e27-bb15-3f12f92840ac}</Project>
+      <Name>Locadora.Repositorio.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
