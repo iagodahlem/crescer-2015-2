@@ -60,6 +60,8 @@ namespace Locadora.Dominio
                     && this.Categoria == jogoComp.Categoria
                     && this.Descricao == jogoComp.Descricao
                     && this.Selo == jogoComp.Selo
+                    && this.URLImagem == jogoComp.URLImagem
+                    && this.URLVideo == jogoComp.URLVideo
                     && this.Cliente == jogoComp.Cliente;
             }
 
