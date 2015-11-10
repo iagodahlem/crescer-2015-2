@@ -56,6 +56,10 @@
     <Compile Include="Migrations\201511091930094_Initial.Designer.cs">
       <DependentUpon>201511091930094_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511101732583_UsuarioEPermissao.cs" />
+    <Compile Include="Migrations\201511101732583_UsuarioEPermissao.Designer.cs">
+      <DependentUpon>201511101732583_UsuarioEPermissao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioBase.cs" />
@@ -73,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511091930094_Initial.resx">
       <DependentUpon>201511091930094_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511101732583_UsuarioEPermissao.resx">
+      <DependentUpon>201511101732583_UsuarioEPermissao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
