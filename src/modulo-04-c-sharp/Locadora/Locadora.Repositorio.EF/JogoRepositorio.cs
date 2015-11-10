@@ -45,18 +45,7 @@ namespace Locadora.Repositorio.EF
         {
             using (var db = CriarBanco())
             {
-                var novoJogo = new Jogo()
-                {
-                    Nome = jogo.Nome,
-                    Preco = jogo.Preco,
-                    Categoria = jogo.Categoria,
-                    Descricao = jogo.Descricao,
-                    Selo = jogo.Selo,
-                    URLImagem = jogo.URLImagem,
-                    URLVideo = jogo.URLVideo
-                };
-
-                db.Entry(novoJogo).State = System.Data.Entity.EntityState.Added;
+                db.Entry(jogo).State = System.Data.Entity.EntityState.Added;
 
                 return db.SaveChanges();
             }
