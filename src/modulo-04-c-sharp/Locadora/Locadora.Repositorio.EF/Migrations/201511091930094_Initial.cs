@@ -26,8 +26,8 @@ namespace Locadora.Repositorio.EF.Migrations
                         IdCategoria = c.Int(nullable: false),
                         Descricao = c.String(nullable: false),
                         IdSelo = c.Int(nullable: false),
-                        Imagem = c.String(),
-                        Video = c.String(),
+                        URLImagem = c.String(),
+                        URLVideo = c.String(),
                         IdClienteLocacao = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
@@ -43,18 +43,22 @@ namespace Locadora.Repositorio.EF.Migrations
                 c => new
                 {
                     Id = c.Int(nullable: false, identity: false),
-                    Descricao = c.String(nullable: false, maxLength: 250),
+                    Nome = c.String(nullable: false, maxLength: 250),
                 })
                 .PrimaryKey(t => t.Id);
+
+            CriarSelos();
 
             CreateTable(
                 "dbo.Categoria",
                 c => new
                 {
                     Id = c.Int(nullable: false, identity: false),
-                    Descricao = c.String(nullable: false, maxLength: 250),
+                    Nome = c.String(nullable: false, maxLength: 250),
                 })
-                .PrimaryKey(t => t.Id); 
+                .PrimaryKey(t => t.Id);
+
+            CriarCategorias();
         }
 
         public override void Down()
@@ -71,6 +75,22 @@ namespace Locadora.Repositorio.EF.Migrations
             DropTable("dbo.Cliente");
             DropTable("dbo.Categoria");
             DropTable("dbo.Selo");
+        }
+
+        private void CriarSelos()
+        {
+            Sql("INSERT INTO Selo (Id, Nome) VALUES (1, 'Ouro')");
+            Sql("INSERT INTO Selo (Id, Nome) VALUES (2, 'Prata')");
+            Sql("INSERT INTO Selo (Id, Nome) VALUES (3, 'Bronze')");
+        }
+
+        private void CriarCategorias()
+        {
+            Sql("INSERT INTO Categoria (Id, Nome) VALUES (1, 'RPG')");
+            Sql("INSERT INTO Categoria (Id, Nome) VALUES (2, 'Corrida')");
+            Sql("INSERT INTO Categoria (Id, Nome) VALUES (3, 'Aventura')");
+            Sql("INSERT INTO Categoria (Id, Nome) VALUES (4, 'Luta')");
+            Sql("INSERT INTO Categoria (Id, Nome) VALUES (5, 'Esporte')");
         }
     }
 }
