@@ -51,15 +51,16 @@ namespace Locadora.Web.MVC.Controllers
 
         public ActionResult JogoDetalhes(int id)
         {
+            var jogoDetalhes = repositorio.BuscarPorId(id);
             var jogoModel = new JogoModel()
             {
-                Nome = repositorio.BuscarPorId(id).Nome,
-                Categoria = repositorio.BuscarPorId(id).Categoria.ToString(),
-                Preco = repositorio.BuscarPorId(id).Preco,
-                Descricao = repositorio.BuscarPorId(id).Descricao,
-                Selo = repositorio.BuscarPorId(id).Selo.ToString(),
-                Imagem = repositorio.BuscarPorId(id).URLImagem,
-                Video = repositorio.BuscarPorId(id).URLVideo
+                Nome = jogoDetalhes.Nome,
+                Categoria = jogoDetalhes.Categoria.ToString(),
+                Preco = jogoDetalhes.Preco,
+                Descricao = jogoDetalhes.Descricao,
+                Selo = jogoDetalhes.Selo.ToString(),
+                Imagem = jogoDetalhes.URLImagem,
+                Video = jogoDetalhes.URLVideo
             };
 
             return View(jogoModel);
