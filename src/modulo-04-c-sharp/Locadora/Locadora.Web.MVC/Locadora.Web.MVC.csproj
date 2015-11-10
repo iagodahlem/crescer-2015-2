@@ -124,7 +124,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -135,7 +137,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\JogoDetalhesModel.cs" />
     <Compile Include="Models\JogoModel.cs" />
     <Compile Include="Models\RelatorioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +153,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Relatorio\JogosDisponiveis.cshtml" />
     <Content Include="Views\Relatorio\JogoDetalhes.cshtml" />
+    <Content Include="Views\Jogo\Manter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -161,7 +163,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Jogo\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Locadora.Dominio\Locadora.Dominio.csproj">
@@ -175,10 +176,6 @@
     <ProjectReference Include="..\Locadora.Repositorio.ADO\Locadora.Repositorio.ADO.csproj">
       <Project>{14105bc9-3336-43bc-b394-6e0aa2a29751}</Project>
       <Name>Locadora.Repositorio.ADO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Locadora.Repositorio.XML\Locadora.Repositorio.XML.csproj">
-      <Project>{94e11ed9-d5fd-4339-9fcd-dd1d3ff1badd}</Project>
-      <Name>Locadora.Repositorio.XML</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

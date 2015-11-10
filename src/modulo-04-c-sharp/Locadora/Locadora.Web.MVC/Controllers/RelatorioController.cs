@@ -51,7 +51,7 @@ namespace Locadora.Web.MVC.Controllers
 
         public ActionResult JogoDetalhes(int id)
         {
-            var jogoModel = new JogoDetalhesModel()
+            var jogoModel = new JogoModel()
             {
                 Nome = repositorio.BuscarPorId(id).Nome,
                 Categoria = repositorio.BuscarPorId(id).Categoria.ToString(),
