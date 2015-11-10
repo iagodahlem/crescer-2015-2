@@ -58,8 +58,8 @@ namespace Locadora.Web.MVC.Controllers
                 Preco = repositorio.BuscarPorId(id).Preco,
                 Descricao = repositorio.BuscarPorId(id).Descricao,
                 Selo = repositorio.BuscarPorId(id).Selo.ToString(),
-                Imagem = repositorio.BuscarPorId(id).Imagem,
-                Video = repositorio.BuscarPorId(id).Video
+                Imagem = repositorio.BuscarPorId(id).URLImagem,
+                Video = repositorio.BuscarPorId(id).URLVideo
             };
 
             return View(jogoModel);

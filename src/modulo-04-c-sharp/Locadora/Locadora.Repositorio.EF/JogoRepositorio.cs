@@ -52,8 +52,8 @@ namespace Locadora.Repositorio.EF
                     Categoria = jogo.Categoria,
                     Descricao = jogo.Descricao,
                     Selo = jogo.Selo,
-                    Imagem = jogo.Imagem,
-                    Video = jogo.Video
+                    URLImagem = jogo.URLImagem,
+                    URLVideo = jogo.URLVideo
                 };
 
                 db.Entry(novoJogo).State = System.Data.Entity.EntityState.Added;

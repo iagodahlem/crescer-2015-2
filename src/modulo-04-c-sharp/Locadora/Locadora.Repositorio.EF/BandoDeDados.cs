@@ -34,8 +34,8 @@ namespace Locadora.Repositorio.EF
             Property(p => p.Categoria).IsRequired().HasColumnName("IdCategoria");
             Property(p => p.Descricao).IsRequired();
             Property(p => p.Selo).IsRequired().HasColumnName("IdSelo");
-            Property(p => p.Imagem).IsOptional();
-            Property(p => p.Video).IsOptional();
+            Property(p => p.URLImagem).IsOptional();
+            Property(p => p.URLVideo).IsOptional();
 
             HasOptional(p => p.Cliente).WithOptionalDependent().Map(m => m.MapKey("IdClienteLocacao"));
         }

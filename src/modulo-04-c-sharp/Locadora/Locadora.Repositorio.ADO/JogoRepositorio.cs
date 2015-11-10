@@ -38,8 +38,8 @@ namespace Locadora.Repositorio.ADO
                 comando.AddParam("paramIdClienteLocacao", entidade.Cliente.Id);
                 comando.AddParam("paramDescricao", entidade.Descricao);
                 comando.AddParam("paramIdSelo", (int)entidade.Selo);
-                comando.AddParam("paramImagem", entidade.Imagem);
-                comando.AddParam("paramVideo", entidade.Video);
+                comando.AddParam("paramImagem", entidade.URLImagem);
+                comando.AddParam("paramVideo", entidade.URLVideo);
                 comando.AddParam("paramId", entidade.Id);
 
                 conexao.Open();
@@ -108,8 +108,8 @@ namespace Locadora.Repositorio.ADO
                 comando.AddParam("paramIdClienteLocacao", entidade.Cliente.Id);
                 comando.AddParam("paramDescricao", entidade.Descricao);
                 comando.AddParam("paramIdSelo", (int)entidade.Selo);
-                comando.AddParam("paramImagem", entidade.Imagem);
-                comando.AddParam("paramVideo", entidade.Video);
+                comando.AddParam("paramImagem", entidade.URLImagem);
+                comando.AddParam("paramVideo", entidade.URLVideo);
 
                 conexao.Open();
                 return comando.ExecuteNonQuery();
@@ -155,11 +155,10 @@ namespace Locadora.Repositorio.ADO
             jogo.Categoria = (Categoria)Convert.ToInt32(reader["IdCategoria"]);
             jogo.Descricao = reader["Descricao"].ToString();
             jogo.Selo= (Selo)Convert.ToInt32(reader["IdSelo"]);
-            jogo.Imagem = reader["Imagem"].ToString();
-            jogo.Video = reader["Video"].ToString();
+            jogo.URLImagem = reader["Imagem"].ToString();
+            jogo.URLVideo = reader["Video"].ToString();
 
             return jogo;
         }
-
     }
 }

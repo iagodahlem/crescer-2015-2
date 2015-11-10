@@ -10,8 +10,8 @@ namespace Locadora.Dominio
         public Categoria Categoria { get; set; }
         public string Descricao { get; set; }
         public Selo Selo { get; set; }
-        public string Imagem { get; set; } = null;
-        public string Video { get; set; } = null;
+        public string URLImagem { get; set; } = null;
+        public string URLVideo { get; set; } = null;
         public Cliente Cliente { get; set; }
 
         public Jogo()
