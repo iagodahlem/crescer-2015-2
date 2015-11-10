@@ -1,43 +1,77 @@
 ﻿using Locadora.Dominio.Repositorio;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Locadora.Dominio;
 
 namespace Locadora.Repositorio.EF
 {
-    public class JogoRepositorio : IJogoRepositorio
+    public class JogoRepositorio : RepositorioBase, IJogoRepositorio
     {
         public int Atualizar(Jogo jogo)
         {
-            throw new NotImplementedException();
+            using (var db = CriarBanco())
+            {
+                db.Entry(jogo).State = System.Data.Entity.EntityState.Modified;
+
+                return db.SaveChanges();
+            }
         }
 
         public Jogo BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            using (var db = CriarBanco())
+            {
+                return db.Jogo.Find(id);
+            }
         }
 
         public IList<Jogo> BuscarPorNome(string nome)
         {
-            throw new NotImplementedException();
+            using (var db = CriarBanco())
+            {
+                return db.Jogo.Where(jogo => jogo.Nome == nome).ToList();
+            }
         }
 
         public IList<Jogo> BuscarTodos()
         {
-            throw new NotImplementedException();
+            using (var db = CriarBanco())
+            {
+                return db.Jogo.Where(jogo => jogo.Id != 0).ToList();
+            }
         }
 
         public int Criar(Jogo jogo)
         {
-            throw new NotImplementedException();
+            using (var db = CriarBanco())
+            {
+                var novoJogo = new Jogo()
+                {
+                    Nome = jogo.Nome,
+                    Preco = jogo.Preco,
+                    Categoria = jogo.Categoria,
+                    Descricao = jogo.Descricao,
+                    Selo = jogo.Selo,
+                    Imagem = jogo.Imagem,
+                    Video = jogo.Video
+                };
+
+                db.Entry(novoJogo).State = System.Data.Entity.EntityState.Added;
+
+                return db.SaveChanges();
+            }
         }
 
         public int Excluir(int id)
         {
-            throw new NotImplementedException();
+            using (var db = CriarBanco())
+            {
+                var jogo = db.Jogo.Find(id);
+
+                db.Entry(jogo).State = System.Data.Entity.EntityState.Deleted;
+
+                return db.SaveChanges();
+            }
         }
     }
 }
