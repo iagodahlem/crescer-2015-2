@@ -15,8 +15,6 @@ namespace Locadora.Dominio
         public string Video { get; set; } = null;
         public Cliente Cliente { get; set; }
 
-        public int? MyProperty { get; set; }
-
         public Jogo()
         {
 
