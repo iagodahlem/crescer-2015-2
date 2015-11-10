@@ -29,7 +29,7 @@ namespace Locadora.Repositorio.EF
         {
             using (var db = CriarBanco())
             {
-                return db.Jogo.Where(jogo => jogo.Nome == nome).ToList();
+                return db.Jogo.Where(jogo => jogo.Nome.Contains(nome)).ToList();
             }
         }
 
