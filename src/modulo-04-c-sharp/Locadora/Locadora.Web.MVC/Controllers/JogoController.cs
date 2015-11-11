@@ -1,4 +1,5 @@
 ﻿using Locadora.Dominio.Repositorio;
+using Locadora.Web.MVC.Helpers;
 using Locadora.Web.MVC.Models;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Locadora.Web.MVC.Controllers
 {
     public class JogoController : Controller
     {
-        public IJogoRepositorio repositorio = new Locadora.Repositorio.EF.JogoRepositorio();
+        public IJogoRepositorio repositorio = Modulos.CriarJogoRepositorio();
 
         public ActionResult Manter(int id)
         {
