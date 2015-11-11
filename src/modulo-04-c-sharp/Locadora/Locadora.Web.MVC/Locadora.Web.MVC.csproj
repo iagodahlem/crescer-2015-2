@@ -141,6 +141,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JogoController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RelatorioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -162,6 +163,7 @@
     <Content Include="Views\Relatorio\JogosDisponiveis.cshtml" />
     <Content Include="Views\Relatorio\JogoDetalhes.cshtml" />
     <Content Include="Views\Jogo\Manter.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -171,6 +173,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Segurança\Filters\" />
+    <Folder Include="Segurança\Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Locadora.Dominio\Locadora.Dominio.csproj">
