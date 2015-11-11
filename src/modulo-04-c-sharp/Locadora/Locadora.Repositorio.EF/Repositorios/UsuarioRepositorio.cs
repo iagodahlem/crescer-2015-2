@@ -10,7 +10,7 @@ namespace Locadora.Repositorio.EF.Repositorios
 {
     public class UsuarioRepositorio : RepositorioBase, IUsuarioRepositorio
     {
-        public Usuario BuscaPorEmail(string email)
+        public Usuario BuscarPorEmail(string email)
         {
             using (var db = CriarBanco())
             {

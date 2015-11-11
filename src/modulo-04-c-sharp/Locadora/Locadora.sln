@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locadora.Helpers", "Locador
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locadora.Repositorio.EF", "Locadora.Repositorio.EF\Locadora.Repositorio.EF.csproj", "{4DBA5E8E-5474-4E27-BB15-3F12F92840AC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servicos", "Servicos", "{5DEE23A8-9599-4953-9A2F-C723DEB2F01E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locadora.Infraestrutura.Servicos", "Locadora.Infraestrutura.Servicos\Locadora.Infraestrutura.Servicos.csproj", "{E108A71A-E5EB-4E10-B162-BD0E1447BCA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{4DBA5E8E-5474-4E27-BB15-3F12F92840AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DBA5E8E-5474-4E27-BB15-3F12F92840AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DBA5E8E-5474-4E27-BB15-3F12F92840AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E108A71A-E5EB-4E10-B162-BD0E1447BCA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E108A71A-E5EB-4E10-B162-BD0E1447BCA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E108A71A-E5EB-4E10-B162-BD0E1447BCA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E108A71A-E5EB-4E10-B162-BD0E1447BCA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,5 +69,7 @@ Global
 		{904D46BA-4984-4269-B153-D79D0AEFC0DD} = {B8852BF0-3657-4217-B96D-39339EDC6B84}
 		{98CFBFA0-6792-41AA-9F4C-F69FFD0C3C5C} = {904D46BA-4984-4269-B153-D79D0AEFC0DD}
 		{4DBA5E8E-5474-4E27-BB15-3F12F92840AC} = {4C4BE62A-458D-4CF0-91DD-92DBB516982C}
+		{5DEE23A8-9599-4953-9A2F-C723DEB2F01E} = {B8852BF0-3657-4217-B96D-39339EDC6B84}
+		{E108A71A-E5EB-4E10-B162-BD0E1447BCA7} = {5DEE23A8-9599-4953-9A2F-C723DEB2F01E}
 	EndGlobalSection
 EndGlobal

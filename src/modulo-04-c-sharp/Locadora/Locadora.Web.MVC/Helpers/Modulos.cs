@@ -1,11 +1,8 @@
 ﻿using Locadora.Dominio.Repositorio;
+using Locadora.Dominio.Servicos;
+using Locadora.Infraestrutura.Servicos;
 using Locadora.Repositorio.EF;
 using Locadora.Repositorio.EF.Repositorios;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Locadora.Web.MVC.Helpers
 {
@@ -19,6 +16,16 @@ namespace Locadora.Web.MVC.Helpers
         public static IUsuarioRepositorio CriarUsuarioRepositorio()
         {
             return new UsuarioRepositorio();
+        }
+
+        public static IServicoCriptografia CriarServicoCriptografia()
+        {
+            return new ServicoCriptografia();
+        }
+
+        public static ServicoAutenticacao CriarServicoAutenticacao()
+        {
+            return new ServicoAutenticacao(CriarUsuarioRepositorio(), CriarServicoCriptografia());
         }
     }
 }

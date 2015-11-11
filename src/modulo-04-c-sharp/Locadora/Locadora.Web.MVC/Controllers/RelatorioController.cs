@@ -50,7 +50,6 @@ namespace Locadora.Web.MVC.Controllers
             }
         }
 
-        [Authorize(Roles = "DETALHES_DO_JOGO")]
         public ActionResult JogoDetalhes(int id)
         {
             var jogoDetalhes = repositorio.BuscarPorId(id);

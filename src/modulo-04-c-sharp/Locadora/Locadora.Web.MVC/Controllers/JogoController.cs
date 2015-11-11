@@ -1,4 +1,5 @@
-﻿using Locadora.Dominio.Repositorio;
+﻿using Locadora.Dominio;
+using Locadora.Dominio.Repositorio;
 using Locadora.Web.MVC.Helpers;
 using Locadora.Web.MVC.Models;
 using System;
@@ -13,14 +14,64 @@ namespace Locadora.Web.MVC.Controllers
     {
         public IJogoRepositorio repositorio = Modulos.CriarJogoRepositorio();
 
-        public ActionResult Manter(int id)
+        [HttpGet]
+        public ActionResult Manter(int id = -1)
         {
-            return View();
+            bool edicao = id > 0;
+
+            if (edicao)
+            {
+                var jogo = repositorio.BuscarPorId(id);
+                var jogoManterModel = new JogoManterModel()
+                {
+                    Nome = jogo.Nome,
+                    Preco = jogo.Preco,
+                    Categoria = jogo.Categoria,
+                    Descricao = jogo.Descricao,
+                    Selo = jogo.Selo,
+                    Imagem = jogo.URLImagem,
+                    Video = jogo.URLVideo
+                };
+                return View(jogoManterModel);
+            }
+            return View(new JogoManterModel());
         }
 
-        public ActionResult Salvar(JogoModel jogo)
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult Salvar(JogoManterModel jogo)
         {
-            return View();
+            bool validaCampos = ModelState.IsValid;
+
+            if (validaCampos)
+            {
+                bool edicao = jogo.Id > 0;
+
+                var novoJogo = new Jogo()
+                {
+                    Nome = jogo.Nome,
+                    Preco = jogo.Preco,
+                    Categoria = jogo.Categoria,
+                    Descricao = jogo.Descricao,
+                    Selo = jogo.Selo,
+                    URLImagem = jogo.Imagem,
+                    URLVideo = jogo.Video
+                };
+
+                if (edicao)
+                {
+                    repositorio.Atualizar(novoJogo);
+                }
+                else
+                {
+                    repositorio.Criar(novoJogo);
+                }
+                return RedirectToAction("JogosDisponiveis", "Relatorio");
+            }
+            else
+            {
+                return View("Manter", jogo);
+            }
         }
     }
 }
