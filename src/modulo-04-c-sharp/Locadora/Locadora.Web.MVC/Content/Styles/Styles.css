@@ -6,6 +6,20 @@
     background-attachment: fixed;
 }
 
+#header a {
+    color: #fff !important;
+}
+
+#header a:hover {
+    color: #ababab !important;
+    background-color: transparent;
+}
+
+#header a:focus {
+    color: #ababab !important;
+    background-color: transparent;
+}
+
 .header-shadow {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
@@ -20,13 +34,13 @@
     font-size: 80px;
     font-weight: 600;
     margin: 0;
-    padding: 80px 0 30px;
+    padding: 120px 0 30px;
 }
 
 .banner-text {
     font-size: 24px;
     margin: 0;
-    padding: 30px 0 170px;
+    padding: 30px 0 80px;
 }
 
 /*=========================*/
@@ -57,6 +71,12 @@
     background-color: #222222;
     box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.4);
     border-top: 1px solid #ababab;
+}
+
+.footer-login {
+    margin: 0;
+    color: #fff;
+    text-shadow: 0 -2px 6px rgba(0, 0, 0, 0.4);;
 }
 
 .footer-copyright {
