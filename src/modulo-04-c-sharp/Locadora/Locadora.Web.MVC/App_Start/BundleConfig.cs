@@ -17,7 +17,8 @@ namespace Locadora.Web.MVC.App_Start
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/Styles/Styles.css",
-                        "~/Content/Styles/Site.css"));
+                        "~/Content/Styles/Site.css",
+                        "~/Content/Styles/Login.css"));
         }
     }
 }

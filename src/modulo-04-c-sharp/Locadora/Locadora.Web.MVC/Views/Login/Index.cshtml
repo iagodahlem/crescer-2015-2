@@ -1,0 +1,100 @@
+﻿@model Locadora.Web.MVC.Models.LoginModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top header-shadow">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Locadora CWI Crescer", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                </ul>
+
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            Login
+                            <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu" style="padding:17px;">
+
+                            @using (@Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "form-horizontal" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true);
+
+                                <div class="form-group">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(m => m.Email)
+                                </div>
+                                <div class="form-group">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control input-sm" })
+                                    @Html.ValidationMessageFor(m => m.Password)
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary btn-sm btn-block" value="Login" />
+                                </div>
+
+                                <span class="error-mesage">
+                                    @Html.ValidationMessage("INVALID_LOGIN")
+                                </span>
+                            }
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="background">
+        <div class="container body-content">
+
+        </div>
+
+        <footer class="footer text-center">
+            <div class="buttons-container">
+                <a class="github-button" href="https://github.com/iagodahlem/crescer-2015-2" data-icon="octicon-star" data-count-href="/iagodahlem/crescer-2015-2/stargazers" data-count-api="/repos/iagodahlem/crescer-2015-2#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star iagodahlem/crescer-2015-2 on GitHub">Star</a>
+                <a class="github-button" href="https://github.com/iagodahlem/crescer-2015-2/fork" data-icon="octicon-repo-forked" data-count-href="/iagodahlem/crescer-2015-2/network" data-count-api="/repos/iagodahlem/crescer-2015-2#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork iagodahlem/crescer-2015-2 on GitHub">Fork</a>
+            </div>
+            <div class="footer-copyright">
+                <p>
+                    Feito com <span class="heart">♥</span> por <a href="https://github.com/iagodahlem" target="_blank">Iago Dahlem Lorensini</a>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+</body>
+</html>

@@ -117,6 +117,7 @@
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Styles\bootstrap.min.css" />
     <Content Include="Content\Images\background-1.jpg" />
+    <Content Include="Content\Styles\Login.css" />
     <Content Include="Content\Styles\Site.css" />
     <Content Include="Content\Styles\Styles.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -170,6 +171,7 @@
     <Content Include="Views\Relatorio\JogoDetalhes.cshtml" />
     <Content Include="Views\Jogo\Manter.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

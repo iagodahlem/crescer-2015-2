@@ -49,22 +49,5 @@ namespace Locadora.Web.MVC.Controllers
                 return View();
             }
         }
-
-        public ActionResult JogoDetalhes(int id)
-        {
-            var jogoDetalhes = repositorio.BuscarPorId(id);
-            var jogoModel = new JogoModel()
-            {
-                Nome = jogoDetalhes.Nome,
-                Categoria = jogoDetalhes.Categoria.ToString(),
-                Preco = jogoDetalhes.Preco,
-                Descricao = jogoDetalhes.Descricao,
-                Selo = jogoDetalhes.Selo.ToString(),
-                Imagem = jogoDetalhes.URLImagem,
-                Video = jogoDetalhes.URLVideo
-            };
-
-            return View(jogoModel);
-        }
     }
 }

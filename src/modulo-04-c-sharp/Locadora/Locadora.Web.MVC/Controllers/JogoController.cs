@@ -15,15 +15,32 @@ namespace Locadora.Web.MVC.Controllers
         public IJogoRepositorio repositorio = Modulos.CriarJogoRepositorio();
 
         [HttpGet]
-        public ActionResult Manter(int id = -1)
+        public ActionResult JogoDetalhes(int id)
         {
-            bool edicao = id > 0;
-
-            if (edicao)
+            var jogoDetalhes = repositorio.BuscarPorId(id);
+            var jogoModel = new JogoModel()
             {
-                var jogo = repositorio.BuscarPorId(id);
+                Nome = jogoDetalhes.Nome,
+                Categoria = jogoDetalhes.Categoria.ToString(),
+                Preco = jogoDetalhes.Preco,
+                Descricao = jogoDetalhes.Descricao,
+                Selo = jogoDetalhes.Selo.ToString(),
+                Imagem = jogoDetalhes.URLImagem,
+                Video = jogoDetalhes.URLVideo
+            };
+
+            return View(jogoModel);
+        }
+
+        [HttpGet]
+        public ActionResult Manter(int? id)
+        {
+            if (id.HasValue)
+            {
+                var jogo = repositorio.BuscarPorId((int) id);
                 var jogoManterModel = new JogoManterModel()
                 {
+                    Id = jogo.Id,
                     Nome = jogo.Nome,
                     Preco = jogo.Preco,
                     Categoria = jogo.Categoria,
@@ -34,43 +51,55 @@ namespace Locadora.Web.MVC.Controllers
                 };
                 return View(jogoManterModel);
             }
-            return View(new JogoManterModel());
+            return View();
         }
 
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult Salvar(JogoManterModel jogo)
+        public ActionResult Salvar(JogoManterModel jogoManter)
         {
             bool validaCampos = ModelState.IsValid;
 
             if (validaCampos)
             {
-                bool edicao = jogo.Id > 0;
+                bool isEdicao = jogoManter.Id != null;
 
-                var novoJogo = new Jogo()
+                if (isEdicao)
                 {
-                    Nome = jogo.Nome,
-                    Preco = jogo.Preco,
-                    Categoria = jogo.Categoria,
-                    Descricao = jogo.Descricao,
-                    Selo = jogo.Selo,
-                    URLImagem = jogo.Imagem,
-                    URLVideo = jogo.Video
-                };
-
-                if (edicao)
-                {
-                    repositorio.Atualizar(novoJogo);
+                    var jogo = new Jogo((int) jogoManter.Id)
+                    {
+                        Nome = jogoManter.Nome,
+                        Preco = jogoManter.Preco,
+                        Categoria = jogoManter.Categoria,
+                        Descricao = jogoManter.Descricao,
+                        Selo = jogoManter.Selo,
+                        URLImagem = jogoManter.Imagem,
+                        URLVideo = jogoManter.Video
+                    };
+                    repositorio.Atualizar(jogo);
+                    TempData["Mensagem"] = "Jogo editado com sucesso.";
                 }
                 else
                 {
-                    repositorio.Criar(novoJogo);
+                    var jogo = new Jogo()
+                    {
+                        Nome = jogoManter.Nome,
+                        Preco = jogoManter.Preco,
+                        Categoria = jogoManter.Categoria,
+                        Descricao = jogoManter.Descricao,
+                        Selo = jogoManter.Selo,
+                        URLImagem = jogoManter.Imagem,
+                        URLVideo = jogoManter.Video
+                    };
+                    repositorio.Criar(jogo);
+                    TempData["Mensagem"] = "Jogo cadastrado com sucesso.";
+
                 }
                 return RedirectToAction("JogosDisponiveis", "Relatorio");
             }
             else
             {
-                return View("Manter", jogo);
+                return View("Manter", jogoManter);
             }
         }
     }

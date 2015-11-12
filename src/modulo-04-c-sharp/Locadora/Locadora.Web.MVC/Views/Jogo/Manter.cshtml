@@ -1,6 +1,6 @@
 ﻿@model JogoManterModel
 
-@{ string titulo = Model != null || Model.Id != 0 ? "Editar Jogo" : "Cadastrar Jogo"; }
+@{ string titulo = Model != null && Model.Id != 0 ? "Editar Jogo" : "Cadastrar Jogo"; }
 
 @{
     ViewBag.Title = titulo;
