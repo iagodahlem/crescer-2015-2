@@ -155,7 +155,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguranca\Autorizador.cs" />
     <Compile Include="Seguranca\ControleDeSessao.cs" />
-    <Compile Include="Seguranca\UsiarioLogado.cs" />
+    <Compile Include="Seguranca\UsuarioLogado.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

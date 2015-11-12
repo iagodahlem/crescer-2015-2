@@ -37,7 +37,7 @@ namespace Locadora.Web.MVC.Controllers
             }
 
             ModelState.AddModelError("INVALID_LOGIN", "Usuário ou senha inválidos.");
-            return View("Index", loginModel);
+            return View("Login", loginModel);
         }
 
         public void Sair()

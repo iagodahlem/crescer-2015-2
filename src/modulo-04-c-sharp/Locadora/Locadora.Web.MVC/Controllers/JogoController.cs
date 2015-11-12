@@ -2,8 +2,10 @@
 using Locadora.Dominio.Repositorio;
 using Locadora.Web.MVC.Helpers;
 using Locadora.Web.MVC.Models;
+using Locadora.Web.MVC.Seguranca;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -33,6 +35,7 @@ namespace Locadora.Web.MVC.Controllers
         }
 
         [HttpGet]
+        [Autorizador(Roles = Permissao.ADMIN)]
         public ActionResult Manter(int? id)
         {
             if (id.HasValue)
@@ -54,8 +57,9 @@ namespace Locadora.Web.MVC.Controllers
             return View();
         }
 
-        [ValidateAntiForgeryToken]
         [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Autorizador(Roles = Permissao.ADMIN)]
         public ActionResult Salvar(JogoManterModel jogoManter)
         {
             bool validaCampos = ModelState.IsValid;
