@@ -9,11 +9,6 @@ namespace Locadora.Web.MVC.Controllers
     [Authorize]
     public class LocacaoController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public ActionResult Locar()
         {
             return View();
