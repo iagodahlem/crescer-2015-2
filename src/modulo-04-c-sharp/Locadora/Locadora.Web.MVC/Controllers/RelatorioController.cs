@@ -13,6 +13,7 @@ namespace Locadora.Web.MVC.Controllers
     {
         public IJogoRepositorio repositorio = new Locadora.Repositorio.EF.JogoRepositorio();
 
+        [HttpGet]
         public ActionResult JogosDisponiveis(string nomeJogo)
         {
             var relatorioModel = new RelatorioModel();

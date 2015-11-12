@@ -3,15 +3,11 @@ using Locadora.Dominio.Repositorio;
 using Locadora.Web.MVC.Helpers;
 using Locadora.Web.MVC.Models;
 using Locadora.Web.MVC.Seguranca;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Locadora.Web.MVC.Controllers
 {
+    [Authorize]
     public class JogoController : Controller
     {
         public IJogoRepositorio repositorio = Modulos.CriarJogoRepositorio();

@@ -46,6 +46,7 @@ namespace Locadora.Web.MVC.Controllers
             return View("Index", loginModel);
         }
 
+        [HttpPost]
         public void Sair()
         {
             ControleDeSessao.Encerrar();
