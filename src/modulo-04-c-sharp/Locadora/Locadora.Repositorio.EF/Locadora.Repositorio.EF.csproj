@@ -54,6 +54,10 @@
     <Compile Include="Mapping\JogoMap.cs" />
     <Compile Include="Mapping\PermissaoMap.cs" />
     <Compile Include="Mapping\UsuarioMap.cs" />
+    <Compile Include="Migrations\201511121633362_Remover_Preco.cs" />
+    <Compile Include="Migrations\201511121633362_Remover_Preco.Designer.cs">
+      <DependentUpon>201511121633362_Remover_Preco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositorios\ClienteRepositorio.cs" />
     <Compile Include="Repositorios\JogoRepositorio.cs" />
     <Compile Include="Migrations\201511091930094_Initial.cs" />
@@ -85,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511101732583_UsuarioEPermissao.resx">
       <DependentUpon>201511101732583_UsuarioEPermissao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511121633362_Remover_Preco.resx">
+      <DependentUpon>201511121633362_Remover_Preco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
