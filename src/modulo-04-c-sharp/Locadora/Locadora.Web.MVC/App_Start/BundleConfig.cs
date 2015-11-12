@@ -15,6 +15,9 @@ namespace Locadora.Web.MVC.App_Start
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
+                        "~/Scripts/scripts.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/Styles/Styles.css",
                         "~/Content/Styles/Site.css",
