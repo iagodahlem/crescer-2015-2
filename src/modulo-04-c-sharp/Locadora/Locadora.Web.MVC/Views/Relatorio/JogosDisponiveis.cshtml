@@ -41,7 +41,7 @@
                     <td>@jogo.Categoria</td>
                     <td>@jogo.Preco.ToString("c")</td>
                     <td>@jogo.Selo</td>
-                    <td align="center">@Html.ActionLink("Detalhes", "JogoDetalhes", new { id = jogo.Id })</td>
+                    <td align="center">@Html.ActionLink("Detalhes", "JogoDetalhes", "Jogo", new { id = jogo.Id }, new { })</td>
                     <td align="center">@Html.ActionLink("Editar", "Manter", "Jogo", new { id = jogo.Id }, new { })</td>
                 </tr>
             }

@@ -168,7 +168,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Relatorio\JogosDisponiveis.cshtml" />
-    <Content Include="Views\Relatorio\JogoDetalhes.cshtml" />
+    <Content Include="Views\Jogo\JogoDetalhes.cshtml" />
     <Content Include="Views\Jogo\Manter.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
