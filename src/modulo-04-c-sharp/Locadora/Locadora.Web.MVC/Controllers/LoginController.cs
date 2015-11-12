@@ -3,19 +3,25 @@ using Locadora.Dominio.Servicos;
 using Locadora.Web.MVC.Helpers;
 using Locadora.Web.MVC.Models;
 using Locadora.Web.MVC.Seguranca;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace Locadora.Web.MVC.Controllers
 {
     public class LoginController : Controller
     {
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
-        }
+            if (ControleDeSessao.UsuarioLogado != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
 
-        public ActionResult Login()
-        {
             return View();
         }
 
@@ -36,14 +42,14 @@ namespace Locadora.Web.MVC.Controllers
                 }
             }
 
-            ModelState.AddModelError("INVALID_LOGIN", "Usuário ou senha inválidos.");
-            return View("Login", loginModel);
+            ModelState.AddModelError("ERRO_LOGIN", "Usuário ou senha inválidos.");
+            return View("Index", loginModel);
         }
 
         public void Sair()
         {
             ControleDeSessao.Encerrar();
+            RedirectToAction("Index", "Login");
         }
-
     }
 }
