@@ -13,5 +13,10 @@ namespace Locadora.Web.MVC.Controllers
         {
             return View();
         }
+
+        public ActionResult Locar()
+        {
+            return View();
+        }
     }
 }

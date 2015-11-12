@@ -6,7 +6,6 @@ namespace Locadora.Dominio
     public class Jogo : EntidadeBase
     {
         public string Nome { get; set; }
-        public decimal Preco { get; set; }
         public Categoria Categoria { get; set; }
         public string Descricao { get; set; }
         public Selo Selo { get; set; }
@@ -35,7 +34,6 @@ namespace Locadora.Dominio
             var builder = new StringBuilder();
             builder.AppendLine("Id: " + this.Id);
             builder.AppendLine("Nome: " + this.Nome);
-            builder.AppendLine("Preço: " + this.Preco.ToString("C", CultureInfo.GetCultureInfo("pt-BR")));
             builder.AppendLine("Categoria: " + this.Categoria);
             builder.AppendLine("Descricão: " + this.Descricao);
             builder.AppendLine("Selo: " + this.Selo);
@@ -56,7 +54,6 @@ namespace Locadora.Dominio
 
                 return this.Id == jogoComp.Id
                     && this.Nome == jogoComp.Nome
-                    && this.Preco == jogoComp.Preco
                     && this.Categoria == jogoComp.Categoria
                     && this.Descricao == jogoComp.Descricao
                     && this.Selo == jogoComp.Selo

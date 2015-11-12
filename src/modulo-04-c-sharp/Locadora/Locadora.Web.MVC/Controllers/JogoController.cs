@@ -20,7 +20,6 @@ namespace Locadora.Web.MVC.Controllers
             {
                 Nome = jogoDetalhes.Nome,
                 Categoria = jogoDetalhes.Categoria.ToString(),
-                Preco = jogoDetalhes.Preco,
                 Descricao = jogoDetalhes.Descricao,
                 Selo = jogoDetalhes.Selo.ToString(),
                 Imagem = jogoDetalhes.URLImagem,
@@ -41,7 +40,6 @@ namespace Locadora.Web.MVC.Controllers
                 {
                     Id = jogo.Id,
                     Nome = jogo.Nome,
-                    Preco = jogo.Preco,
                     Categoria = jogo.Categoria,
                     Descricao = jogo.Descricao,
                     Selo = jogo.Selo,
@@ -69,7 +67,6 @@ namespace Locadora.Web.MVC.Controllers
                     var jogo = new Jogo((int) jogoManter.Id)
                     {
                         Nome = jogoManter.Nome,
-                        Preco = jogoManter.Preco,
                         Categoria = jogoManter.Categoria,
                         Descricao = jogoManter.Descricao,
                         Selo = jogoManter.Selo,
@@ -84,7 +81,6 @@ namespace Locadora.Web.MVC.Controllers
                     var jogo = new Jogo()
                     {
                         Nome = jogoManter.Nome,
-                        Preco = jogoManter.Preco,
                         Categoria = jogoManter.Categoria,
                         Descricao = jogoManter.Descricao,
                         Selo = jogoManter.Selo,

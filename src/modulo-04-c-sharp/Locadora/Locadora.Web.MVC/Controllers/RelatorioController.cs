@@ -26,7 +26,6 @@ namespace Locadora.Web.MVC.Controllers
                 {
                     Id = jogo.Id,
                     Nome = jogo.Nome,
-                    Preco = jogo.Preco,
                     Categoria = jogo.Categoria.ToString(),
                     Selo = jogo.Selo.ToString()
                 };
@@ -36,9 +35,6 @@ namespace Locadora.Web.MVC.Controllers
             if (relatorioModel.ListaJogos.Count() != 0)
             {
                 relatorioModel.QuantidadeTotal = relatorioModel.ListaJogos.Count();
-                relatorioModel.ValorMedio = relatorioModel.ListaJogos.Sum(valorMedio => valorMedio.Preco);
-                relatorioModel.JogoMaisCaro = relatorioModel.ListaJogos.Max(maisCaro => maisCaro.Preco);
-                relatorioModel.JogoMaisBarato = relatorioModel.ListaJogos.Min(maisBarato => maisBarato.Preco);
 
                 return View(relatorioModel);
             }
