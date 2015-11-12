@@ -175,7 +175,8 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Locacao\Locar.cshtml" />
-    <Content Include="Views\Shared\_Locacao.cshtml" />
+    <Content Include="Views\Shared\Jogo\_Locacao.cshtml" />
+    <Content Include="Views\Shared\Jogo\_SeloJogo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

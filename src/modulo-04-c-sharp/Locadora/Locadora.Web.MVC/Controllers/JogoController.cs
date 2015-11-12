@@ -19,9 +19,9 @@ namespace Locadora.Web.MVC.Controllers
             var jogoModel = new JogoModel()
             {
                 Nome = jogoDetalhes.Nome,
-                Categoria = jogoDetalhes.Categoria.ToString(),
+                Categoria = jogoDetalhes.Categoria,
                 Descricao = jogoDetalhes.Descricao,
-                Selo = jogoDetalhes.Selo.ToString(),
+                Selo = jogoDetalhes.Selo,
                 Imagem = jogoDetalhes.URLImagem,
                 Video = jogoDetalhes.URLVideo
             };

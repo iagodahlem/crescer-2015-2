@@ -26,8 +26,8 @@ namespace Locadora.Web.MVC.Controllers
                 {
                     Id = jogo.Id,
                     Nome = jogo.Nome,
-                    Categoria = jogo.Categoria.ToString(),
-                    Selo = jogo.Selo.ToString()
+                    Categoria = jogo.Categoria,
+                    Selo = jogo.Selo
                 };
                 relatorioModel.ListaJogos.Add(jogoModel);
             }

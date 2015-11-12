@@ -7,11 +7,16 @@
 
 <h3 class="text-center">@TempData["Mensagem"]</h3>
 
-<nav class="navbar-btn">
-    <ul class="nav">
-        <li><button class="btn btn-default btn-primary" onclick="location.href='../Jogo/Manter'">Cadastrar jogo</button></li>
-    </ul>
-</nav>
+@{ int numeroDeColunasDaAcao = User.IsInRole("ADMIN") ? 3 : 2; }
+
+@if (User.IsInRole("ADMIN"))
+{
+    <nav class="navbar-btn">
+        <ul class="nav">
+            <li><button class="btn btn-default btn-primary" onclick="location.href='../Jogo/Manter'">Cadastrar jogo</button></li>
+        </ul>
+    </nav>
+}
 
 @if (Model != null)
 {
@@ -20,7 +25,6 @@
             <tr>
                 <th>Nome</th>
                 <th>Categoria</th>
-                <th>Preço</th>
                 <th>Selo</th>
                 <th colspan="3">Ações</th>
             </tr>
@@ -36,10 +40,12 @@
                 <tr>
                     <td>@jogo.Nome</td>
                     <td>@jogo.Categoria</td>
-                    <td>@jogo.Preco.ToString("c")</td>
-                    <td>@jogo.Selo</td>
+                    <td align="center">@Html.Partial("~/Views/Shared/Jogo/_SeloJogo.cshtml", jogo.Selo)</td>
                     <td align="center">@Html.ActionLink("Detalhes", "JogoDetalhes", "Jogo", new { id = jogo.Id }, new { })</td>
-                    <td align="center">@Html.ActionLink("Editar", "Manter", "Jogo", new { id = jogo.Id }, new { })</td>
+                    @if (User.IsInRole("ADMIN"))
+                    {
+                        <td align="center">@Html.ActionLink("Editar", "Manter", "Jogo", new { id = jogo.Id }, new { })</td>
+                    }
                     <td align="center">@Html.ActionLink("Locar", "Locar", "Locacao", new { id = jogo.Id }, new { })</td>
                 </tr>
             }
