@@ -27,47 +27,41 @@
                 @Html.ActionLink("Locadora CWI Crescer", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
 
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse pull-right">
                 <ul class="nav navbar-nav">
-
-                </ul>
-
-                <ul class="nav pull-right">
-                    <li class="dropdown">
-
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                    <li>
+                        <a id="loginLabel" href="#">
                             Login
                             <span class="caret"></span>
                         </a>
-
-                        <div class="dropdown-menu" style="padding:17px;">
-
-                            @using (@Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "form-horizontal" }))
-                            {
-                                @Html.AntiForgeryToken()
-                                @Html.ValidationSummary(true);
-
-                                <div class="form-group">
-                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-sm" })
-                                    @Html.ValidationMessageFor(m => m.Email)
-                                </div>
-                                <div class="form-group">
-                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control input-sm" })
-                                    @Html.ValidationMessageFor(m => m.Password)
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="submit" class="btn btn-primary btn-sm btn-block" value="Login" />
-                                </div>
-
-                                <span class="error-mesage">
-                                    @Html.ValidationMessage("INVALID_LOGIN")
-                                </span>
-                            }
-
-                        </div>
                     </li>
                 </ul>
+
+                <div class="login-menu-content hidden">
+                    <span class="glyphicon glyphicon-triangle-top" id="triangle"></span>
+                    @using (@Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true);
+
+                        <div class="login-menu-input">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-sm", placeholder = "E-mail" })
+                            @Html.ValidationMessageFor(m => m.Email)
+                        </div>
+                        <div class="login-menu-input">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control input-sm", placeholder = "Senha" })
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </div>
+
+                        <div class="login-menu-input">
+                            <input type="submit" class="btn btn-primary btn-sm btn-block" value="Login" />
+                        </div>
+
+                        <span class="error-mesage">
+                            @Html.ValidationMessage("INVALID_LOGIN")
+                        </span>
+                    }
+                </div>
             </div>
         </div>
     </div>
@@ -96,5 +90,17 @@
 
     <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 
+    <script>
+        $(function () {
+            $('#loginLabel').click(function () {
+                if ($('.login-menu-content').hasClass('hidden')) {
+                    $('.login-menu-content').removeClass('hidden');
+                }
+                else {
+                    $('.login-menu-content').addClass('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
