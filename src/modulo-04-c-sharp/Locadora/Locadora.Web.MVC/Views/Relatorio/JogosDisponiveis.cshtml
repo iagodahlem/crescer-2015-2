@@ -22,15 +22,12 @@
                 <th>Categoria</th>
                 <th>Preço</th>
                 <th>Selo</th>
-                <th colspan="2">Ações</th>
+                <th colspan="3">Ações</th>
             </tr>
         <thead>
         <tfoot>
             <tr>
                 <td>Quantidade de jogos: @Model.QuantidadeTotal</td>
-                <td>Valor médio: @Model.ValorMedio.ToString("c")</td>
-                <td>Jogo mais caro: @Model.JogoMaisCaro.ToString("c")</td>
-                <td colspan="2">Jogo mais barato: @Model.JogoMaisBarato.ToString("c")</td>
             </tr>
         </tfoot>
         <tbody>
@@ -43,6 +40,7 @@
                     <td>@jogo.Selo</td>
                     <td align="center">@Html.ActionLink("Detalhes", "JogoDetalhes", "Jogo", new { id = jogo.Id }, new { })</td>
                     <td align="center">@Html.ActionLink("Editar", "Manter", "Jogo", new { id = jogo.Id }, new { })</td>
+                    <td align="center">@Html.ActionLink("Locar", "Locar", "Locacao", new { id = jogo.Id }, new { })</td>
                 </tr>
             }
         </tbody>
