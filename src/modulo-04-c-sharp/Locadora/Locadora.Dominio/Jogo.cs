@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Text;
 
 namespace Locadora.Dominio
@@ -6,12 +7,15 @@ namespace Locadora.Dominio
     public class Jogo : EntidadeBase
     {
         public string Nome { get; set; }
+        public decimal? Valor { get; set; } = null;
+        public DateTime? DataEntrega { get; set; } = null;
         public Categoria Categoria { get; set; }
         public string Descricao { get; set; }
         public Selo Selo { get; set; }
         public string URLImagem { get; set; } = null;
         public string URLVideo { get; set; } = null;
         public Cliente Cliente { get; set; }
+        public int? IdCliente { get; set; }
 
         public Jogo()
         {

@@ -7,10 +7,11 @@
 
     @Styles.Render("~/Content/css")
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-    
+    @Styles.Render("~/Content/themes/base")
+
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body class="body-home">
     <div class="navbar navbar-inverse navbar-fixed-top header-shadow">
         <div class="container">
             <div class="navbar-header">
@@ -18,21 +19,42 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
+                </button>s
                 @Html.ActionLink("Locadora CWI Crescer", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Listar Jogos", "JogosDisponiveis", "Relatorio")</li>
+                    <li>@Html.ActionLink("Jogos", "JogosDisponiveis", "Relatorio")</li>
+                    <li>@Html.ActionLink("Devolução", "Devolucao", "Locacao")</li>
                 </ul>
+
+                <div class="navbar-collapse collapse pull-right">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a id="loginLabel" href="#">
+                                @string.Format(User.Identity.Name)
+                                <span class="caret"></span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="login-menu-content hidden">
+                        <span class="glyphicon glyphicon-triangle-top" id="triangle"></span>
+                        <ul class="nav navbar-nav">
+                            <li>
+                                @Html.ActionLink("Sair", "Sair", "Login")
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
                 <div class="col-sm-3 col-md-3 pull-right">
                     <form class="navbar-form" role="search" action="@Url.Action("JogosDisponiveis", "Relatorio")" method="get">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Pesquisar jogo..." name="nomeJogo">
+                            <input id="textPesquisa" type="text" class="form-control" placeholder="Pesquisar jogo..." name="nomeJogo">
                             <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                <button id="btnPesquisar" class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                             </div>
                         </div>
                     </form>
@@ -62,8 +84,19 @@
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    @Scripts.Render("~/bundles/jquery-ui")
+    @Scripts.Render("~/bundles/scripts")
 
     <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+    <script>
+        $("document").ready(function() {
+            $("#textPesquisa").autocomplete({
+              source: '@Url.Action("JogosAutocomplete", "Jogo")',
+              select: function() { $("#btnPesquisar").click(); }
+            });
+        });
+    </script>
 
     @RenderSection("Scripts", false)
 </body>

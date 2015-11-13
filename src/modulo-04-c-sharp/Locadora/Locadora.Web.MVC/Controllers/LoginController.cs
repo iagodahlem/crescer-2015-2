@@ -25,6 +25,12 @@ namespace Locadora.Web.MVC.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel loginModel)
@@ -46,11 +52,10 @@ namespace Locadora.Web.MVC.Controllers
             return View("Index", loginModel);
         }
 
-        [HttpPost]
-        public void Sair()
+        public ActionResult Sair()
         {
             ControleDeSessao.Encerrar();
-            RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "Login");
         }
     }
 }

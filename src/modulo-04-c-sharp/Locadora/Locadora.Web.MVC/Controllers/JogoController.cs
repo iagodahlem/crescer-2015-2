@@ -3,6 +3,8 @@ using Locadora.Dominio.Repositorio;
 using Locadora.Web.MVC.Helpers;
 using Locadora.Web.MVC.Models;
 using Locadora.Web.MVC.Seguranca;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Locadora.Web.MVC.Controllers
@@ -16,7 +18,7 @@ namespace Locadora.Web.MVC.Controllers
         public ActionResult JogoDetalhes(int id)
         {
             var jogoDetalhes = repositorio.BuscarPorId(id);
-            var jogoModel = new JogoModel()
+            var jogoModel = new JogoDetalhesModel()
             {
                 Nome = jogoDetalhes.Nome,
                 Categoria = jogoDetalhes.Categoria,
@@ -35,7 +37,7 @@ namespace Locadora.Web.MVC.Controllers
         {
             if (id.HasValue)
             {
-                var jogo = repositorio.BuscarPorId((int) id);
+                var jogo = repositorio.BuscarPorId((int)id);
                 var jogoManterModel = new JogoManterModel()
                 {
                     Id = jogo.Id,
@@ -64,7 +66,7 @@ namespace Locadora.Web.MVC.Controllers
 
                 if (isEdicao)
                 {
-                    var jogo = new Jogo((int) jogoManter.Id)
+                    var jogo = new Jogo((int)jogoManter.Id)
                     {
                         Nome = jogoManter.Nome,
                         Categoria = jogoManter.Categoria,
@@ -97,6 +99,40 @@ namespace Locadora.Web.MVC.Controllers
             {
                 return View("Manter", jogoManter);
             }
+        }
+
+        public JsonResult JogosAutocomplete(string term)
+        {
+            IList<Jogo> jogosEncontrados = null;
+            IJogoRepositorio jogoRepositorio = Modulos.CriarJogoRepositorio();
+
+            if (string.IsNullOrEmpty(term))
+            {
+                jogosEncontrados = jogoRepositorio.BuscarTodos();
+            }
+            else
+            {
+                jogosEncontrados = jogoRepositorio.BuscarPorNome(term);
+            }
+
+            var json = jogosEncontrados.Select(x => new { label = x.Nome });
+
+            return Json(json, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult JogosLocadosAutocomplete(string term)
+        {
+            IList<Jogo> jogosEncontrados = null;
+            IJogoRepositorio jogoRepositorio = Modulos.CriarJogoRepositorio();
+
+            if (term != null)
+            {
+                jogosEncontrados = jogoRepositorio.BuscarLocados();
+            }
+
+            var json = jogosEncontrados.Select(x => new { label = x.Nome });
+
+            return Json(json, JsonRequestBehavior.AllowGet);
         }
     }
 }

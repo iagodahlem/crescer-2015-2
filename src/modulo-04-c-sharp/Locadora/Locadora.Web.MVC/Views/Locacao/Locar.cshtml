@@ -1,7 +1,32 @@
-﻿
+﻿@model Locadora.Web.MVC.Models.JogoLocacaoModel
 @{
     ViewBag.Title = "Locação";
 }
 
 <h2>Locação</h2>
 
+@Html.Partial("~/Views/Shared/Jogo/_LocacaoJogo.cshtml")
+
+@using (@Html.BeginForm("ConcluirLocacao", "Locacao", FormMethod.Post, new { @class = "form-inline", role = "form" }))
+{
+    @Html.ValidationSummary(false)
+
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.TextBoxFor(model => model.NomeCliente, new { id = "nomeCliente", @class = "form-control", placeholder = "Pesquisar cliente..." })
+    </div>
+    <button id="btnLocar" class="btn btn-primary" type="submit">Finalizar Locação</button>
+}
+
+@section Scripts
+{
+    <script>
+        $("document").ready(function () {
+            $("#nomeCliente").autocomplete({
+                source: '@Url.Action("ClientesAutocomplete", "Cliente")',
+                select: function () { $("#btnPesquisar").click(); }
+            });
+        });
+    </script>
+}

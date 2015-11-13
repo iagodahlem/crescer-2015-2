@@ -58,6 +58,14 @@
     <Compile Include="Migrations\201511121633362_Remover_Preco.Designer.cs">
       <DependentUpon>201511121633362_Remover_Preco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511121929315_Adicionar valor e data no jogo.cs" />
+    <Compile Include="Migrations\201511121929315_Adicionar valor e data no jogo.Designer.cs">
+      <DependentUpon>201511121929315_Adicionar valor e data no jogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511122257340_Adicionar IDCliente no Jogo.cs" />
+    <Compile Include="Migrations\201511122257340_Adicionar IDCliente no Jogo.Designer.cs">
+      <DependentUpon>201511122257340_Adicionar IDCliente no Jogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositorios\ClienteRepositorio.cs" />
     <Compile Include="Repositorios\JogoRepositorio.cs" />
     <Compile Include="Migrations\201511091930094_Initial.cs" />
@@ -92,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511121633362_Remover_Preco.resx">
       <DependentUpon>201511121633362_Remover_Preco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511121929315_Adicionar valor e data no jogo.resx">
+      <DependentUpon>201511121929315_Adicionar valor e data no jogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511122257340_Adicionar IDCliente no Jogo.resx">
+      <DependentUpon>201511122257340_Adicionar IDCliente no Jogo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,9 +7,7 @@
 
 <h3 class="text-center">@TempData["Mensagem"]</h3>
 
-@{ int numeroDeColunasDaAcao = User.IsInRole("ADMIN") ? 3 : 2; }
-
-@if (User.IsInRole("ADMIN"))
+@if (true)
 {
     <nav class="navbar-btn">
         <ul class="nav">
@@ -26,7 +24,8 @@
                 <th>Nome</th>
                 <th>Categoria</th>
                 <th>Selo</th>
-                <th colspan="3">Ações</th>
+                <th>Editar</th>
+                <th>Locar</th>
             </tr>
         <thead>
         <tfoot>
@@ -38,14 +37,10 @@
             @foreach (var jogo in @Model.ListaJogos)
             {
                 <tr>
-                    <td>@jogo.Nome</td>
+                    <td>@Html.ActionLink(@jogo.Nome, "JogoDetalhes", "Jogo", new { id = jogo.Id }, new { })</td>
                     <td>@jogo.Categoria</td>
                     <td align="center">@Html.Partial("~/Views/Shared/Jogo/_SeloJogo.cshtml", jogo.Selo)</td>
-                    <td align="center">@Html.ActionLink("Detalhes", "JogoDetalhes", "Jogo", new { id = jogo.Id }, new { })</td>
-                    @if (User.IsInRole("ADMIN"))
-                    {
-                        <td align="center">@Html.ActionLink("Editar", "Manter", "Jogo", new { id = jogo.Id }, new { })</td>
-                    }
+                    <td align="center">@Html.ActionLink("Editar", "Manter", "Jogo", new { id = jogo.Id }, new { })</td>
                     <td align="center">@Html.ActionLink("Locar", "Locar", "Locacao", new { id = jogo.Id }, new { })</td>
                 </tr>
             }

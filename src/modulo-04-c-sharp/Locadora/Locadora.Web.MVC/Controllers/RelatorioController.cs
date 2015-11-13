@@ -1,4 +1,6 @@
-﻿using Locadora.Dominio.Repositorio;
+﻿using Locadora.Dominio;
+using Locadora.Dominio.Repositorio;
+using Locadora.Web.MVC.Helpers;
 using Locadora.Web.MVC.Models;
 using System;
 using System.Collections.Generic;
@@ -18,7 +20,7 @@ namespace Locadora.Web.MVC.Controllers
         {
             var relatorioModel = new RelatorioModel();
 
-            var metodoBusca = string.IsNullOrEmpty(nomeJogo) ? repositorio.BuscarTodos() : repositorio.BuscarPorNome(nomeJogo);
+            var metodoBusca = string.IsNullOrEmpty(nomeJogo) ? repositorio.BuscarNaoLocados() : repositorio.BuscarPorNome(nomeJogo);
 
             foreach (var jogo in metodoBusca)
             {

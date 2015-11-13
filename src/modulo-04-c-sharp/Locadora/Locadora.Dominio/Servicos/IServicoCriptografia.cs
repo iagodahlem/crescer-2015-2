@@ -11,4 +11,3 @@ namespace Locadora.Dominio.Servicos
         string CriptografarSenha(string senha);
     }
 }
-

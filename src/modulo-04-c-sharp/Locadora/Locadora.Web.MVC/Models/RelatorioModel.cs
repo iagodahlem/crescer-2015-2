@@ -9,11 +9,13 @@ namespace Locadora.Web.MVC.Models
     public class RelatorioModel
     {
         public List<JogoModel> ListaJogos { get; set; }
+        public List<JogoLocacaoModel> ListaJogosLocacao { get; set; }
         public int QuantidadeTotal { get; set; }
 
         public RelatorioModel()
         {
             ListaJogos = new List<JogoModel>();
+            ListaJogosLocacao = new List<JogoLocacaoModel>();
         }
     }
 }

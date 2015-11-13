@@ -1,0 +1,45 @@
+﻿@model Locadora.Web.MVC.Models.RelatorioModel
+@{
+    ViewBag.Title = "Devolucao";
+}
+
+<h2>Devolução</h2>
+
+@if (Model != null)
+{
+    <table class="table table-striped table-bordered table-background">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Data para Entrega</th>
+                <th>Selo</th>
+                <th>Devolver</th>
+            </tr>
+        <thead>
+        <tbody>
+            @foreach (var jogo in @Model.ListaJogosLocacao)
+            {
+                <tr>
+                    <td>@jogo.Nome</td>
+                    <td>@jogo.Valor</td>
+                    <td>@jogo.DataEntrega</td>
+                    <td align="center">@Html.Partial("~/Views/Shared/Jogo/_SeloJogo.cshtml", jogo.Selo)</td>
+                    <td align="center">@Html.ActionLink("Devolver", "ConcluirDevolucao", "Locacao", new { id = jogo.Id }, new { })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@section Scripts
+{
+    <script>
+        $("document").ready(function () {
+            $("#nomeJogo").autocomplete({
+                source: '@Url.Action("JogosLocadosAutocomplete", "Jogo")',
+                select: function () { $("#btnPesquisar").click(); }
+            });
+        });
+    </script>
+}
