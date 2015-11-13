@@ -70,7 +70,6 @@
     color: #fff;
     background-color: #222222;
     box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.4);
-    border-top: 1px solid #ababab;
     margin-top: 80px;
 }
 
@@ -108,10 +107,10 @@
     text-align: right;
 }
 
-.imagem-selo-jogo {
+.imagem-selo-jogo-sobreposta img {
     position: relative;
     top: -178px;
-    right: -144px;
+    right: -136px;
 }
 
 /*=========================*/
@@ -120,22 +119,36 @@
     font-size: 16px;
     color: red;
     margin: 5px;
-    -webkit-transform: scale(.8);
-    transform: scale(.8);
+
+
+    -webkit-transform:scale(0.7); 
+	-moz-transform:scale(0.7); 
+	-o-transform:scale(0.7);
+    transform:scale(0.7);
+
     animation: heart-beat 2s infinite;
 }
 
-@keyframes heart-beat {
+keyframes heart-beat {
     0% {
-        -webkit-transform: scale(.8);
-        transform: scale(.5);
+        -webkit-transform:scale(0.7); 
+	    -moz-transform:scale(0.7); 
+	    -o-transform:scale(0.7);
+        transform:scale(0.7);
+        font-size: 16px;
     }
     50% {
-        -webkit-transform: scale(.5);
-        transform: scale(.5);
+        -webkit-transform:scale(1.2); 
+	    -moz-transform:scale(1.2); 
+	    -o-transform:scale(1.2);
+        transform:scale(1.2);
+        font-size: 18px;
     }
     100% {
-        -webkit-transform: scale(.8);
-        transform: scale(.8);
+        -webkit-transform:scale(0.7); 
+	    -moz-transform:scale(0.7); 
+	    -o-transform:scale(0.7);
+        transform:scale(0.7);
+        font-size: 16px;
     }
 }

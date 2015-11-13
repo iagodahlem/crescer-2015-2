@@ -5,7 +5,9 @@
         <tr>
             <td width="340px" height="100px" rowspan="4" align="center">
                 <img class="table-img" src="@Model.Imagem" alt="@Model.Nome" />
-                @Html.Partial("~/Views/Shared/Jogo/_SeloJogo.cshtml", Model.Selo)
+                <div class="imagem-selo-jogo-sobreposta">
+                    @Html.Partial("~/Views/Shared/Jogo/_SeloJogo.cshtml", Model.Selo)
+                </div>
             </td>
         </tr>
         <tr>
