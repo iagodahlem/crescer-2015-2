@@ -28,9 +28,56 @@ namespace Locadora.Dominio
             this.Cliente = cliente;
         }
 
-        public void LocarPara(Cliente cliente)
+        public void LocarPara(/*int idCliente,*/ Cliente cliente)
         {
+            //this.IdCliente = idCliente;
             this.Cliente = cliente;
+            this.DataEntrega = DataPrevistaParaEntrega(this.Selo);
+            this.Valor = ValorJogo(this.Selo);
+        }
+
+        public DateTime DataPrevistaParaEntrega(Selo selo)
+        {
+            int diasParaEntrega = 0;
+            DateTime dataEntrega = DateTime.Now;
+
+            switch (selo)
+            {
+                case Selo.OURO:
+                    diasParaEntrega = 1;
+                    break;
+
+                case Selo.PRATA:
+                    diasParaEntrega = 2;
+                    break;
+
+                case Selo.BRONZE:
+                    diasParaEntrega = 3;
+                    break;
+            }
+
+            return dataEntrega.AddDays(diasParaEntrega);
+        }
+
+        public decimal ValorJogo(Selo selo)
+        {
+            decimal valor = 0.00M;
+            switch (selo)
+            {
+                case Selo.OURO:
+                    valor = 15.00M;
+                    break;
+
+                case Selo.PRATA:
+                    valor = 10.00M;
+                    break;
+
+                case Selo.BRONZE:
+                    valor = 5.00M;
+                    break;
+            }
+
+            return valor;
         }
 
         public override string ToString()

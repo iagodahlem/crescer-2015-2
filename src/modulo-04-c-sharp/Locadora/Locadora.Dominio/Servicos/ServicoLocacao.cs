@@ -10,23 +10,24 @@ namespace Locadora.Dominio.Servicos
     {
         public DateTime DataPrevistaParaEntrega(Selo selo)
         {
+            int diasParaEntrega = 0;
             DateTime dataEntrega = DateTime.Now;
+
             switch (selo)
             {
                 case Selo.OURO:
-                    dataEntrega = dataEntrega.AddDays(1);
+                    diasParaEntrega = 1;
                     break;
 
                 case Selo.PRATA:
-                    dataEntrega = dataEntrega.AddDays(2);
+                    diasParaEntrega = 2;
                     break;
 
                 case Selo.BRONZE:
-                    dataEntrega = dataEntrega.AddDays(3);
+                    diasParaEntrega = 3;
                     break;
             }
-
-            return dataEntrega;
+            return dataEntrega.AddDays(diasParaEntrega);
         }
 
         public decimal ValorJogo(Selo selo)

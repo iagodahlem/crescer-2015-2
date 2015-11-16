@@ -76,5 +76,44 @@ namespace Locadora.Dominio.Test
 
             Assert.AreEqual(videoObtido, videoEsperado);
         }
+
+        [TestMethod]
+        public void LocacaoParaClienteTemPreco15ComSeloDeOuro()
+        {
+            var jogo = new Jogo() { Selo = Selo.OURO };
+            var cliente = new Cliente();
+            decimal precoEsperado = 15;
+
+            jogo.LocarPara(cliente);
+            decimal? precoObtido = jogo.Valor;
+
+            Assert.AreEqual(precoEsperado, precoObtido);
+        }
+
+        [TestMethod]
+        public void LocacaoParaClienteTemPreco10ComSeloDePrata()
+        {
+            var jogo = new Jogo() { Selo = Selo.PRATA };
+            var cliente = new Cliente();
+            decimal precoEsperado = 10;
+
+            jogo.LocarPara(cliente);
+            decimal? precoObtido = jogo.Valor;
+
+            Assert.AreEqual(precoEsperado, precoObtido);
+        }
+
+        [TestMethod]
+        public void LocacaoParaClienteTemPreco5ComSeloDeBronze()
+        {
+            var jogo = new Jogo() { Selo = Selo.BRONZE };
+            var cliente = new Cliente();
+            decimal precoEsperado = 5;
+
+            jogo.LocarPara(cliente);
+            decimal? precoObtido = jogo.Valor;
+
+            Assert.AreEqual(precoEsperado, precoObtido);
+        }
     }
 }
