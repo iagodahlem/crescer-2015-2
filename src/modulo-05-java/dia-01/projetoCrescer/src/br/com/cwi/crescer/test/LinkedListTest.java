@@ -10,8 +10,7 @@ public class LinkedListTest {
 
     @Test
     public void adicionarPrimeiroNaLista() {
-
-        LinkedList linkedList = new LinkedList();
+        LinkedList<String> linkedList = new LinkedList<String>();
 
         linkedList.addFirst("primeiro");
         linkedList.addFirst("segundo");
@@ -23,10 +22,10 @@ public class LinkedListTest {
 
     @Test
     public void adicionarUltimoNaLista() {
-
-        LinkedList linkedList = new LinkedList();
+        LinkedList<String> linkedList = new LinkedList<String>();
 
         linkedList.addFirst("primeiro");
+        linkedList.addFirst("segundo");
         linkedList.addLast("ultimo");
 
         assertEquals(linkedList.getLast(), "ultimo");
@@ -34,8 +33,7 @@ public class LinkedListTest {
 
     @Test
     public void removerPrimeiroItemDaLista() {
-
-        LinkedList linkedList = new LinkedList();
+        LinkedList<String> linkedList = new LinkedList<String>();
 
         linkedList.addFirst("primeiro");
         linkedList.addFirst("segundo");
@@ -46,17 +44,24 @@ public class LinkedListTest {
     }
 
     @Test
-    public void adicionarNodeNoMeioDaLista() {
-
-        LinkedList linkedList = new LinkedList();
-
+    public void adicionarNodeNaPosicao2() {
+        LinkedList<String> linkedList = new LinkedList<String>();
         linkedList.addFirst("primeiro");
-        linkedList.addFirst("segundo");
-        linkedList.addFirst("terceiro");
+        linkedList.addLast("segundo");
+        linkedList.addLast("quarto");
+        linkedList.add(2, "terceiro");
 
-        linkedList.add(1, "quarto");
+        assertEquals(linkedList.getNode(2).getValue(), "terceiro");
+    }
 
-        assertEquals(linkedList.getFirst(), "quarto");
+    @Test
+    public void adicionarNumerosInteirosNaLista() {
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+        linkedList.addFirst(1);
+        linkedList.addLast(2);
+
+        assertEquals(linkedList.getFirst(), 1, 0);
+        assertEquals(linkedList.getLast(), 2, 0);
     }
 
 }
