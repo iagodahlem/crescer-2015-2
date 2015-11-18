@@ -1,5 +1,10 @@
 package br.com.cwi.crescer;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.cwi.crescer.LinkedList.Node;
+
 public class DoublyLinkedList<T> {
 
     private Node<T> first, last;
@@ -20,6 +25,41 @@ public class DoublyLinkedList<T> {
         last.setNext(node);
         last.setPrevious(node.getPrevious());
         last = node;
+    }
+    
+    public void add(int index, T value) {
+        Node<T> nodeAnterior = getNode(index - 1);
+        Node<T> newNode = new Node<T>(value, nodeAnterior.getNext());
+        nodeAnterior.setNext(newNode);
+    }
+    
+    public void removeFirst() {
+        Node<T> node = first;
+        first = node.getNext();
+    }
+
+    public void remove(int index) {
+        Node<T> tmp = getNode(index - 1);
+        Node<T> removido = tmp.getNext();
+        tmp.setNext(removido.getNext());
+    }
+    
+    public List<T> list() {
+        ArrayList<T> lista = new ArrayList<T>();
+        Node<T> node = first;
+        while (node != null) {
+            lista.add(node.getValue());
+            node = node.getNext();
+        }
+        return lista;
+    }
+    
+    public Node<T> getNode(int index) {
+        Node<T> node = first;
+        for (int i = 0; i < index; i++) {
+            node = node.getNext();
+        }
+        return node;
     }
 
     public T getFirst() {

@@ -1,0 +1,26 @@
+package br.com.cwi.crescer;
+
+import java.Console;
+import java.io.Console;
+import java.util.Scanner;
+
+public class Aplicacao {
+
+    public static void main(String[] args) {
+    	
+    	JavaConsole console = new JavaConsole();
+    	Scanner scanner = new Scanner(System.in);
+    	
+    	String quebraDeLinha = "\n";
+    	StringBuffer menu = new StringBuffer();
+    	menu.append("===== Console App - Iago =====" + quebraDeLinha);
+    	menu.append("1 - LinkedList" + quebraDeLinha);
+    	menu.append("2 - DoublyLinkedList" + quebraDeLinha);
+    	
+    	System.out.println(menu);
+    	
+    	
+    	int operacao;
+    	operacao = read.
+    }
+}

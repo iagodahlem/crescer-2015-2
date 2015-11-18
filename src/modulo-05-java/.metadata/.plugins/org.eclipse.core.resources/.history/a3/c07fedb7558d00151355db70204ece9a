@@ -1,0 +1,8 @@
+package br.com.cwi.crescer.model;
+
+public class Servico {
+	
+	private Long idServico;
+	private String dsServico;
+	
+}

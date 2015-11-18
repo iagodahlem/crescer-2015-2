@@ -1,0 +1,34 @@
+package br.com.cwi.crescer.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import br.com.cwi.crescer.jdbc.ConnectionFactory;
+import br.com.cwi.crescer.model.Cliente;
+
+public class ClienteDao {
+
+	public void adiciona(Cliente cliente) throws SQLException {
+		Cliente novoCliente = cliente;
+		Long id = cliente.getIdCliente();
+		String nome = cliente.getNmCliente();
+		String cpf = cliente.getNrCPF();
+		
+		try {
+			Connection connection = new ConnectionFactory().getConnection();
+			PreparedStatement statement = connection.prepareStatement(" insert into cliente (idCliente, nmCliente, nrCpf) values (?, ? ,?) ");
+			
+			Statement stmt = connection.createStatement();
+			stmt.execute(" insert into cliente (idCliente, nmCliente, nrCpf) values (" + cliente.getIdCliente() + ") ");
+			
+			statement.execute();
+			
+		} catch (SQLException e) {
+			throw e;
+		}
+		
+	}
+	
+}
