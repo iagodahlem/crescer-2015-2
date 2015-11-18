@@ -1,7 +1,0 @@
-package br.com.cwi.crescer.jdbc;
-
-public class ConnectionFactory {
-	public Connection getConnection() thwros SQLExcception {
-		
-	}
-}

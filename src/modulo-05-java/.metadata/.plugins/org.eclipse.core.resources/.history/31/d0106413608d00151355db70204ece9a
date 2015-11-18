@@ -1,8 +1,0 @@
-package br.com.cwi.crescer.dao;
-
-public class ServicoDao {
-	
-	public void insert(Cliente cliente) {
-		
-	}
-}
