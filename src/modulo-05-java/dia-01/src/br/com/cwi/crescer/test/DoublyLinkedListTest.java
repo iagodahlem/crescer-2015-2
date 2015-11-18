@@ -1,7 +1,5 @@
 package br.com.cwi.crescer.test;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
 import br.com.cwi.crescer.DoublyLinkedList;
@@ -18,7 +16,12 @@ public class DoublyLinkedListTest {
         assertEquals(doublyLinkedList.getFirst(), "segundo");
     }
 
-    @Test
+    private void assertEquals(String first, String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Test
     public void ListaDuplaRecebeLast() {
         DoublyLinkedList<String> doublyLinkedList = new DoublyLinkedList<String>();
 
