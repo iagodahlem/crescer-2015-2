@@ -1,5 +1,6 @@
 package br.com.cwi.crescer.application;
 
+import java.io.Console;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -11,11 +12,11 @@ public class App {
 		int operacao;
 		Operations op = new Operations();
 		Scanner scanner = new Scanner(System.in);
-		
+			
 		Menu menu = new Menu();
-		
+			
 		operacao = scanner.nextInt();
-		
+			
 		if (operacao == 1) {
 	    	op.inserirPedidoSelecionandoCliente();
 		}
@@ -26,7 +27,7 @@ public class App {
 			op.listarPedidosDeDeterminadoCliente();
 		}
 		if (operacao == 4) {
-			
+			op.buscarPedido();
 		}
 		
 	}

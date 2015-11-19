@@ -109,4 +109,26 @@ public class Operations {
     	
 	}
 	
+	public void buscarPedido() throws SQLException {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("\n" + "Digite o numero do pedido... ");
+		
+		Long idPedido = scanner.nextLong();
+		
+		PedidoDao pedidoDao = new PedidoDao();
+		Pedido pedido = pedidoDao.load(idPedido);
+		
+		if (pedido != null) {
+			System.out.println("Nº Pedido: " + pedido.getIdPedido());
+			System.out.println("Nº Cliente: " + pedido.getIdCliente());
+			System.out.println("Descrição: " + pedido.getDsPedido());
+		}
+		else {
+			System.out.println("Nenhum pedido encontrado.");
+		}
+    	
+	}
+	
 }
