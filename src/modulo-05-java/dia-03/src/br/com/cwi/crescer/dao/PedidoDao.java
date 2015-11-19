@@ -101,7 +101,7 @@ public class PedidoDao {
 			
 			List<Pedido> pedidos = new ArrayList<Pedido>();			
 			
-			String sql = " select idPedido, idCliente, dsPedido where idCliente = ? ";
+			String sql = " select idPedido, idCliente, dsPedido from pedido where idCliente = ? ";
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setLong(1, idCliente);
 			

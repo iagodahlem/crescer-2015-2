@@ -17,13 +17,13 @@ public class App {
 		operacao = scanner.nextInt();
 		
 		if (operacao == 1) {
-	    	op.selecionarCliente();
+	    	op.inserirPedidoSelecionandoCliente();
 		}
 		if (operacao == 2) {
-			op.inserirCliente();
+			op.inserirPedidoCriandoCliente();
 		}
 		if (operacao == 3) {
-			
+			op.listarPedidosDeDeterminadoCliente();
 		}
 		if (operacao == 4) {
 			

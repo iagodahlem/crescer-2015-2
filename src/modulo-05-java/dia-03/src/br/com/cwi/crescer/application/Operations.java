@@ -11,11 +11,11 @@ import br.com.cwi.crescer.model.Pedido;
 
 public class Operations {
 	
-	public void selecionarCliente() throws SQLException {
+	public Cliente selecionarCliente() throws SQLException {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Nº - Nome");
+		System.out.println("Nº | Nome");
 		System.out.println("---------");
 		
 		ClienteDao clienteDao = new ClienteDao();
@@ -24,16 +24,20 @@ public class Operations {
     		System.out.println(cliente.getIdCliente() + "  - " + cliente.getNmCliente());
     	}
     	
-    	System.out.println("\n" + "Digite o numero do cliente que deseja incluir no pedido... ");
+    	System.out.println("\n" + "Digite o numero do cliente... ");
     	
     	Long idCliente = scanner.nextLong();
     	Cliente cliente = clienteDao.load(idCliente);
     	
-    	inserirPedido(cliente);
+    	return cliente;
     	
 	}
 	
-	public void inserirCliente() throws SQLException {
+	public void inserirPedidoSelecionandoCliente() throws SQLException {
+		inserirPedido(selecionarCliente());
+	}
+	
+	public Cliente inserirCliente() throws SQLException {
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -46,8 +50,13 @@ public class Operations {
 		ClienteDao clienteDao = new ClienteDao();
 		clienteDao.insert(cliente);
 		
-		inserirPedido(cliente);
+		System.out.println("Cliente inserido com sucesso.");
 		
+		return cliente;
+	}
+	
+	public void inserirPedidoCriandoCliente() throws SQLException {
+		inserirPedido(inserirCliente());
 	}
 	
 	public void inserirPedido(Cliente cliente) throws SQLException {
@@ -75,6 +84,29 @@ public class Operations {
 		PedidoDao pedidoDao = new PedidoDao();
 		pedidoDao.insert(pedido);
 		
+		System.out.println("Pedido inserido com sucesso.");
+		
+	}
+	
+	public void listarPedidosDeDeterminadoCliente() throws SQLException {
+		
+		Cliente cliente = selecionarCliente();
+		Long idCliente = cliente.getIdCliente();
+		
+		System.out.println("Nº Pedido | Nº Cliente | Descrição");
+		System.out.println("----------------------------------");
+		
+		PedidoDao pedidoDao = new PedidoDao();
+		List<Pedido> list = pedidoDao.listByCliente(idCliente);
+		if (list != null) {
+			for (Pedido pedido : list) {
+	    		System.out.println(pedido.getIdPedido() + " - " + pedido.getIdCliente() + " - " + pedido.getDsPedido());
+	    	}	
+		}
+		else {
+			System.out.println("Nenhum pedido encontrado");
+		}
+    	
 	}
 	
 }
