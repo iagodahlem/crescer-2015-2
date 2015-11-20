@@ -11,6 +11,9 @@ import br.com.cwi.crescer.model.Pedido;
 
 public class Operations {
 	
+	ClienteDao clienteDao = new DaoBase().CriarClienteDao();
+	PedidoDao pedidoDao = new DaoBase().CriarPedidoDao();
+	
 	public Cliente selecionarCliente() throws SQLException {
 		
 		Scanner scanner = new Scanner(System.in);
@@ -18,7 +21,6 @@ public class Operations {
 		System.out.println("Nº | Nome");
 		System.out.println("---------");
 		
-		ClienteDao clienteDao = new ClienteDao();
 		List<Cliente> list = clienteDao.listAll();
     	for (Cliente cliente : list) {
     		System.out.println(cliente.getIdCliente() + "  - " + cliente.getNmCliente());
@@ -47,7 +49,6 @@ public class Operations {
 		System.out.println("Digite o CPF do cliente... ");
 		cliente.setNrCPF(scanner.nextLine());
 		
-		ClienteDao clienteDao = new ClienteDao();
 		clienteDao.insert(cliente);
 		
 		System.out.println("Cliente inserido com sucesso.");
@@ -74,14 +75,12 @@ public class Operations {
 			pedido.setIdCliente(idCliente);
 		}
 		else {
-			ClienteDao clienteDao = new ClienteDao();
 			idCliente = clienteDao.loadByName(nomeCliente).getIdCliente();
 			pedido.setIdCliente(idCliente);
 		}
 		
 		pedido.setDsPedido(scanner.nextLine());
 		
-		PedidoDao pedidoDao = new PedidoDao();
 		pedidoDao.insert(pedido);
 		
 		System.out.println("Pedido inserido com sucesso.");
@@ -96,7 +95,6 @@ public class Operations {
 		System.out.println("Nº Pedido | Nº Cliente | Descrição");
 		System.out.println("----------------------------------");
 		
-		PedidoDao pedidoDao = new PedidoDao();
 		List<Pedido> list = pedidoDao.listByCliente(idCliente);
 		if (list != null) {
 			for (Pedido pedido : list) {
@@ -117,7 +115,6 @@ public class Operations {
 		
 		Long idPedido = scanner.nextLong();
 		
-		PedidoDao pedidoDao = new PedidoDao();
 		Pedido pedido = pedidoDao.load(idPedido);
 		
 		if (pedido != null) {
