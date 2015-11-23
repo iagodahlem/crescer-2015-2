@@ -18,7 +18,7 @@ public class Cidade {
 	@Basic(optional = false)
 	private String nome;
 	
-	@Column(name = "UF")
+	@Column(name = "UF", length = 2)
 	@Basic(optional = false)
 	private String uf;
 	
