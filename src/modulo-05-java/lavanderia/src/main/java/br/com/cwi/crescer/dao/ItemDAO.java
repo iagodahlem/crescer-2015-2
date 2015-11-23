@@ -4,10 +4,12 @@ import javax.persistence.EntityManager;
 
 import org.springframework.stereotype.Repository;
 
-@Repository
-public class Item extends DAO {
+import br.com.cwi.crescer.domain.Item;
 
-	public Item(EntityManager em) {
+@Repository
+public class ItemDAO extends DAO {
+
+	public ItemDAO(EntityManager em) {
 		super();
 		super.em = em;
 	}
