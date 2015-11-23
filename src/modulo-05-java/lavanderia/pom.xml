@@ -8,8 +8,10 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>lavanderia</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Lavanderia CWI Crescer</name>
+	<description>
+		Projeto de uma Lavanderia utilizado durante as aulas do Projeto Crescer 2015-2 
+	</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -49,6 +51,7 @@
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0.4</version>
 		</dependency>
+		
 	</dependencies>
 	
 	<build>

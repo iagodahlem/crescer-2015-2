@@ -12,7 +12,7 @@ public class Cidade {
 
 	@Id
 	@Column(name = "IDCidade")
-	private long idCidade;
+	private Long idCidade;
 	
 	@Column(name = "Nome", length = 50)
 	@Basic(optional = false)
@@ -22,11 +22,11 @@ public class Cidade {
 	@Basic(optional = false)
 	private String uf;
 	
-	public long getIdCidade() {
+	public Long getIdCidade() {
 		return idCidade;
 	}
 
-	public void setIdCidade(long idCidade) {
+	public void setIdCidade(Long idCidade) {
 		this.idCidade = idCidade;
 	}
 

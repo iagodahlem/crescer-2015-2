@@ -3,6 +3,8 @@ package br.com.cwi.crescer.domain;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,7 +20,7 @@ public class Cliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQUENCE_NAME)
-	@Column(name = "Cliente")
+	@Column(name = "IDCliente")
 	private Long idPessoa;
 	
 	@Column(name = "Nome", length = 70)
@@ -44,8 +46,13 @@ public class Cliente {
 	@Column(name = "CEP", length = 8)
 	private Long cep;
 	
+	@Enumerated(EnumType.ORDINAL)
 	@Column(name = "Situacao", length = 1)
-	private String situacao;
+	private SituacaoCliente situacao;
+	
+	public static enum SituacaoCliente {
+		ATIVO, INATIVO
+	}
 
 	public Long getIdPessoa() {
 		return idPessoa;
@@ -111,11 +118,11 @@ public class Cliente {
 		this.cep = cep;
 	}
 
-	public String getSituacao() {
+	public SituacaoCliente getSituacao() {
 		return situacao;
 	}
 
-	public void setSituacao(String situacao) {
+	public void setSituacao(SituacaoCliente situacao) {
 		this.situacao = situacao;
 	}
 	
