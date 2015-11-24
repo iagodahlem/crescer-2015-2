@@ -2,11 +2,14 @@ package br.com.cwi.crescer.domain;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -23,12 +26,16 @@ public class Produto {
 	private Long idProduto;
 	
 	@Column(name = "IDServico")
+	@Basic(optional = false)
 	private Long idServico;
 	
-	@Column(name = "IDMaterial")
-	private Long idMaterial;
+	@ManyToOne
+	@JoinColumn(name = "IDMaterial")
+	@Basic(optional = false)
+	private Material material;
 	
 	@Column(name = "Valor")
+	@Basic(optional = false)
 	private BigDecimal valor;
 
 	public Long getIdProduto() {
@@ -47,12 +54,12 @@ public class Produto {
 		this.idServico = idServico;
 	}
 
-	public Long getIdMaterial() {
-		return idMaterial;
+	public Material getMaterial() {
+		return material;
 	}
-
-	public void setIdMaterial(Long idMaterial) {
-		this.idMaterial = idMaterial;
+	
+	public void setMaterial(Material material) {
+		this.material = material;
 	}
 
 	public BigDecimal getValor() {
