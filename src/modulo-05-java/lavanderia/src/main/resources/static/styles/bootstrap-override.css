@@ -1,0 +1,25 @@
+/* ==============================================
+	Bootstrap override
+   ============================================== */
+
+@CHARSET "UTF-8";
+
+.navbar-override {
+	margin-left: 260px;
+	border-bottom: 1px solid #ddd;
+}
+
+.navbar-container-override {
+	padding-left: 0;
+}
+
+.navbar-brand-override {
+	margin-bottom: 1px;
+	padding: 15px 31.4px 16px;
+	border-bottom: 1px solid #ccc;
+	color: #fff;
+}
+
+.navbar-brand-override:hover {
+	color: #ddd;
+}
