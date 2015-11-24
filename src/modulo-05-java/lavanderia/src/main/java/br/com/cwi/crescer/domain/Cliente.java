@@ -25,7 +25,7 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQUENCE_NAME)
 	@Column(name = "IDCliente")
-	private Long idPessoa;
+	private Long idCliente;
 	
 	@Column(name = "Nome", length = 70)
 	@Basic(optional = false)
@@ -52,12 +52,12 @@ public class Cliente {
 	@OneToMany(mappedBy = "cliente")
 	private List<Pedido> pedidos;
 
-	public Long getIdPessoa() {
-		return idPessoa;
+	public Long getIdCliente() {
+		return idCliente;
 	}
 
-	public void setIdPessoa(Long idPessoa) {
-		this.idPessoa = idPessoa;
+	public void setIdCliente(Long idPessoa) {
+		this.idCliente = idPessoa;
 	}
 
 	public String getNome() {

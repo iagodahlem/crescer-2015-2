@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Lavanderia Crescer - Clientes</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="../styles/background.css" />
+	<link rel="stylesheet" href="../styles/normalize.css" />
+	<link rel="stylesheet" href="../styles/menu.css" />
+	<link rel="stylesheet" href="../styles/container.css" />
+	<link rel="stylesheet" href="../styles/bootstrap-override.css" />
+</head>
+<body>
+	<div th:if="${ not #lists.isEmpty(clientes) }">
+
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nome</th>
+					<th>CPF</th>
+					<th>E-mail</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cliente : ${(clientes)}">
+					<td th:text="${cliente.id}"></td>
+					<td th:text="${cliente.nome}"></td>
+					<td th:text="${cliente.cpf}"></td>
+					<td th:text="${cliente.email}"></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>
