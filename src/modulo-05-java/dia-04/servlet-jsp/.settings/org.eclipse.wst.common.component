@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="lavanderia">
+    <wb-module deploy-name="servlets-jsp">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="lavanderia"/>
-        <property name="java-output-path" value="/lavanderia/build/classes"/>
+        <property name="java-output-path" value="/servlets-jsp/build/classes"/>
+        <property name="context-root" value="servlets-jsp"/>
     </wb-module>
 </project-modules>

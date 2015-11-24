@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import br.com.cwi.crescer.AbstractInfrastructureTest;
 import br.com.cwi.crescer.domain.Cliente;
 
 public class ClienteDAOTest extends AbstractInfrastructureTest {
@@ -15,6 +16,14 @@ public class ClienteDAOTest extends AbstractInfrastructureTest {
 	public void testFindById() throws Exception {
 		Cliente cliente = clienteDAO.findById(1L);
 		Assert.assertNotNull(cliente);
+		Assert.assertNotNull(cliente.getCidade());
+	}
+	
+	@Test
+	public void deveBuscarClientesComPedidos() throws Exception {
+		Cliente cliente = clienteDAO.findById(1L);
+		Assert.assertNotNull(cliente);
+		Assert.assertNotNull(cliente.getPedidos());
 	}
 
 }

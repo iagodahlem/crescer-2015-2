@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import br.com.cwi.crescer.AbstractInfrastructureTest;
 import br.com.cwi.crescer.domain.Item;
 
 public class ItemDAOTest extends AbstractInfrastructureTest {

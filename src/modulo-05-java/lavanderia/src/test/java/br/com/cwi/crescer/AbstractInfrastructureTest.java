@@ -1,4 +1,4 @@
-package br.com.cwi.crescer.dao;
+package br.com.cwi.crescer;
 
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
