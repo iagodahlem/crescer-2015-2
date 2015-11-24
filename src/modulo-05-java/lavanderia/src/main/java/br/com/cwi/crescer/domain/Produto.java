@@ -25,9 +25,10 @@ public class Produto {
 	@Column(name = "IDProduto")
 	private Long idProduto;
 	
-	@Column(name = "IDServico")
+	@ManyToOne
+	@JoinColumn(name = "IDServico")
 	@Basic(optional = false)
-	private Long idServico;
+	private Servico servico;
 	
 	@ManyToOne
 	@JoinColumn(name = "IDMaterial")
@@ -46,12 +47,12 @@ public class Produto {
 		this.idProduto = idProduto;
 	}
 
-	public Long getIdServico() {
-		return idServico;
+	public Servico getServico() {
+		return servico;
 	}
-
-	public void setIdServico(Long idServico) {
-		this.idServico = idServico;
+	
+	public void setServico(Servico servico) {
+		this.servico = servico;
 	}
 
 	public Material getMaterial() {
