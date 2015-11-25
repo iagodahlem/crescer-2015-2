@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/_head :: head"></head>
+<body>
+
+	<div class="bg-img">
+
+		<div th:include="fragments/_menu :: menu"></div>
+
+		<div th:include="fragments/_header :: header-nav"></div>
+
+		<div class="container-override fixed radius bg-opacity-gray">
+			
+			<h2 class="title-container title-shadow">Remover cliente <span th:text="${cliente.nome}"></span></h2>
+
+			<div class="form-content">
+				
+				<form th:action="@{/clientes/remover}" th:object="${cliente}" method="post" class="form-horizontal">
+
+					<input th:field="*{id}" type="hidden" />
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Nome:</label>
+						<div class="form-control-override col-sm-10">
+							<input th:field="*{nome}" type="text" disabled="true" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">CPF:</label>
+						<div class="form-control-override col-sm-10">
+							<input th:field="*{cpf}" type="text" disabled="true" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">E-mail:</label>
+						<div class="form-control-override col-sm-10">
+							<input th:field="*{email}" type="text" disabled="true" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Endereço:</label>
+						<div class="form-control-override col-sm-10">
+							<input th:field="*{endereco}" type="text" disabled="true" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Bairro:</label>
+						<div class="form-control-override col-sm-10">
+							<input th:field="*{bairro}" type="text" disabled="true" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">CEP:</label>
+						<div class="form-control-override col-sm-10">
+							<input th:field="*{cep}" type="text" disabled="true" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Cidade:</label>
+						<div class="form-control-override col-sm-10">
+							<select th:field="*{idCidade}" disabled="true" class="form-control">
+								<option th:each="c : ${cidades}" th:text="${c.nome}" th:value="${c.idCidade}" >[option]</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Situação:</label>
+						<div class="form-control-override col-sm-10">
+							<input th:field="*{situacao}" type="text" disabled="true" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<a th:href="${ '/clientes/' }" class="btn btn-primary">Cancelar</a>
+							<button type="submit" class="btn btn-danger">Remover</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<div th:include="fragments/_scripts :: scripts"></div>
+</body>
+</html>

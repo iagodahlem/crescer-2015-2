@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="UTF-8" />
-	<title>Lavanderia Crescer - Clientes</title>
-	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous" />
-	<link rel="stylesheet" href="../styles/background.css" />
-	<link rel="stylesheet" href="../styles/normalize.css" />
-	<link rel="stylesheet" href="../styles/menu.css" />
-	<link rel="stylesheet" href="../styles/container.css" />
-	<link rel="stylesheet" href="../styles/bootstrap-override.css" />
-</head>
+<head th:include="fragments/_head :: head"></head>
 <body>
-	<div th:if="${ not #lists .isEmpty(clientes) }">
 
-		<table>
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Nome</th>
-					<th>CPF</th>
-					<th>E-mail</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="cliente : ${(clientes)}">
-					<td th:text="${cliente.id}"></td>
-					<td th:text="${cliente.nome}"></td>
-					<td th:text="${cliente.cpf}"></td>
-					<td th:text="${cliente.email}"></td>
-				</tr>
-			</tbody>
-		</table>
+	<div class="bg-img">
+
+		<div th:include="fragments/_menu :: menu"></div>
+
+		<div th:include="fragments/_header :: header-nav"></div>
+
+		<div class="container-override fixed radius bg-opacity-gray">
+			
+			<h2 class="title-container title-shadow">Clientes</h2>
+
+			<div th:if="${ not #lists .isEmpty(clientes) }">
+				<table class="table-override table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Nome</th>
+							<th>CPF</th>
+							<th>E-mail</th>
+							<th class="text-center">Detalhes</th>
+							<th class="text-center">Editar</th>
+							<th class="text-center">Remover</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="cliente : ${(clientes)}">
+							<td th:text="${cliente.id}"></td>
+							<td th:text="${cliente.nome}"></td>
+							<td th:text="${cliente.cpf}"></td>
+							<td th:text="${cliente.email}"></td>
+							<td align="center">
+								<a th:href="${ '/clientes/' + cliente.id }">
+									<span class="table-icon glyphicon glyphicon-plus" aria-hidden="true"></span>
+								</a>
+							</td>
+							<td align="center">
+								<a th:href="${ '/clientes/editar/' + cliente.id }" class="table-link">
+									<span class="table-icon glyphicon glyphicon-cog" aria-hidden="true"></span>
+								</a>
+							</td>
+							<td align="center">
+								<a th:href="${ '/clientes/remover/' + cliente.id }" class="table-link">
+									<span class="table-icon glyphicon glyphicon-remove" aria-hidden="true"></span>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
 
 	</div>
+	
+	<div th:include="fragments/_scripts :: scripts"></div>
 </body>
 </html>

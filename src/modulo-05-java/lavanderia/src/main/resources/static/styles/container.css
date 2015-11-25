@@ -2,9 +2,9 @@
 	Container
    ============================================== */
 
-.container {
-	width: 80%;
-	height: 100%;
-	background-color: #eee;
-	margin-left: 260px;
+.container-override {
+    width: 964px;
+    height: 83%;
+    left: 300px;
+    top: 95px;
 }

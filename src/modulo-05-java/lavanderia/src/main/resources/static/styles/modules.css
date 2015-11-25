@@ -1,0 +1,29 @@
+/* ==============================================
+	Modulos
+   ============================================== */
+
+@CHARSET "UTF-8";
+
+.fixed {
+	position: fixed;
+}
+
+.radius {
+	border-radius: 5px;
+}
+
+.font-bold {
+	font-weight: 800;
+}
+
+.title-container {
+	font-size: 18px;
+	font-weight: 600;
+	margin-top: 20px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+.title-shadow {
+	text-shadow: 1px 1px 2px #000;
+}
