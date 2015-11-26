@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8" />
+	<title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">Lavanderia</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/styles/modules.css" th:href="${'/styles/modules.css'}" />
+	<link rel="stylesheet" href="/styles/background.css" th:href="${'/styles/background.css'}" />
+	<link rel="stylesheet" href="/styles/header.css" th:href="${'/styles/header.css'}" />
+	<link rel="stylesheet" href="/styles/menu.css" th:href="${'/styles/menu.css'}" />
+	<link rel="stylesheet" href="/styles/container.css" th:href="${'/styles/container.css'}" />
+	<link rel="stylesheet" href="/styles/forms.css" th:href="${'/styles/forms.css'}" />
+	<link rel="stylesheet" href="/styles/footer.css" th:href="${'/styles/footer.css'}" />
+	<link rel="stylesheet" href="/styles/normalize.css" th:href="${'/styles/normalize.css'}" />
+	<link rel="stylesheet" href="/styles/bootstrap-override.css" th:href="${'/styles/bootstrap-override.css'}" />
+</head>
+<body>
+	<div class="bg-img">
+		<div th:include="fragments/_header :: header-nav">
+			
+		</div>
+
+		<div th:include="fragments/_menu :: menu">
+			
+		</div>
+		
+		<div layout:fragment="content" class="container-override fixed radius bg-opacity-gray">
+
+			
+
+		</div>
+
+		<div th:replace="fragments/_footer :: footer">
+
+		</div>
+	</div>
+	<div th:include="fragments/_scripts :: scripts"></div>
+</body>
+</html>

@@ -1,7 +1,22 @@
 <div th:fragment="menu">
+
 	<div class="menu fixed radius bg-opacity-gray">
-		<div class="navbar-header">
-			<a class="navbar-brand-override navbar-brand font-bold title-shadow" href="#">Lavanderia CWI Crescer</a>
-		</div>
+
+		<div class="menu-black"></div>
+
+		<ul class="menu-nav">
+			<li class="menu-brand">
+				<a class="font-bold title-shadow" th:href="${'/'}">
+					Lavanderia CWI Crescer
+				</a>
+			</li>
+			<li>
+				<a href="#">Dashboard</a>
+			</li>
+			<li>
+				<a href="#">Sobre</a>
+			</li>
+		</ul>
 	</div>
+
 </div>

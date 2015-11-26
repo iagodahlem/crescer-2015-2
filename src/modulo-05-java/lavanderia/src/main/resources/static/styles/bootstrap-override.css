@@ -4,12 +4,6 @@
 
 @CHARSET "UTF-8";
 
-.navbar-override {
-	margin-left: 300px;
-	margin-right: 22px;
-	margin-top: 22px;
-}
-
 .navbar-container-override {
 	padding-left: 0;
 }
@@ -41,5 +35,17 @@
 .form-control-override select {
 	color: #fff;
 	background-color: rgba(0, 0, 0, 0.5) !important;
+	border-color: transparent;
+}
+
+.panel-header-menu-override {
+	height: 50px;
+	padding-top: 16px !important;
+	color: #fff !important;
+	background-color: transparent !important;
+	border-color: transparent !important;
+}
+
+.no-border {
 	border-color: transparent;
 }

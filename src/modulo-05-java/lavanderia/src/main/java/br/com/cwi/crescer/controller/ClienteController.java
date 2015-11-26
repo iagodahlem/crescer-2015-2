@@ -2,13 +2,17 @@ package br.com.cwi.crescer.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.cwi.crescer.domain.Cidade;
 import br.com.cwi.crescer.dto.ClienteDTO;
@@ -44,8 +48,18 @@ public class ClienteController {
     }
 	
     @RequestMapping(path = "/editar", method = RequestMethod.POST)
-    public ModelAndView editar(ClienteDTO dto) {
-        clienteService.atualizar(dto);
+    public ModelAndView editar(@Valid @ModelAttribute("cliente") ClienteDTO clienteDTO, 
+    		BindingResult result,
+    		final RedirectAttributes redirectAttributes) {
+    	
+    	if (result.hasErrors()) {
+            return new ModelAndView("cliente/edita");
+        }
+        
+    	clienteService.atualizar(clienteDTO);
+    	
+    	redirectAttributes.addFlashAttribute("mensagem", "Cliente editado com sucesso.");
+        
         return new ModelAndView("redirect:/clientes");
     }
     
@@ -55,8 +69,18 @@ public class ClienteController {
     }
     
     @RequestMapping(path = "/inserir", method = RequestMethod.POST)
-    public ModelAndView inserir(ClienteDTO clienteDTO) {
-        clienteService.inserir(clienteDTO);
+    public ModelAndView inserir(@Valid @ModelAttribute("cliente") ClienteDTO clienteDTO, 
+    		BindingResult result,
+    		final RedirectAttributes redirectAttributes) {
+     
+    	if (result.hasErrors()) {
+            return new ModelAndView("cliente/insere");
+        }
+    	
+    	clienteService.inserir(clienteDTO);
+    	
+    	redirectAttributes.addFlashAttribute("mensagem", "Cliente cadastrado com sucesso.");
+    	
         return new ModelAndView("redirect:/clientes");
     }
     
@@ -66,8 +90,12 @@ public class ClienteController {
     }
     
     @RequestMapping(path = "/remover", method = RequestMethod.POST)
-    public ModelAndView remover(ClienteDTO clienteDTO) {
-        clienteService.remover(clienteDTO);
+    public ModelAndView remover(ClienteDTO clienteDTO, final RedirectAttributes redirectAttributes) {
+
+    	clienteService.remover(clienteDTO);
+    	
+    	redirectAttributes.addFlashAttribute("mensagem", "Cliente removido com sucesso.");
+    	
         return new ModelAndView("redirect:/clientes");
     }
     

@@ -63,7 +63,9 @@ public class ClienteService {
     public void remover(ClienteDTO clienteDTO) {
     	Long id = clienteDTO.getId();
     	if (id != null) {
-    		clienteDAO.delete(id);
+    		Cliente cliente = clienteDAO.findById(id);
+    		cliente.setSituacao(SituacaoCliente.INATIVO);
+    		clienteDAO.save(cliente);
     	}
     }
 	

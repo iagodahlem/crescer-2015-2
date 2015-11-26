@@ -10,14 +10,6 @@
 	background-image: url('https://static.pexels.com/photos/8999/night.jpg');
 	background-size: 100%;
 	background-attachment: fixed;
-	
-	/*
-	-webkit-filter: blur(1px);
-   	-moz-filter: blur(1px);
-   	-ms-filter: blur(1px);
-   	-o-filter: blur(1px);
-	filter: blur(1px);
-	*/
 }
 
 .bg-opacity-white {

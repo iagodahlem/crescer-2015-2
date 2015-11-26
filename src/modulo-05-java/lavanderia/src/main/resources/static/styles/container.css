@@ -3,8 +3,16 @@
    ============================================== */
 
 .container-override {
-    width: 964px;
-    height: 83%;
-    left: 300px;
-    top: 95px;
+    margin: 66px 8px 8px 276px;
+    width: 78%;
+    padding-bottom: 15px;
+    max-height: 80%;
+}
+
+.title-container {
+	font-size: 18px;
+	font-weight: 600;
+	margin-top: 20px;
+    margin-bottom: 15px;
+    margin-left: 15px;
 }

@@ -1,82 +1,76 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:include="fragments/_head :: head"></head>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+layout:decorator="default">
+<head>
+	<title>Exibe</title>
+</head>
 <body>
-	
-	<div class="bg-img">
 
-		<div th:include="fragments/_menu :: menu"></div>
+	<div layout:fragment="content">
+		<h2 class="title-container title-shadow">Cliente <span th:text="${cliente.nome}"></span></h2>
 
-		<div th:include="fragments/_header :: header-nav"></div>
+		<div class="form-content">
 
-		<div class="container-override fixed radius bg-opacity-gray">
-			
-			<h2 class="title-container title-shadow">Cliente <span th:text="${cliente.nome}"></span></h2>
-
-			<div class="form-content">
-				
-				<form th:object="${cliente}" class="form-horizontal">
-					<div class="form-group">
-						<label class="col-sm-2 control-label">ID:</label>
-						<div class="form-control-override col-sm-10">
-							<input th:field="*{id}" type="text" disabled="true" class="form-control" />
-						</div>
+			<form th:object="${cliente}" class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">ID:</label>
+					<div class="form-control-override col-sm-10">
+						<input th:field="*{id}" type="text" disabled="true" class="form-control" />
 					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Nome:</label>
-						<div class="form-control-override col-sm-10">
-							<input th:field="*{nome}" type="text" disabled="true" class="form-control" />
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Nome:</label>
+					<div class="form-control-override col-sm-10">
+						<input th:field="*{nome}" type="text" disabled="true" class="form-control" />
 					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">CPF:</label>
-						<div class="form-control-override col-sm-10">
-							<input th:field="*{cpf}" type="text" disabled="true" class="form-control" />		
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">CPF:</label>
+					<div class="form-control-override col-sm-10">
+						<input th:field="*{cpf}" type="text" disabled="true" class="form-control" />		
 					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">E-mail:</label>
-						<div class="form-control-override col-sm-10">
-							<input th:field="*{email}" type="text" disabled="true" class="form-control" />		
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">E-mail:</label>
+					<div class="form-control-override col-sm-10">
+						<input th:field="*{email}" type="text" disabled="true" class="form-control" />		
 					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Endereço:</label>
-						<div class="form-control-override col-sm-10">
-							<input th:field="*{endereco}" type="text" disabled="true" class="form-control" />
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Endereço:</label>
+					<div class="form-control-override col-sm-10">
+						<input th:field="*{endereco}" type="text" disabled="true" class="form-control" />
 					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Bairro:</label>
-						<div class="form-control-override col-sm-10">
-							<input th:field="*{bairro}" type="text" disabled="true" class="form-control" />
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Bairro:</label>
+					<div class="form-control-override col-sm-10">
+						<input th:field="*{bairro}" type="text" disabled="true" class="form-control" />
 					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">CEP:</label>
-						<div class="form-control-override col-sm-10">
-							<input th:field="*{cep}" type="text" disabled="true" class="form-control" />
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">CEP:</label>
+					<div class="form-control-override col-sm-10">
+						<input th:field="*{cep}" type="text" disabled="true" class="form-control" />
 					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Cidade:</label>
-						<div class="form-control-override col-sm-10">
-							<input th:field="*{cidade}" type="text" disabled="true" class="form-control" />
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Cidade:</label>
+					<div class="form-control-override col-sm-10">
+						<input th:field="*{cidade}" type="text" disabled="true" class="form-control" />
 					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Situação:</label>
-						<div class="form-control-override col-sm-10">
-							<input th:field="*{situacao}" type="text" disabled="true" class="form-control" />
-						</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Situação:</label>
+					<div class="form-control-override col-sm-10">
+						<input th:field="*{situacao}" type="text" disabled="true" class="form-control" />
 					</div>
-				</form>
-
-			</div>
+				</div>
+			</form>
 		</div>
 	</div>
-	
-	<div th:include="fragments/_scripts :: scripts"></div>
-</body>
 
+</body>
 </html>
