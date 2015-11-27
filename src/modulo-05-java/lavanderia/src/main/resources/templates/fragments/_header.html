@@ -13,8 +13,7 @@
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							Cliente
-							<span class="caret"></span>
+							Cliente<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
 							<li><a th:href="${'/clientes/'}">Listar</a></li>
@@ -26,14 +25,21 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							Usuario
+							<span sec:authentication="name">Usuario</span>
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li role="separator" class="divider"></li>
-							<li><a href="#">Sair</a></li>
+							<li>
+								<a href="#">Another action</a>
+							</li>
+							<li>
+								<div sec:authorize="isAuthenticated()">
+									<li role="separator" class="divider"></li>
+									<form th:action="@{/logout}" method="POST">
+										<input type="submit" value="Sair" />
+									</form>
+								</div>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -52,4 +58,4 @@
 			</div>
 		</div>
 	</nav>
-</div>	
+</div>

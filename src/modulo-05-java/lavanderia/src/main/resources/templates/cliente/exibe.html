@@ -14,12 +14,14 @@ layout:decorator="default">
 		<div class="form-content">
 
 			<form th:object="${cliente}" class="form-horizontal">
+
 				<div class="form-group">
 					<label class="col-sm-2 control-label">ID:</label>
 					<div class="form-control-override col-sm-10">
 						<input th:field="*{id}" type="text" disabled="true" class="form-control" />
 					</div>
 				</div>
+				
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Nome:</label>
 					<div class="form-control-override col-sm-10">

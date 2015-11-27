@@ -1,0 +1,25 @@
+//sec:authorize="isAuthenticated()"
+
+
+// nome na home
+th:if="${#authorization.expression('hasRole(''ROLE_USER'')')}"
+
+//<span sec:authentication="name"></span>
+
+
+// autorização
+@Preautorize("hasRole=('admin')")
+
+
+
+
+//erros
+${timestamp}
+
+${status}
+
+${error}
+
+<div th:if="${ex} or ${exception} or (${message} and ${message.length() != 0})">
+   <i th:text="${message}">message ...</i>
+</div>
