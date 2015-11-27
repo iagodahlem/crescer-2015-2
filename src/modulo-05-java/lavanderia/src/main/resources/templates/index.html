@@ -1,16 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:th="http://www.thymeleaf.org" 
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorator="default">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Home</title>
+	<meta charset="UTF-8" />
+	<title>Lavanderia</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/styles/modules.css" th:href="${'/styles/modules.css'}" />
+	<link rel="stylesheet" href="/styles/background.css" th:href="${'/styles/background.css'}" />
+	<link rel="stylesheet" href="/styles/index.css" th:href="${'/styles/index.css'}" />
+	<link rel="stylesheet" href="/styles/footer.css" th:href="${'/styles/footer.css'}" />
+	<link rel="stylesheet" href="/styles/normalize.css" th:href="${'/styles/normalize.css'}" />
+	<link rel="stylesheet" href="/styles/bootstrap-override.css" th:href="${'/styles/bootstrap-override.css'}" />
 </head>
 <body>
 
-	<div layout:fragment="content">
+	<div class="bg-img">
 		
+		<div class="index-title-container text-center">
+			<h1 class="index-title">Lavanderia CWI Crescer</h1>
+			<p class="index-paragraph">
+				Bem vindo a Lavanderia CWI Crescer, onde suas roupas são bem lavadas. Projeto desenvolvido durante o Projeto CRESCER 2015-2 para o Módulo-05, utilizando Java, Spring Framework, Hibernate e Thymeleaf.
+			</p>
+
+			<div class="index-buttons">
+				<a th:href="${'/login'}" class="btn btn-primary btn-lg btn-block">Login</a>
+			</div>
+		</div>
+
+		<footer class="text-center">
+			<p>
+				<div class="offset-heart-1">Made with</div><span class="glyphicon glyphicon-heart heart-index"></span><div class="offset-heart-2">by Iago Dahlem Lorensini</div>
+			</p>
+		</footer>
 	</div>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@ xmlns:th="http://www.thymeleaf.org"
 xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
 layout:decorator="template">
 <head>
-	<title>Clientes</title>
+	<title>Usuarios</title>
 </head>
 <body>
 
@@ -17,27 +17,23 @@ layout:decorator="template">
 			</div>
 		</div>
 
-		<h2 class="title-container title-shadow">Clientes</h2>
+		<h2 class="title-container title-shadow">Usuarios</h2>
 
-		<div th:if="${ not #lists .isEmpty(clientes) }">
+		<div th:if="${ not #lists .isEmpty(users) }">
 			<table class="table-override table">
 				<thead>
 					<tr>
-						<th>#</th>
 						<th>Nome</th>
-						<th>CPF</th>
-						<th>E-mail</th>
+						<th>Flag</th>
 						<th class="text-center">Detalhes</th>
 						<th class="text-center">Editar</th>
 						<th class="text-center">Remover</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="cliente : ${(clientes)}">
-						<td th:text="${cliente.id}"></td>
-						<td th:text="${cliente.nome}"></td>
-						<td th:text="${cliente.cpf}"></td>
-						<td th:text="${cliente.email}"></td>
+					<tr th:each="user : ${(users)}">
+						<td th:text="${user.nome}"></td>
+						<td th:text="${user.flag}"></td>
 						<td align="center">
 							<a th:href="${ '/clientes/' + cliente.id }">
 								<span class="table-icon glyphicon glyphicon-plus" aria-hidden="true"></span>

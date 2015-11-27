@@ -1,0 +1,62 @@
+.index-title-container {
+	padding: 120px 0 100px;
+}
+
+.index-title {
+	font-size: 100px;
+	font-weight: 600;
+	padding-bottom: 50px;
+	margin: 0;
+}
+
+.index-paragraph {
+	font-size: 30px;
+	padding-bottom: 50px;
+}
+
+.index-buttons {
+	margin: 0 auto;
+	width: 30%;
+}
+
+.heart-index {
+	color: red;
+	position: absolute;
+	top: 630px;
+	left: 577px;
+	margin: 0 10px 0;
+
+	animation: heart-beat 2s infinite;
+}
+
+@keyframes heart-beat {
+    0% {
+        -webkit-transform:scale(0.7);
+	    -moz-transform:scale(0.7); 
+	    -o-transform:scale(0.7);
+        transform:scale(0.7);
+    }
+    50% {
+        -webkit-transform:scale(1.2); 
+	    -moz-transform:scale(1.2); 
+	    -o-transform:scale(1.2);
+        transform:scale(1.2);
+    }
+    100% {
+        -webkit-transform:scale(0.7); 
+	    -moz-transform:scale(0.7); 
+	    -o-transform:scale(0.7);
+        transform:scale(0.7);
+    }
+}
+
+.offset-heart-1 {
+	display: inline-block;
+	padding-right: 12px;
+}
+
+.offset-heart-2 {
+	display: inline-block;
+	padding-left: 12px;
+}
+

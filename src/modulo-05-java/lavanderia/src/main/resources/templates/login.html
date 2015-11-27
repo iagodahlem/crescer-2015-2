@@ -15,18 +15,16 @@
 
 	<div class="bg-img">
 		
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2">
-				<h1>Lavanderia CWI Crescer</h1>
-				<div>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi eaque iure illum suscipit beatae quaerat sit officiis tempore nisi nihil voluptatibus dolorem veritatis ipsa incidunt laudantium et repellat ducimus, esse.
-					</p>
-				</div>
+		<div class="login-content-text text-center">
+			<h1 class="login-content-title">Lavanderia CWI Crescer - Login</h1>
+			<div>
+				<p>
+					Web System Lavanderia CWI Crescer, entre se já tiver um cadastro, se não entre em contato com o administrador do sistema.
+				</p>
 			</div>
 		</div>
 
-		<div class="">
+		<div class="login-content text-center">
 
 			<div th:if="${param.logout}">
 				<div class="alert alert-success alert-dismissible" role="alert">
@@ -41,32 +39,36 @@
 					<p>Login incorreto. Tente novamente!</p>
 				</div>
 			</div>
-
+			
 			<form name="form" th:action="@{/login}" action="/login" method="POST" class="form-horizontal">
 
+				<div class="text-left container-title-login">
+					<h3 class="title-login">Login</h3>
+					<p>Insira seu usuario e senha para logar:</p>
+				</div>
+
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Usuario</label>
-					<div class="form-control-override col-sm-10">
-						<input type="text" name="username" class="form-control" />
+					<div class="form-control-override form-login col-sm-12">
+						<input type="text" name="username" placeholder="Usuario" class="form-control input-lg" />
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="col-sm-2 control-label">Senha</label>
-					<div class="form-control-override col-sm-10">
-						<input type="password" name="password" class="form-control" />
+					<div class="form-control-override form-login col-sm-12">
+						<input type="password" name="password" placeholder="Senha" class="form-control input-lg" />
 					</div>
 				</div>
 
 				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-12">
-						<button type="submit" class="btn btn-default">Logar</button>
+					<div class="form-login col-sm-12">
+						<button type="submit" class="btn btn-primary btn-lg btn-block">Logar</button>
 					</div>
 				</div>
 			</form>
 		</div>
 	</div>
 
-	<div th:include="fragments/_scripts :: scripts"></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
