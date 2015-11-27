@@ -1,7 +1,5 @@
 package br.com.cwi.crescer.dto;
 
-import br.com.cwi.crescer.domain.Users;
-
 public class UserDTO {
 
 	private String nome;

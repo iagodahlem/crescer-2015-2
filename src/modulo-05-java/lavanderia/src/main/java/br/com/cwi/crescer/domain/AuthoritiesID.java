@@ -4,16 +4,18 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.MapsId;
 
 @Embeddable
 public class AuthoritiesID implements Serializable {
 	
-	private static final long serialVersionUID = 343L;
+	private static final long serialVersionUID = 1L;
 	
+	@MapsId
 	@ManyToOne
-	@PrimaryKeyJoinColumn(name = "username")
+	@JoinColumn(name = "username")
 	private Users username;
 	
 	@Column(name = "authority")
