@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.cwi.crescer.service.UserService;
 
 @Controller
-@RequestMapping("/usuarios")
+@RequestMapping("/users")
 public class UserController {
 	
 	private UserService userService;
@@ -21,7 +21,7 @@ public class UserController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView listar() {
-		return new ModelAndView("user/lista", "usuarios", userService.listarClientesAtivos());
+		return new ModelAndView("user/lista", "users", userService.listarUsuariosAtivos());
 	}
 	
 }

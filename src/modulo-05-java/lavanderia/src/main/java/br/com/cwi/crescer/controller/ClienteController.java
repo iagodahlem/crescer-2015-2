@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.cwi.crescer.domain.Cidade;
+import br.com.cwi.crescer.domain.Cliente.SituacaoCliente;
 import br.com.cwi.crescer.dto.ClienteDTO;
 import br.com.cwi.crescer.service.CidadeService;
 import br.com.cwi.crescer.service.ClienteService;
@@ -34,7 +36,12 @@ public class ClienteController {
 
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView listar() {
-		return new ModelAndView("cliente/lista", "clientes", clienteService.listarClientesAtivos());
+		return new ModelAndView("cliente/lista", "clientes", clienteService.listarTodos());
+	}
+	
+	@RequestMapping(path = "/listarPorNome", method=RequestMethod.GET)
+	public ModelAndView listarPorNome(@RequestParam("nome") String nome) {
+		return new ModelAndView("cliente/lista", "clientes", clienteService.listarPorNome(nome));
 	}
 	
 	@RequestMapping(path = "/{id}", method=RequestMethod.GET)
@@ -42,12 +49,12 @@ public class ClienteController {
 		return new ModelAndView("cliente/exibe", "cliente", clienteService.buscarPorId(id));
 	}
 	
-	@RequestMapping(path = "/editar/{id}", method = RequestMethod.GET)
+	@RequestMapping(path = "/editar/{id}", method=RequestMethod.GET)
     public ModelAndView viewEdita(@PathVariable("id") Long id) {
         return new ModelAndView("cliente/edita", "cliente", clienteService.buscarPorId(id));
     }
 	
-    @RequestMapping(path = "/editar", method = RequestMethod.POST)
+    @RequestMapping(path = "/editar", method=RequestMethod.POST)
     public ModelAndView editar(@Valid @ModelAttribute("cliente") ClienteDTO clienteDTO, 
     		BindingResult result,
     		final RedirectAttributes redirectAttributes) {
@@ -63,12 +70,12 @@ public class ClienteController {
         return new ModelAndView("redirect:/clientes");
     }
     
-    @RequestMapping(path = "/inserir", method = RequestMethod.GET)
+    @RequestMapping(path = "/inserir", method=RequestMethod.GET)
     public ModelAndView viewInsere() {
         return new ModelAndView("cliente/insere", "cliente", new ClienteDTO());
     }
     
-    @RequestMapping(path = "/inserir", method = RequestMethod.POST)
+    @RequestMapping(path = "/inserir", method=RequestMethod.POST)
     public ModelAndView inserir(@Valid @ModelAttribute("cliente") ClienteDTO clienteDTO, 
     		BindingResult result,
     		final RedirectAttributes redirectAttributes) {
@@ -84,12 +91,12 @@ public class ClienteController {
         return new ModelAndView("redirect:/clientes");
     }
     
-    @RequestMapping(path = "/remover/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/remover/{id}", method=RequestMethod.GET)
     public ModelAndView viewRemove(@PathVariable("id") Long id) {
         return new ModelAndView("cliente/remove", "cliente", clienteService.buscarPorId(id));
     }
     
-    @RequestMapping(path = "/remover", method = RequestMethod.POST)
+    @RequestMapping(path = "/remover", method=RequestMethod.POST)
     public ModelAndView remover(ClienteDTO clienteDTO, final RedirectAttributes redirectAttributes) {
 
     	clienteService.remover(clienteDTO);
@@ -102,6 +109,11 @@ public class ClienteController {
     @ModelAttribute("cidades")
     public List<Cidade> comboCidades() {
         return cidadeService.listar();
+    }
+    
+    @ModelAttribute("situacoes")
+    public List<SituacaoCliente> comboSituacao() {
+        return clienteService.listarSituacoes();
     }
 	
 }

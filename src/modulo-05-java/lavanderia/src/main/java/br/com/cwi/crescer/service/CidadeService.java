@@ -21,4 +21,5 @@ public class CidadeService {
     public List<Cidade> listar() {
         return cidadeDAO.listAll();
     }
+    
 }

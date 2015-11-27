@@ -26,18 +26,8 @@ public class UserService {
 		this.authsDAO = authsDAO;
 	}
 
-	public List<UserDTO> listarClientesAtivos() {
-
-		List<Users> users = usersDAO.findByEnabled(Enabled.ENABLED);
+	public List<UserDTO> listarUsuariosAtivos() {
 		
-		List<UserDTO> usersDTO = new ArrayList<UserDTO>();
-		for (Users user : users) {
-			usersDTO.add(new UserDTO(user.getUsername(), user.getPassword()));
-		}
-
-		return usersDTO;
-		
-		/*
 		List<Authorities> auths = authsDAO.listAll();
 
 		List<UserDTO> usersDTO = new ArrayList<UserDTO>();
@@ -48,7 +38,6 @@ public class UserService {
 		}
 
 		return usersDTO;
-		*/
 	}
 	
 }

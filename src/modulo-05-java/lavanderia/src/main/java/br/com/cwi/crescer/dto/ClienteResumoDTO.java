@@ -7,7 +7,7 @@ public class ClienteResumoDTO {
 	private Long id;
 	private String nome;
 	private String cpf;
-	private String email;
+	private String situacao;
 	
 	public ClienteResumoDTO() {
 
@@ -17,7 +17,7 @@ public class ClienteResumoDTO {
 		this.id = cliente.getIdCliente();
 		this.nome = cliente.getNome();
 		this.cpf = cliente.getCpf();
-		this.email = cliente.getEmail();
+		this.situacao = cliente.getSituacao().toString();
 	}	
 
 	public Long getId() {
@@ -43,13 +43,13 @@ public class ClienteResumoDTO {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	
-	public String getEmail() {
-		return email;
+
+	public String getSituacao() {
+		return situacao;
 	}
-	
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
 	}
 	
 }

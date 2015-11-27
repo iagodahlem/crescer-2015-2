@@ -35,17 +35,17 @@ layout:decorator="template">
 						<td th:text="${user.nome}"></td>
 						<td th:text="${user.flag}"></td>
 						<td align="center">
-							<a th:href="${ '/users/' + cliente.id }">
+							<a th:href="${ '/users/' + user.nome }">
 								<span class="table-icon glyphicon glyphicon-plus" aria-hidden="true"></span>
 							</a>
 						</td>
 						<td align="center">
-							<a th:href="${ '/clientes/editar/' + cliente.id }" class="table-link">
+							<a th:href="${ '/users/editar/' + user.nome }" class="table-link">
 								<span class="table-icon glyphicon glyphicon-cog" aria-hidden="true"></span>
 							</a>
 						</td>
 						<td align="center">
-							<a th:href="${ '/clientes/remover/' + cliente.id }" class="table-link">
+							<a th:href="${ '/users/remover/' + user.nome }" class="table-link">
 								<span class="table-icon glyphicon glyphicon-remove" aria-hidden="true"></span>
 							</a>
 						</td>

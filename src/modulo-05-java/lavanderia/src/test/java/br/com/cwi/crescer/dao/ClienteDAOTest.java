@@ -22,6 +22,18 @@ public class ClienteDAOTest extends AbstractInfrastructureTest {
 	}
 	
 	@Test
+	public void deveListarTodosOsClientes() throws Exception {
+		List<Cliente> clientes = clienteDAO.listAll();
+		Assert.assertNotNull(clientes);
+	}
+	
+	@Test
+	public void deveBuscarClientesPorNome() throws Exception {
+		List<Cliente> clientes = clienteDAO.listByNome("teste");
+		Assert.assertNotNull(clientes);
+	}
+	
+	@Test
     public void deveBuscarClientesAtivos() throws Exception {
         List<Cliente> clientes = clienteDAO.findBySituacao(SituacaoCliente.ATIVO);
         Assert.assertNotNull(clientes);

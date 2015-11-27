@@ -10,4 +10,5 @@ public class ProdutoDAO extends AbstractDAO {
 	public Produto findById(Long id) {
 		return em.find(Produto.class, id);
 	}
+	
 }
