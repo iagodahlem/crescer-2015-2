@@ -1,5 +1,7 @@
 package br.com.cwi.crescer.dao;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,4 +20,10 @@ public class ServicoDAOTest extends AbstractInfrastructureTest {
 		Assert.assertNotNull(servico);
 	}
 
+	@Test
+	public void deveBuscarServicos() throws Exception {
+		List<Servico> servicos = servicoDAO.listAll();
+		Assert.assertNotNull(servicos);
+	}
+	
 }

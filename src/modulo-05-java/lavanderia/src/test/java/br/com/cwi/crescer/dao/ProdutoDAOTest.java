@@ -1,5 +1,7 @@
 package br.com.cwi.crescer.dao;
 
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,12 @@ public class ProdutoDAOTest extends AbstractInfrastructureTest {
 	public void testFindById() throws Exception {
 		Produto produto = produtoDAO.findById(1L);
 		Assert.assertNotNull(produto);
+	}
+	
+	@Test
+	public void deveRetornarProdutos() throws Exception {
+		List<Produto> produtos = produtoDAO.listAll();
+		Assert.assertNotNull(produtos);
 	}
 
 	@Test
