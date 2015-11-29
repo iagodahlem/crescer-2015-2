@@ -12,7 +12,7 @@
 		<h2 class="title-container title-shadow">Edição de Produto</h2>
 
 		<div class="form-content">
-			<form th:action="@{/produtos/inserir}" th:object="${produto}" method="post" class="form-horizontal">
+			<form th:action="@{/produtos/editar}" th:object="${produto}" method="post" class="form-horizontal">
 
 				<input th:field="*{id}" type="hidden" />
 

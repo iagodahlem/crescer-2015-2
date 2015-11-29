@@ -28,6 +28,10 @@ public class ProdutoService {
 		this.servicoDAO = servicoDAO;
 	}
 	
+	public ProdutoDTO buscarPorId(Long id) {
+		return new ProdutoDTO(produtoDAO.findById(id));
+	}
+	
 	public List<ProdutoDTO> listarTodos() {
 		List<Produto> produtos = produtoDAO.listAll();
 
@@ -39,17 +43,16 @@ public class ProdutoService {
 		return produtosDTO;
 	}
 	
-	public ProdutoDTO buscarPorId(Long id) {
-		return new ProdutoDTO(produtoDAO.findById(id));
-	}
+	public List<ProdutoDTO> listarPorMaterialEServico(String material, String servico) {
+		
+		List<Produto> produtos = produtoDAO.listByMaterialEServico(material, servico);
 
-	public void atualizar(ProdutoDTO produtoDTO) {
+		List<ProdutoDTO> produtosDTO = new ArrayList<ProdutoDTO>();
+		for (Produto produto: produtos) {
+			produtosDTO.add(new ProdutoDTO(produto));
+		}
 
-		Produto produto = produtoDAO.findById(produtoDTO.getId());
-		ProdutoMapper.merge(produtoDTO, produto);
-		produto.setSituacao(produtoDTO.getSituacao());
-
-		produtoDAO.save(produto);
+		return produtosDTO;
 	}
 	
 	public void inserir(ProdutoDTO produtoDTO) {
@@ -58,6 +61,15 @@ public class ProdutoService {
 		produto.setMaterial(materialDAO.findById(produtoDTO.getIdMaterial()));
 		produto.setServico(servicoDAO.findById(produtoDTO.getIdServico()));
 		produto.setSituacao(SituacaoProduto.ATIVO);
+
+		produtoDAO.save(produto);
+	}
+	
+	public void atualizar(ProdutoDTO produtoDTO) {
+
+		Produto produto = produtoDAO.findById(produtoDTO.getId());
+		ProdutoMapper.merge(produtoDTO, produto);
+		produto.setSituacao(produtoDTO.getSituacao());
 
 		produtoDAO.save(produto);
 	}
