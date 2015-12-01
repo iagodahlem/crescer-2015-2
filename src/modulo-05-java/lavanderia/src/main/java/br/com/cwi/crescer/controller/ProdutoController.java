@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -55,11 +56,13 @@ public class ProdutoController {
 				produtoService.listarPorMaterialEServico(material, servico));
 	}
 
+	@PreAuthorize("hasRole('ADMIN')")
 	@RequestMapping(path = "/editar/{id}", method = RequestMethod.GET)
 	public ModelAndView viewEdita(@PathVariable("id") Long id) {
 		return new ModelAndView("produto/edita", "produto", produtoService.buscarPorId(id));
 	}
 
+	@PreAuthorize("hasRole('ADMIN')")
 	@RequestMapping(path = "/editar", method = RequestMethod.POST)
 	public ModelAndView editar(@Valid @ModelAttribute("produto") ProdutoDTO produtoDTO, BindingResult result,
 			final RedirectAttributes redirectAttributes) {
@@ -75,11 +78,13 @@ public class ProdutoController {
 		return new ModelAndView("redirect:/produtos");
 	}
 
+	@PreAuthorize("hasRole('ADMIN')")
 	@RequestMapping(path = "/inserir", method = RequestMethod.GET)
 	public ModelAndView viewInsere() {
 		return new ModelAndView("produto/insere", "produto", new ProdutoDTO());
 	}
 
+	@PreAuthorize("hasRole('ADMIN')")
 	@RequestMapping(path = "/inserir", method = RequestMethod.POST)
 	public ModelAndView inserir(@Valid @ModelAttribute("produto") ProdutoDTO produtoDTO, BindingResult result,
 			final RedirectAttributes redirectAttributes) {

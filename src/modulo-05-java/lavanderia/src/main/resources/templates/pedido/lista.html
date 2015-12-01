@@ -45,7 +45,7 @@ layout:decorator="template">
 						<th>Situação</th>
 						<th class="text-center">Detalhes</th>
 						<th class="text-center">Retirar</th>
-						<th class="text-center">Cancelar</th>
+						<th sec:authorize="hasRole('ROLE_ADMIN')" class="text-center">Cancelar</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -67,7 +67,7 @@ layout:decorator="template">
 								glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
 							</a>
 						</td>
-						<td align="center">
+						<td sec:authorize="hasRole('ROLE_ADMIN')" align="center">
 							<a th:href="${ '/pedidos/cancelar/' + pedido.id }" class="table-link">
 								<span class="table-icon glyphicon glyphicon-remove" aria-hidden="true"></span>
 							</a>

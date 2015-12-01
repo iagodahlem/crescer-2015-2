@@ -12,7 +12,7 @@
 					<li>
 						<a th:href="${'/produtos/'}">Listar</a>
 					</li>
-					<li>
+					<li sec:authorize="hasRole('ROLE_ADMIN')">
 						<a th:href="${'/produtos/inserir'}">Cadastrar</a>
 					</li>
 				</ul>
