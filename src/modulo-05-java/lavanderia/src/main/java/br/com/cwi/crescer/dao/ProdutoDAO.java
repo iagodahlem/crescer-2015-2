@@ -1,6 +1,5 @@
 package br.com.cwi.crescer.dao;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -20,9 +19,23 @@ public class ProdutoDAO extends AbstractDAO {
 	public Produto findById(Long id) {
 		return em.find(Produto.class, id);
 	}
+	
+	public Produto findByMaterialEServico(String material, String servico) {
+		return em.createQuery("FROM Produto p WHERE p.material.descricao = :material AND "
+				+ "p.servico.descricao = :servico", Produto.class)
+				.setParameter("material", material)
+				.setParameter("servico", servico)
+				.getSingleResult();
+	}
 
 	public List<Produto> listAll() {
 		return em.createQuery("FROM Produto", Produto.class).getResultList();
+	}
+	
+	public List<Produto> listByServico(Long id) {
+		return em.createQuery("FROM Produto p WHERE p.servico.idServico = :id", Produto.class)
+				.setParameter("id", id)
+				.getResultList();
 	}
 
 	public List<Produto> listByMaterialEServico(String material, String servico) {
@@ -49,18 +62,6 @@ public class ProdutoDAO extends AbstractDAO {
 		}
 		
 		return query.getResultList();
-
-		/*
-		for (int i = 0; i < parameters.size(); i++) {
-			query.setParameter(parameters.get(i).toString(), parameters.getValue(i) + "%");
-		}
-
-		
-
-		 * return em.createQuery(sql.toString(), Produto.class)
-		 * .setParameter("material", material + "%") .setParameter("servico",
-		 * servico + "%") .getResultList();
-		 */
 	}
 
 	@Transactional

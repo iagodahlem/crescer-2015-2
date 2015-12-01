@@ -20,18 +20,18 @@ public class ProdutoService {
 	private ProdutoDAO produtoDAO;
 	private MaterialDAO materialDAO;
 	private ServicoDAO servicoDAO;
-	
+
 	@Autowired
 	public ProdutoService(ProdutoDAO produtoDAO, MaterialDAO materialDAO, ServicoDAO servicoDAO) {
 		this.produtoDAO = produtoDAO;
 		this.materialDAO = materialDAO;
 		this.servicoDAO = servicoDAO;
 	}
-	
+
 	public ProdutoDTO buscarPorId(Long id) {
 		return new ProdutoDTO(produtoDAO.findById(id));
 	}
-	
+
 	public List<ProdutoDTO> listarTodos() {
 		List<Produto> produtos = produtoDAO.listAll();
 
@@ -42,19 +42,33 @@ public class ProdutoService {
 
 		return produtosDTO;
 	}
-	
+
 	public List<ProdutoDTO> listarPorMaterialEServico(String material, String servico) {
-		
+
 		List<Produto> produtos = produtoDAO.listByMaterialEServico(material, servico);
 
 		List<ProdutoDTO> produtosDTO = new ArrayList<ProdutoDTO>();
-		for (Produto produto: produtos) {
+		for (Produto produto : produtos) {
 			produtosDTO.add(new ProdutoDTO(produto));
 		}
 
 		return produtosDTO;
 	}
-	
+
+	public boolean verificaProdutoUnico(ProdutoDTO produtoDTO) {
+
+		String material = produtoDTO.getMaterialDescricao();
+		String servico = produtoDTO.getServicoDescricao();
+		
+		Produto produto = produtoDAO.findByMaterialEServico(material, servico);
+
+		if (produto != null) {
+			return false;
+		}
+
+		return true;
+	}
+
 	public void inserir(ProdutoDTO produtoDTO) {
 
 		Produto produto = ProdutoMapper.getNewEntity(produtoDTO);
@@ -62,9 +76,11 @@ public class ProdutoService {
 		produto.setServico(servicoDAO.findById(produtoDTO.getIdServico()));
 		produto.setSituacao(SituacaoProduto.ATIVO);
 
-		produtoDAO.save(produto);
+		if (verificaProdutoUnico(produtoDTO)) {
+			produtoDAO.save(produto);
+		}
 	}
-	
+
 	public void atualizar(ProdutoDTO produtoDTO) {
 
 		Produto produto = produtoDAO.findById(produtoDTO.getId());
@@ -73,12 +89,24 @@ public class ProdutoService {
 
 		produtoDAO.save(produto);
 	}
-	
+
 	public List<SituacaoProduto> listarSituacoes() {
 		List<SituacaoProduto> situacoes = new ArrayList<SituacaoProduto>();
 		situacoes.add(SituacaoProduto.ATIVO);
 		situacoes.add(SituacaoProduto.INATIVO);
 		return situacoes;
 	}
-	
+
+	public List<ProdutoDTO> listByServico(Long id) {
+
+		List<Produto> produtos = produtoDAO.listByServico(id);
+
+		List<ProdutoDTO> produtosDTO = new ArrayList<ProdutoDTO>();
+		for (Produto produto : produtos) {
+			produtosDTO.add(new ProdutoDTO(produto));
+		}
+
+		return produtosDTO;
+	}
+
 }

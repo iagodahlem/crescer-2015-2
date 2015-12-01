@@ -17,7 +17,7 @@ public class ItemDAOTest extends AbstractInfrastructureTest {
 	
 	@Test
 	public void testFindById() throws Exception {
-		Item item = itemDAO.findById(1L);
+		Item item = itemDAO.findById(301L);
 		Assert.assertNotNull(item);
 	}
 	
@@ -34,14 +34,20 @@ public class ItemDAOTest extends AbstractInfrastructureTest {
 	
 	@Test
 	public void itemTemUmPedido() throws Exception {
-		Item item = itemDAO.findById(1L);
+		Item item = itemDAO.findById(301L);
 		Assert.assertNotNull(item.getPedido());
 	}
 
 	@Test
 	public void itemTemUmProduto() throws Exception {
-		Item item = itemDAO.findById(1L);
+		Item item = itemDAO.findById(301L);
 		Assert.assertNotNull(item.getProduto());
+	}
+	
+	@Test
+	public void deveBuscarItensPorPedido() throws Exception {
+		List<Item> itens = itemDAO.findByIdPedido(1L);
+		Assert.assertNotNull(itens);
 	}
 	
 }

@@ -22,6 +22,12 @@ public class PedidoDAOTest extends AbstractInfrastructureTest {
 	}
 	
 	@Test
+	public void deveBuscarTodosOsPedidos() throws Exception {
+		List<Pedido> pedidos = pedidoDAO.listAll();
+		Assert.assertNotNull(pedidos);
+	}
+	
+	@Test
     public void deveBuscarPedidosPendentes() throws Exception {
         List<Pedido> pedidos = pedidoDAO.findBySituacao(SituacaoPedido.PENDENTE);
         Assert.assertNotNull(pedidos);
@@ -44,6 +50,24 @@ public class PedidoDAOTest extends AbstractInfrastructureTest {
 		Pedido pedido = pedidoDAO.findById(1L);
 		Assert.assertNotNull(pedido);
 		Assert.assertNotNull(pedido.getItens());
+	}
+	
+	@Test
+	public void deveListarPedidosPorCPF() throws Exception {
+		List<Pedido> pedidos = pedidoDAO.listByCPFESituacao("123", null);
+		Assert.assertNotNull(pedidos);
+	}
+	
+	@Test
+	public void deveListarPedidosPorSituacao() throws Exception {
+		List<Pedido> pedidos = pedidoDAO.listByCPFESituacao(null, SituacaoPedido.PENDENTE);
+		Assert.assertNotNull(pedidos);
+	}
+	
+	@Test
+	public void deveListarPedidosPorCPFESituacao() throws Exception {
+		List<Pedido> pedidos = pedidoDAO.listByCPFESituacao("52426419407", SituacaoPedido.PENDENTE);
+		Assert.assertNotNull(pedidos);
 	}
 	
 }

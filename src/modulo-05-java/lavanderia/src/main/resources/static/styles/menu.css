@@ -6,19 +6,16 @@
 
 .menu {
 	width: 260px;
-	height: 88.7%;
-	margin-left: 8px;
-	margin-top: 8px;
-	margin-bottom: 8px; 
+	height: 100%;
 	color: white;
+    top: 0;
 }
 
 .menu-black {
 	width: 260px;
-    height: 535px;
+    height: 609px;
     position: absolute;
     bottom: 0;
-    border-radius: 0 0 5px 5px;
     background-color: rgba(0, 0, 0, 0.6);
 }
 

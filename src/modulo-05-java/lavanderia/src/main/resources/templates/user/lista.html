@@ -7,7 +7,9 @@ layout:decorator="template">
 	<title>Usuarios</title>
 </head>
 <body>
-
+	<div layout:fragment="header">
+		<div th:include="fragments/headers/_header-usuario :: header-nav"></div>
+	</div>
 	<div layout:fragment="content">
 		
 		<div th:if="${mensagem}">

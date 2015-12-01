@@ -1,20 +1,46 @@
 <div th:fragment="menu">
 
-	<div class="menu fixed radius bg-opacity-gray">
+	<div class="menu fixed bg-opacity-gray">
 
 		<div class="menu-black"></div>
 
 		<ul class="menu-nav">
 			<li class="menu-brand">
-				<a class="font-bold title-shadow" th:href="${'/'}">
+				<a class="font-bold title-shadow" th:href="${'/home'}">
 					Lavanderia CWI Crescer
 				</a>
 			</li>
 			<li>
-				<a href="#">Dashboard</a>
+				<a th:href="${'/home'}">
+					<span class="glyphicon glyphicon-home"></span>
+					Home
+				</a>
 			</li>
 			<li>
-				<a href="#">Sobre</a>
+				<a th:href="${'/pedidos/'}">
+					<span class="glyphicon glyphicon-shopping-cart"></span>
+					Pedidos
+				</a>
+			</li>
+			<li>
+				<a th:href="${'/clientes/'}">
+					<span class="glyphicon glyphicon-star"></span>
+					Clientes
+				</a>
+			</li>
+			<li>
+				<a th:href="${'/produtos/'}">
+					<span class="glyphicon glyphicon-file"></span>
+					Produtos
+				</a>
+			</li>
+			<li>
+				<div sec:authorize="hasRole('ROLE_ADMIN')">
+					<a th:href="${'/users/'}">
+						<span class="glyphicon glyphicon-user"></span>
+						Usuarios
+					</a>
+				</div>
 			</li>
 		</ul>
 	</div>

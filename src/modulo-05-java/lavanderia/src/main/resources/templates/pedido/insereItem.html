@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+layout:decorator="template">
+<head>
+	<title>Cadastro</title>
+</head>
+<body>
+	<div layout:fragment="header">
+		<div th:include="fragments/headers/_header-pedido :: header-nav"></div>
+	</div>
+	<div layout:fragment="content">
+
+		<div th:if="${mensagem}">
+			<div class="alert alert-success alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<p th:text="${mensagem}"></p>
+			</div>
+		</div>
+
+		<h2 class="title-container title-shadow">Cadastro de Itens</h2>
+
+		<div class="form-content">
+			<form th:action="@{/pedidos/inserirItem}" th:object="${item}" method="post" class="form-horizontal">
+
+				<input th:field="*{idPedido}" type="hidden" />
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Servico:</label>
+					<div class="form-control-override col-sm-10">
+						<select id="servico" class="form-control">
+							<option th:each="s : ${servicos}" th:text="${s.descricao}" th:value="${s.idServico}" >[option]</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Material:</label>
+					<div class="form-control-override col-sm-10">
+						<select id="material" th:field="*{idProduto}" class="form-control">
+							<option value=""></option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Peso:</label>
+					<div class="form-control-override col-sm-10">
+						<input th:field="*{peso}" type="text" class="form-control" />
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-default">
+							Incluir Item
+						</button>
+						<a th:href="${ '/pedidos/processar/' + item.idPedido }" class="btn btn-default">
+							Processar Pedido
+						</a>
+					</div>
+				</div>
+				
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -8,6 +8,10 @@
 	<title>Home</title>
 </head>
 <body>
+	<div layout:fragment="header">
+		<div th:include="fragments/headers/_header-home :: header-nav"></div>
+	</div>
+	
 	<div layout:fragment="content">
 	
 	</div>

@@ -26,7 +26,7 @@ public class ClienteService {
 		this.cidadeDAO = cidadeDAO;
 	}
 
-	public List<ClienteResumoDTO> listarClientesAtivos() {
+	public List<ClienteResumoDTO> listarClientesDTOAtivos() {
 
 		List<Cliente> clientes = clienteDAO.findBySituacao(SituacaoCliente.ATIVO);
 
@@ -99,6 +99,10 @@ public class ClienteService {
 		situacoes.add(SituacaoCliente.ATIVO);
 		situacoes.add(SituacaoCliente.INATIVO);
 		return situacoes;
+	}
+	
+	public List<Cliente> listAtivos() {
+		return clienteDAO.findBySituacao(SituacaoCliente.ATIVO);
 	}
 
 }

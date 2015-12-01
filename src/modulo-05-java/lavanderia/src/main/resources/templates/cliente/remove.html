@@ -7,7 +7,9 @@
 	<title>Home</title>
 </head>
 <body>
-
+	<div layout:fragment="header">
+		<div th:include="fragments/headers/_header-cliente :: header-nav"></div>
+	</div>
 	<div layout:fragment="content">
 
 		<h2 class="title-container title-shadow">Remover cliente <span th:text="${cliente.nome}"></span></h2>

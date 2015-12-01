@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Erro</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/styles/modules.css" th:href="${'/styles/modules.css'}" />
+	<link rel="stylesheet" href="/styles/background.css" th:href="${'/styles/background.css'}" />
+	<link rel="stylesheet" href="/styles/index.css" th:href="${'/styles/index.css'}" />
+	<link rel="stylesheet" href="/styles/footer.css" th:href="${'/styles/footer.css'}" />
+	<link rel="stylesheet" href="/styles/normalize.css" th:href="${'/styles/normalize.css'}" />
+	<link rel="stylesheet" href="/styles/bootstrap-override.css" th:href="${'/styles/bootstrap-override.css'}" />
+</head>
+<body>
+	<div class="index-title-container text-center">
+		<h1 class="index-title">Ocorreu algum erro inesperado :(</h1>
+
+		<p th:text="${timestamp}" class="index-paragraph"></p>
+
+		<p th:text="${status}" class="index-paragraph"></p>
+
+		<p th:text="${error}" class="index-paragraph"></p>
+
+		<div th:if="${ex} or ${exception} or (${message} and ${message.length() != 0})">
+			<p th:text="${message}" class="index-paragraph">message ...</p>
+		</div>		
+	</div>
+</body>
+</html>

@@ -19,27 +19,22 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 	<link rel="stylesheet" href="/styles/bootstrap-override.css" th:href="${'/styles/bootstrap-override.css'}" />
 </head>
 <body>
-	<div class="bg-img">
-		<div th:include="fragments/_header :: header-nav">
-			
-		</div>
+	<div layout:fragment="header"></div>
 
-		<div th:include="fragments/_menu :: menu">
-			
-		</div>
-		
-		<div layout:fragment="content" class="container-override fixed radius bg-opacity-gray">
+	<div th:include="fragments/_menu :: menu"></div>
 
-			
+	<div layout:fragment="content" class="container-override radius bg-opacity-gray">
 
-		</div>
 
-		<div th:replace="fragments/_footer :: footer">
 
-		</div>
 	</div>
-	
+
+	<div th:replace="fragments/_footer :: footer">
+
+	</div>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="/scripts/pedido.js"></script>
 </body>
 </html>
